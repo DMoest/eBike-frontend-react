@@ -1,6 +1,3 @@
-# Sofia testar
-  Hej
-
 # Frontend React
 
 This repository is the frontend in the project eBike System.
