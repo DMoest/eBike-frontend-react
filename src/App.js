@@ -5,7 +5,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import City from './pages/City'
 import Bike from './pages/Bike'
-import Charging from './pages/Charging'
+import Charging from './pages/Charging' 
 
 function App() {
   return (
