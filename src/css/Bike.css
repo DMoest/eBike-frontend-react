@@ -1,0 +1,12 @@
+.bike__outer-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    border-bottom: 1px solid #E4E4E6;
+    border-top: 1px solid #E4E4E6;
+    padding: 20px 0px;
+}
+
+.table__column-item {
+    width: 15%;
+}
