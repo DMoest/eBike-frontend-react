@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom'
 
 function City({ name, desc, bikes, charge, customers }) {
     return (
-        // TODO: Get data to city component
+        // "State" sets the city name to a param called 
+        // "cityName" in the child component
         <Link to={"/cities/" +  name.toLowerCase() } state={{ cityName: name }}>
             <div className="city__outer-wrapper">
                 <div className="city__img-wrapper">
