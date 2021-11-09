@@ -2,7 +2,7 @@ import React from 'react'
 
 function Bikes() {
     return (
-        <div>
+        <div className="wrapper">
             Bikes
         </div>
     )

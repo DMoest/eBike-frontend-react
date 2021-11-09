@@ -2,7 +2,7 @@ import React from 'react'
 
 function Charging() {
     return (
-        <div>
+        <div className="wrapper">
             Charging
         </div>
     )

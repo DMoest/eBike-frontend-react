@@ -29,6 +29,11 @@ h5 {
     margin-bottom: 0.6em;
 }
 
+h1 {
+    margin-bottom: 50px;
+    font-size: 3em;
+}
+
 p {
     opacity: 0.7;
     line-height: 1.5em;
@@ -36,5 +41,5 @@ p {
 
 .wrapper {
     width: 100vw;
-    padding: 25px 25px;
+    padding: 50px 50px;
 }
