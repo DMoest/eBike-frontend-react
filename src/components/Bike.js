@@ -4,7 +4,7 @@ import '../css/Bike.css'
 
 function Bike({ id, city, lat, lan, latest_travel, parking, status }) {
     return (
-        <div className="bike__outer-wrapper">
+        <div className="table__outer-wrapper">
             <div className="table__column-item">
                 {id}
             </div>
