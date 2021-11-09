@@ -1,0 +1,13 @@
+.city__outer-wrapper {
+    background: #fff;
+    width: 33%;
+}
+
+.city__img-wrapper {
+    height: 250px;
+    background: #ebebeb;
+}
+
+.city__content-wrapper {
+    padding: 20px;
+}

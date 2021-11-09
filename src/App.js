@@ -1,20 +1,26 @@
 import './css/App.css';
 import './css/Other.css'
 import { Route, Routes } from 'react-router-dom'
+
+// Pages
 import Home from './pages/Home'
 import About from './pages/About'
-import City from './pages/City'
-import Bike from './pages/Bike'
-import Charging from './pages/Charging' 
+import Cities from './pages/Cities'
+import Bikes from './pages/Bikes'
+import Charging from './pages/Charging'
+
+// Global components
+import Nav from './components/global/Nav'
 
 function App() {
   return (
     <div className="App">
+      <Nav />
       <Routes>
         <Route path="/" element={ <Home /> }/>
         <Route path="/about" element={ <About /> }/>
-        <Route path="/city" element={ <City /> }/>
-        <Route path="/bike" element={ <Bike /> }/>
+        <Route path="/cities" element={ <Cities /> }/>
+        <Route path="/bikes" element={ <Bikes /> }/>
         <Route path="/charging" element={ <Charging />}/>
       </Routes>
     </div>

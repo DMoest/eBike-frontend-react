@@ -1,13 +1,14 @@
 import React from 'react'
-import '../css/Other.css'
+import City from '../components/City'
+
 import '../css/App.css'
 
-function Home() {
+function Cities() {
     return (
         <div className="wrapper">
-            Home
+            <City />
         </div>
     )
 }
 
-export default Home
+export default Cities

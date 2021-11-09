@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Bike() {
+function Bikes() {
     return (
         <div>
-            Bike
+            Bikes
         </div>
     )
 }
 
-export default Bike
+export default Bikes
