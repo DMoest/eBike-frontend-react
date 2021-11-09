@@ -9,7 +9,7 @@ import Cities from './pages/Cities'
 import Bikes from './pages/Bikes'
 import Charging from './pages/Charging'
 import Login from './pages/Login'
-import City from './pages/City'
+import CitySingle from './pages/CitySingle'
 
 // Global components
 import Nav from './components/global/Nav'
@@ -22,7 +22,7 @@ function App() {
         <Route path="/" element={ <Home /> }/>
         <Route path="/about" element={ <About /> }/>
         <Route path="/cities" element={ <Cities /> }/>
-        <Route path="/cities/:city" element={ <City />}/>
+        <Route path="/cities/:city" element={ <CitySingle />}/>
         <Route path="/bikes" element={ <Bikes /> }/>
         <Route path="/charging" element={ <Charging />}/>
         <Route path="/login" element={ <Login />}/>
