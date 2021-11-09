@@ -1,4 +1,5 @@
 import React from 'react'
+import '../css/Table.css'
 import '../css/Bike.css'
 
 function Bike({ id, city, lat, lan, latest_travel, parking, status }) {
