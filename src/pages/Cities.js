@@ -5,6 +5,7 @@ import Header from '../components/global/Header'
 import '../css/App.css'
 
 function Cities() {
+    // Mock data for the grid
     const cities = [
         {
             name: 'Stockholm',
@@ -14,18 +15,18 @@ function Cities() {
             customers: 42
         },
         {
-            name: 'Stockholm',
+            name: 'Linköping',
             desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ullamcorper quam eu',
-            bikes: 272,
-            charge: 13,
-            customers: 42
+            bikes: 152,
+            charge: 9,
+            customers: 21
         },
         {
-            name: 'Stockholm',
+            name: 'Helsingfors',
             desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ullamcorper quam eu',
-            bikes: 272,
-            charge: 13,
-            customers: 42
+            bikes: 92,
+            charge: 5,
+            customers: 41
         }
     ]
 

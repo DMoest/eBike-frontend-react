@@ -12,9 +12,30 @@
 
 .city__img-wrapper {
     object-fit: cover;
-    background: #ebebeb;
+}
+
+.city__img-wrapper img {
+    width: 100%;
 }
 
 .city__content-wrapper {
     padding: 20px;
+}
+
+.city__bottom-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.city__stats-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.city__stats-item {
+
 }

@@ -11,10 +11,20 @@ function City({ name, desc, bikes, charge, customers }) {
             <div className="city__content-wrapper">
                 <h3>{ name }</h3>
                 <p>{ desc }</p>
-                <div class="city__stats-wrapper">
-                    { bikes }
-                    { charge }
-                    { customers }
+                <div className="city__bottom-wrapper">
+                    <div className="city__stats-wrapper">
+                        <div className="city__stats-item">
+                            { bikes }
+                        </div>
+                        <div className="city__stats-item">
+                            { charge }
+                        </div>
+                        <div className="city__stats-item">
+                            { customers }
+                        </div>
+                    </div>
+
+                    ->
                 </div>
             </div>
         </div>
