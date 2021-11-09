@@ -1,11 +1,12 @@
 import React from 'react'
 import '../css/City.css'
+import map from '../assets/img/city__map-test.png'
 
 function City() {
     return (
         <div className="city__outer-wrapper">
             <div className="city__img-wrapper">
-                {/* <img src="../assets/img/city__map-test.png" alt="test"/> */}
+                <img src={ map } alt="test"/>
             </div>
             <div className="city__content-wrapper">
                 <h3>Stockholm</h3>
