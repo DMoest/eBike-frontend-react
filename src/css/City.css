@@ -1,6 +1,5 @@
 .city__outer-wrapper {
     background: #fff;
-    max-width: 33%;
     transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
     overflow: hidden;
 }
@@ -13,6 +12,7 @@
 
 .city__img-wrapper {
     object-fit: cover;
+    background: #ebebeb;
 }
 
 .city__content-wrapper {

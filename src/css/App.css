@@ -12,8 +12,8 @@ body {
 }
 
 .wrapper {
-    max-width: 1200px;
     width: 100%;
+    padding: 50px 50px;
 }
 
 a {
@@ -39,7 +39,10 @@ p {
     line-height: 1.5em;
 }
 
-.wrapper {
-    width: 100vw;
-    padding: 50px 50px;
+.city__grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
 }
