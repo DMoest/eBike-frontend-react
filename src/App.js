@@ -22,10 +22,10 @@ function App() {
         <Route path="/" element={ <Home /> }/>
         <Route path="/about" element={ <About /> }/>
         <Route path="/cities" element={ <Cities /> }/>
+        <Route path="/cities/:city" element={ <City />}/>
         <Route path="/bikes" element={ <Bikes /> }/>
         <Route path="/charging" element={ <Charging />}/>
         <Route path="/login" element={ <Login />}/>
-        <Route path="/city" element={ <City />}/>
       </Routes>
     </div>
   );
