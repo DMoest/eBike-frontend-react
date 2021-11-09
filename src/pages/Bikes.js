@@ -1,5 +1,6 @@
 import React from 'react'
 import Bike from '../components/Bike'
+import Header from '../components/global/Header'
 
 function Bikes() {
     // Mock data for the grid
@@ -13,10 +14,38 @@ function Bikes() {
             parking: 'Inte tillgänglig',
             status: 'Upptagen'
         },
+        {
+            id: 124,
+            city: 'Stockholm',
+            lat: '13.212313',
+            lan: '53.123123',
+            latest_travel: '12:42 - 11.3.2021',
+            parking: 'Parkering #2',
+            status: 'Ledig'
+        },
+        {
+            id: 123,
+            city: 'Stockholm',
+            lat: '12.212313',
+            lan: '52.123123',
+            latest_travel: '12:41 - 11.3.2021',
+            parking: 'Inte tillgänglig',
+            status: 'Upptagen'
+        },
+        {
+            id: 124,
+            city: 'Stockholm',
+            lat: '13.212313',
+            lan: '53.123123',
+            latest_travel: '12:42 - 11.3.2021',
+            parking: 'Parkering #2',
+            status: 'Ledig'
+        },
     ]
 
     return (
         <div className="wrapper">
+            <Header title="Cyklar"/>
             {bikes.map((bike) => {
                 return <Bike
                     id={bike.id}
