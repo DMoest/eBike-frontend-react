@@ -8,6 +8,7 @@ import About from './pages/About'
 import Cities from './pages/Cities'
 import Bikes from './pages/Bikes'
 import Charging from './pages/Charging'
+import Login from './pages/Login'
 
 // Global components
 import Nav from './components/global/Nav'
@@ -22,6 +23,7 @@ function App() {
         <Route path="/cities" element={ <Cities /> }/>
         <Route path="/bikes" element={ <Bikes /> }/>
         <Route path="/charging" element={ <Charging />}/>
+        <Route path="/login" element={ <Login />}/>
       </Routes>
     </div>
   );

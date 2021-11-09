@@ -12,7 +12,7 @@ function Nav() {
                 <Link to="/cities" className="nav__link">Städer</Link>
                 <Link to="/bikes" className="nav__link">Cyklar</Link>
                 <Link to="/charging" className="nav__link">Laddstationer</Link>
-                {/* <a href="#" className="nav__link">Logga in</a> */}
+                <Link to="/login" className="nav__link nav__btn">Logga in</Link>
             </div>
         </div>
     )
