@@ -34,13 +34,13 @@ function Cities() {
         <div className="wrapper">
             <Header title="Städer"/>
             <div className="city__grid">
-                { cities.map((bike) => {
+                { cities.map((city) => {
                     return <City 
-                        name={bike.name} 
-                        desc={bike.desc} 
-                        bikes={bike.bikes} 
-                        charge={bike.charge} 
-                        customers={bike.customers}
+                        name={city.name} 
+                        desc={city.desc} 
+                        bikes={city.bikes} 
+                        charge={city.charge} 
+                        customers={city.customers}
                     />
                 }) }
             </div>
