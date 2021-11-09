@@ -24,7 +24,7 @@ function City({ name, desc, bikes, charge, customers }) {
                         </div>
                     </div>
 
-                    ->
+                    -{'>'}
                 </div>
             </div>
         </div>

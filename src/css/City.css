@@ -2,6 +2,7 @@
     background: #fff;
     transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
     overflow: hidden;
+    border: 1px solid #E4E4E6;
 }
 
 .city__outer-wrapper:hover {
