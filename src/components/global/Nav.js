@@ -1,7 +1,7 @@
 import React from 'react'
 import '../../css/Nav.css'
 import '../../css/App.css'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 // Icons
 // import home from '../../assets/img/icons/home.svg'
@@ -9,7 +9,7 @@ import { NavLink } from 'react-router-dom'
 function Nav() {
     return (
         <div className="nav__outer-wrapper">
-            <div className="nav__brand">eBike</div>
+            <div className="nav__brand"><Link to="/">eBike</Link></div>
             <div className="nav__menu">
                 <NavLink to="/" className="nav__link">Hem</NavLink>
                 <NavLink to="/cities" className="nav__link">Städer</NavLink>
