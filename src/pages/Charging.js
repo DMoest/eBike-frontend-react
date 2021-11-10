@@ -26,6 +26,10 @@ function Charging() {
     return (
         <div className="wrapper">
             <Header title="Laddstationer"/>
+            
+            {/* Break out into separate component? */}
+            <input type="text" placeholder="Sök" className="input__search"></input>
+
             {chargingStations.map((station) => {
                 return <ChargingStation
                     id={station.id}
