@@ -36,3 +36,13 @@
     justify-content: space-between;
     width: 50%;
 }
+
+.city__stats-item {
+    display: flex;
+    align-items: center;
+}
+
+.city__icon {
+    max-width: 16px;
+    margin-right: 5px;
+}
