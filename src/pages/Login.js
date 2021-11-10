@@ -1,9 +1,10 @@
 import React from 'react'
+import Header from '../components/global/Header'
 
 function Login() {
     return (
         <div className="wrapper">
-            Login
+            <Header title="Logga in"/>
         </div>
     )
 }

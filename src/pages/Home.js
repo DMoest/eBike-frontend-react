@@ -1,11 +1,12 @@
 import React from 'react'
 import '../css/Other.css'
 import '../css/App.css'
+import Header from '../components/global/Header'
 
 function Home() {
     return (
         <div className="wrapper">
-            Home
+            <Header title="Hem"/>
         </div>
     )
 }
