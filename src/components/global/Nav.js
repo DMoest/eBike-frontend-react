@@ -3,6 +3,9 @@ import '../../css/Nav.css'
 import '../../css/App.css'
 import { NavLink } from 'react-router-dom'
 
+// Icons
+// import home from '../../assets/img/icons/home.svg'
+
 function Nav() {
     return (
         <div className="nav__outer-wrapper">

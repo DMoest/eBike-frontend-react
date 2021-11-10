@@ -10,7 +10,7 @@ function City({ name, desc, bikes, charge, customers }) {
         <Link to={"/cities/" +  name.toLowerCase() } state={{ cityName: name }}>
             <div className="city__outer-wrapper">
                 <div className="city__img-wrapper">
-                    <img src={ map } alt="test"/>
+                    <img src={ map } alt="map"/>
                 </div>
                 <div className="city__content-wrapper">
                     <h3>{ name }</h3>
