@@ -25,7 +25,7 @@ function Charging() {
 
     return (
         <div className="wrapper">
-            <Header title="Cyklar"/>
+            <Header title="Laddstationer"/>
             {chargingStations.map((station) => {
                 return <ChargingStation
                     id={station.id}
