@@ -9,10 +9,14 @@ import Cities from './pages/Cities'
 import Bikes from './pages/Bikes'
 import Charging from './pages/Charging'
 import Login from './pages/Login'
+
+// For the single city page. Needed?
 import CitySingle from './pages/CitySingle'
 
 // Global components
 import Nav from './components/global/Nav'
+
+// TODO: Figure out global state
 
 function App() {
   return (

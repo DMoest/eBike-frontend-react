@@ -46,6 +46,10 @@ function Bikes() {
     return (
         <div className="wrapper">
             <Header title="Cyklar"/>
+
+            {/* Break out into separate component? */}
+            <input type="text" placeholder="Sök" className="input__search"></input>
+
             {bikes.map((bike) => {
                 return <Bike
                     id={bike.id}

@@ -47,3 +47,17 @@ p {
     grid-column-gap: 50px;
     grid-row-gap: 50px;
 }
+
+input {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 4px;
+    outline: none;
+    font-size: 18px;
+    border: 1px solid #a7a7a7;
+    background: #FCFBFE;
+}
+
+.input__search {
+    margin-bottom: 50px;
+}
