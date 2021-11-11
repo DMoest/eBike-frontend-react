@@ -1,5 +1,5 @@
 import React from 'react'
-import { Marker } from 'react-leaflet'
+import { Marker, Popup } from 'react-leaflet'
 
 function MapMarkers() {
     const markers = [
@@ -23,7 +23,12 @@ function MapMarkers() {
     return (
         <div>
             { markers.map((marker) => {
-                return <Marker position={[marker.lat, marker.lan]} ></Marker>
+                return <Marker position={[marker.lat, marker.lan]}>
+                    <Popup>
+                        Lat: { marker.lat } 
+                        <br /> Lan: { marker.lan }
+                    </Popup>
+                </Marker>
             }) }
         </div>
     )
