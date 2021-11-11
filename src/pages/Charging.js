@@ -27,7 +27,6 @@ function Charging() {
     return (
         <div className="wrapper">
             <DocumentTitle title='Laddstationer' ></DocumentTitle>
-
             <Header title="Laddstationer"/>
             
             {/* Break out into separate component? */}

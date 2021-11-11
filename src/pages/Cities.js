@@ -34,7 +34,6 @@ function Cities() {
     return (
         <div className="wrapper">
             <DocumentTitle title='Städer' ></DocumentTitle>
-            
             <Header title="Städer"/>
             <div className="city__grid">
                 { cities.map((city) => {

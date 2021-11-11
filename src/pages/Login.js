@@ -6,7 +6,6 @@ function Login() {
     return (
         <div className="wrapper">
             <DocumentTitle title='Logga in' ></DocumentTitle>
-            
             <Header title="Logga in"/>
         </div>
     )
