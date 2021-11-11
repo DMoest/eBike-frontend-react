@@ -9,7 +9,6 @@ function Home() {
     return (
         <div className="wrapper">
             <DocumentTitle title='Hem' ></DocumentTitle>
-            
             <Header title="Hem"/>
             <Map />
         </div>

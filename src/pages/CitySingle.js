@@ -12,7 +12,6 @@ function City() {
     return (
         <div className="wrapper">
             <DocumentTitle title={ cityName } ></DocumentTitle>
-            
             <BtnBack url={ "cities" } />
             <Header title={ cityName } />
         </div>

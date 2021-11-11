@@ -47,7 +47,6 @@ function Bikes() {
     return (
         <div className="wrapper">
             <DocumentTitle title='Cyklar' ></DocumentTitle>
-
             <Header title="Cyklar"/>
 
             {/* Break out into separate component? */}
