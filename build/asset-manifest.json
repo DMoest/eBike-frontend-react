@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.60ffc9c5.chunk.css",
-    "main.js": "/static/js/main.044e4301.chunk.js",
-    "main.js.map": "/static/js/main.044e4301.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.eaa54601.js",
-    "runtime-main.js.map": "/static/js/runtime-main.eaa54601.js.map",
-    "static/js/2.06c30223.chunk.js": "/static/js/2.06c30223.chunk.js",
-    "static/js/2.06c30223.chunk.js.map": "/static/js/2.06c30223.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.60ffc9c5.chunk.css.map": "/static/css/main.60ffc9c5.chunk.css.map",
-    "static/js/2.06c30223.chunk.js.LICENSE.txt": "/static/js/2.06c30223.chunk.js.LICENSE.txt",
-    "static/media/city__map-test.dbeb735c.png": "/static/media/city__map-test.dbeb735c.png",
-    "static/media/icon__charge.cc921c00.svg": "/static/media/icon__charge.cc921c00.svg",
-    "static/media/icon__customer.56e9ea47.svg": "/static/media/icon__customer.56e9ea47.svg",
-    "static/media/icon__scooter.8f7c4e27.svg": "/static/media/icon__scooter.8f7c4e27.svg"
+    "main.css": "/eBike-frontend-react/build/static/css/main.60ffc9c5.chunk.css",
+    "main.js": "/eBike-frontend-react/build/static/js/main.044e4301.chunk.js",
+    "main.js.map": "/eBike-frontend-react/build/static/js/main.044e4301.chunk.js.map",
+    "runtime-main.js": "/eBike-frontend-react/build/static/js/runtime-main.26d51474.js",
+    "runtime-main.js.map": "/eBike-frontend-react/build/static/js/runtime-main.26d51474.js.map",
+    "static/js/2.06c30223.chunk.js": "/eBike-frontend-react/build/static/js/2.06c30223.chunk.js",
+    "static/js/2.06c30223.chunk.js.map": "/eBike-frontend-react/build/static/js/2.06c30223.chunk.js.map",
+    "index.html": "/eBike-frontend-react/build/index.html",
+    "static/css/main.60ffc9c5.chunk.css.map": "/eBike-frontend-react/build/static/css/main.60ffc9c5.chunk.css.map",
+    "static/js/2.06c30223.chunk.js.LICENSE.txt": "/eBike-frontend-react/build/static/js/2.06c30223.chunk.js.LICENSE.txt",
+    "static/media/city__map-test.dbeb735c.png": "/eBike-frontend-react/build/static/media/city__map-test.dbeb735c.png",
+    "static/media/icon__charge.cc921c00.svg": "/eBike-frontend-react/build/static/media/icon__charge.cc921c00.svg",
+    "static/media/icon__customer.56e9ea47.svg": "/eBike-frontend-react/build/static/media/icon__customer.56e9ea47.svg",
+    "static/media/icon__scooter.8f7c4e27.svg": "/eBike-frontend-react/build/static/media/icon__scooter.8f7c4e27.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.eaa54601.js",
+    "static/js/runtime-main.26d51474.js",
     "static/js/2.06c30223.chunk.js",
     "static/css/main.60ffc9c5.chunk.css",
     "static/js/main.044e4301.chunk.js"
