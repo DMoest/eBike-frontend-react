@@ -1,7 +1,6 @@
 import React from 'react'
 import { MapContainer, TileLayer, Marker } from 'react-leaflet'
 
-
 function Map() {
     return (
         <div>

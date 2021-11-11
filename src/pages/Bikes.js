@@ -1,6 +1,7 @@
 import React from 'react'
 import Bike from '../components/Bike'
 import Header from '../components/global/Header'
+import DocumentTitle from 'react-document-title'
 
 function Bikes() {
     // Mock data for the grid
@@ -45,6 +46,8 @@ function Bikes() {
 
     return (
         <div className="wrapper">
+            <DocumentTitle title='Cyklar' ></DocumentTitle>
+
             <Header title="Cyklar"/>
 
             {/* Break out into separate component? */}
