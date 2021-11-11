@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from '../components/global/Header'
 import ChargingStation from '../components/ChargingStation'
+import DocumentTitle from 'react-document-title'
 
 function Charging() {
     // Mock data for the grid
@@ -25,6 +26,8 @@ function Charging() {
 
     return (
         <div className="wrapper">
+            <DocumentTitle title='Laddstationer' ></DocumentTitle>
+
             <Header title="Laddstationer"/>
             
             {/* Break out into separate component? */}

@@ -2,6 +2,7 @@ import React from 'react'
 import { useLocation } from 'react-router-dom'
 import Header from '../components/global/Header'
 import BtnBack from '../components/global/BtnBack'
+import DocumentTitle from 'react-document-title'
 
 function City() {
     // Gets the city name
@@ -10,6 +11,8 @@ function City() {
 
     return (
         <div className="wrapper">
+            <DocumentTitle title={ cityName } ></DocumentTitle>
+            
             <BtnBack url={ "cities" } />
             <Header title={ cityName } />
         </div>
