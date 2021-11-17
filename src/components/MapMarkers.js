@@ -1,32 +1,25 @@
-import React from 'react'
+import { useState, useEffect } from 'react'
+import axios from 'axios'
+
 import { Marker, Popup } from 'react-leaflet'
 
 function MapMarkers() {
-    const markers = [
-        {
-            lat: 60.192123, 
-            lan: 24.945831
-        },
-        {
-            lat: 60.292123,
-            lan: 24.845831
-        },
-        {
-            lat: 60.392123,
-            lan: 24.745831
-        },
-        {
-            lat: 60.492123,
-            lan: 24.645831
-        }
-    ]
+    const url = process.env.REACT_APP_API_BASE_URL + "/api/bike"
+    const [markers, setMarkers] = useState([])
+
+    useEffect(() => {
+        axios.get(url).then((res) => {
+          setMarkers(res.data.bikes)
+        });
+    }, [url])
+
     return (
         <div>
             { markers.map((marker) => {
-                return <Marker position={[marker.lat, marker.lan]}>
+                return <Marker position={[marker.latitude, marker.longitude]}>
                     <Popup>
-                        Lat: { marker.lat } 
-                        <br /> Lan: { marker.lan }
+                        Lat: { marker.latitude } 
+                        <br /> Lan: { marker.longitude }
                     </Popup>
                 </Marker>
             }) }
