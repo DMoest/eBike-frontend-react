@@ -17,8 +17,6 @@ function Bikes() {
         });
     }, []);
 
-    console.log(bikes)
-    
     return (
         <div className="wrapper">
             <DocumentTitle title='Cyklar' ></DocumentTitle>
@@ -29,12 +27,9 @@ function Bikes() {
 
             {bikes.map((bike) => {
                 return <Bike key={bike._id}
-                    // id={bike._id}
                     city={bike.city}
-                    lat={bike.latitude}
-                    lan={bike.longitude}
-                    // latest_travel={bike.latest_travel}
-                    // parking={bike.parking}
+                    latitude={bike.latitude}
+                    longitude={bike.longitude}
                     status={bike.status}
                 />
             })}
