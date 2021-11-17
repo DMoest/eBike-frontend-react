@@ -22,7 +22,6 @@ function Bikes() {
             <DocumentTitle title='Cyklar' ></DocumentTitle>
             <Header title="Cyklar"/>
 
-            {/* Break out into separate component? */}
             <input type="text" placeholder="Sök" className="input__search"></input>
 
             {bikes.map((bike) => {
