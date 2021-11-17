@@ -9,14 +9,13 @@ import { useState, useEffect } from 'react'
 
 function Bikes() {
     const url = process.env.REACT_APP_API_BASE_URL + "/api/bike"
-    console.log(url)
     const [bikes, setBikes] = useState([])
 
     useEffect(() => {
         axios.get(url).then((res) => {
           setBikes(res.data.bikes);
         });
-    }, []);
+    }, [url]);
 
     return (
         <div className="wrapper">
