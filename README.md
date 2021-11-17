@@ -5,14 +5,14 @@ The frontend is intended to communicate with the server backend, support admin t
 
 ### Start & test the application
 
-#### Start the webapp in production
+#### Start the webapp
 ```
-npm run start
+yarn start (or npm run start)
 ```
 
-#### Start the webapp in development
+#### Build the webapp
 ```
-npm run start-dev
+yarn build (or npm run build)
 ```
 
 ### Test the application
