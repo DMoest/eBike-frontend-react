@@ -5,17 +5,17 @@ The frontend is intended to communicate with the server backend, support admin t
 
 ### Start & test the application
 
-#### Start the webapp
+#### Start the backend / API (eBike-backend-laravel) using Docker
+```
+docker compose up ebike_backend
+```
+
+#### Start the react app
 ```
 yarn start (or npm run start)
 ```
 
-#### Build the webapp
+#### Build the react app
 ```
 yarn build (or npm run build)
-```
-
-### Test the application
-```
-npm run test
 ```

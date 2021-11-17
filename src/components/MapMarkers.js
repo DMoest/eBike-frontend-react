@@ -8,15 +8,29 @@ function MapMarkers() {
     const [markers, setMarkers] = useState([])
 
     useEffect(() => {
-        axios.get(url).then((res) => {
-          setMarkers(res.data.bikes)
-        });
+        function fetchData() {
+            axios.get(url).then((res) => {
+                setMarkers(res.data.bikes)
+                console.log('API is called')
+            })
+        }
+
+        // Fetching immediately the first time
+        fetchData()
+
+        // Fetching every 10 seconds
+        const fetchDataInterval = setInterval(() => {
+            fetchData()
+        }, 10000)
+
+        // Clearing is needed
+        return () => clearInterval(fetchDataInterval)
     }, [url])
 
     return (
         <div>
             { markers.map((marker) => {
-                return <Marker position={[marker.latitude, marker.longitude]}>
+                return <Marker position={[marker.latitude, marker.longitude]} key={marker.latitude}>
                     <Popup>
                         Lat: { marker.latitude } 
                         <br /> Lan: { marker.longitude }
