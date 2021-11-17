@@ -8,7 +8,8 @@ import DocumentTitle from 'react-document-title'
 import { useState, useEffect } from 'react'
 
 function Bikes() {
-    const url = "http://localhost:8000/api/bike"
+    const url = process.env.REACT_APP_API_BASE_URL + "/api/bike"
+    console.log(url)
     const [bikes, setBikes] = useState([])
 
     useEffect(() => {
