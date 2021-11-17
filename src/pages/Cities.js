@@ -1,35 +1,20 @@
-import React from 'react'
+import { useState, useEffect } from 'react'
 import City from '../components/City'
 import Header from '../components/global/Header'
 import DocumentTitle from 'react-document-title'
+import axios from 'axios'
 
 import '../css/App.css'
 
 function Cities() {
-    // Mock data for the grid
-    const cities = [
-        {
-            name: 'Stockholm',
-            desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ullamcorper quam eu',
-            bikes: 272,
-            charge: 13,
-            customers: 42
-        },
-        {
-            name: 'Linköping',
-            desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ullamcorper quam eu',
-            bikes: 152,
-            charge: 9,
-            customers: 21
-        },
-        {
-            name: 'Helsingfors',
-            desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ullamcorper quam eu',
-            bikes: 92,
-            charge: 5,
-            customers: 41
-        }
-    ]
+    const url = process.env.REACT_APP_API_BASE_URL + "/api/city"
+    const [cities, setCities] = useState([])
+
+    useEffect(() => {
+        axios.get(url).then((res) => {
+          setCities(res.data)
+        })
+    }, [url]);
 
     return (
         <div className="wrapper">
@@ -37,12 +22,12 @@ function Cities() {
             <Header title="Städer"/>
             <div className="city__grid">
                 { cities.map((city) => {
-                    return <City 
+                    return <City key={city._id}
                         name={city.name} 
-                        desc={city.desc} 
-                        bikes={city.bikes} 
-                        charge={city.charge} 
-                        customers={city.customers}
+                        // desc={city.desc} 
+                        // bikes={city.bikes} 
+                        // charge={city.charge} 
+                        // customers={city.customers}
                     />
                 }) }
             </div>
