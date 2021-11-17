@@ -13,9 +13,9 @@ function Bikes() {
 
     useEffect(() => {
         axios.get(url).then((res) => {
-          setBikes(res.data.bikes);
+          setBikes(res.data.bikes)
         });
-    }, [url]);
+    }, [url])
 
     return (
         <div className="wrapper">
