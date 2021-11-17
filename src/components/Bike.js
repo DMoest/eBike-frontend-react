@@ -2,26 +2,17 @@ import React from 'react'
 import '../css/Table.css'
 import '../css/Bike.css'
 
-function Bike({ id, city, lat, lan, latest_travel, parking, status }) {
+function Bike({ city, latitude, longitude, status }) {
     return (
         <div className="table__outer-wrapper">
-            <div className="table__column-item">
-                {id}
-            </div>
             <div className="table__column-item">
                 {city}
             </div>
             <div className="table__column-item">
-                {lat}
+                {latitude}
             </div>
             <div className="table__column-item">
-                {lan}
-            </div>
-            <div className="table__column-item">
-                {latest_travel}
-            </div>
-            <div className="table__column-item">
-                {parking}
+                {longitude}
             </div>
             <div className="table__column-item">
                 {status}
