@@ -11,31 +11,10 @@ class ShowPayment extends React.Component {
         };
     }
 
-
     async componentDidMount() {
         this.setState({render: true})
     }
 
-
-    chooseCredit = (id) => {
-        this.setState({active: "credit"});
-        // axios.put(`${url}/user/${id}`, {
-        //     body: {
-        //         _id: id,
-        //         payment_method: "credit"
-        //     }
-        // })
-    }
-
-    chooseMonth = (id) => {
-        this.setState({active: "month"});
-        // axios.put(`${url}/user/${id}`, {
-        //     body: {
-        //         _id: id,
-        //         payment_method: "month"
-        //     }
-        // })
-    }
 
     render() {
         console.log("show",this.props.user)
