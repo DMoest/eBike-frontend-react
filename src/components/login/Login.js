@@ -18,11 +18,20 @@ class Login extends React.Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        let url;
+        let url = "http://127.0.0.1:8000/auth/github";
         if (this.state.form === 'login') {
-            axios.post(`${url}/login`, {
-                email: e.target.email.value,
-                password: e.target.password.value,
+            axios.post(`${url}`, {
+                // email: e.target.email.value,
+                // password: e.target.password.value,
+            })
+            .then(response => {
+               return response
+            })
+            .then(data => {
+               console.log(data)
+            })
+            .catch(error => {
+               console.log(error)
             })
         } else {
             axios.post(`${url}/register`, {
@@ -38,6 +47,7 @@ class Login extends React.Component {
     }
 
     render() {
+        console.log(this.props.user)
         return (
             <div className="container">
                 <div style={{transform: `translate(${this.state.form === 'login' ? 0 : 350}px, 0px)`}} className="form-div">

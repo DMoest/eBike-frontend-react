@@ -1,52 +1,37 @@
-// import axios from "axios";
+import axios from "axios";
 import React from "react";
 import './customer.scss';
 const GEOCODE_URL = "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/reverseGeocode?f=pjson&langCode=EN&location=";
+const url = "http://127.0.0.1:8000";
 
 class History extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             render: false,
-            trips: [],
-            test:  [
-                {
-                    bike_id: 123,
-                    city: "Umeå",
-                    start_time: '2021-09-11 12:30:12',
-                    stop_time: '2021-09-11 12:39:39',
-                    start_longitude: 20.26218702049231,
-                    start_latitude: 63.82083799007685,
-                    stop_longitude: 20.26506354569229,
-                    stop_latitude: 63.83095680023798,
-                    price: 30,
-                    status: "betalad"
-                },
-                {
-                    bike_id: 124,
-                    city: "Umeå",
-                    start_time: '2021-11-10 14:39:32',
-                    stop_time: '2021-11-10 15:01:59',
-                    start_longitude: 20.26928702049231,
-                    start_latitude: 63.82083799007685,
-                    stop_longitude: 20.26506358969229,
-                    stop_latitude: 63.83091480023798,
-                    price: 45,
-                    status: "betalad"
-                }
-            ]
+            trips: []
         };
     }
 
-    async componentWillMount() {
-        for (const trip of this.state.test) {
+    async componentDidMount() {
+        await this.getTrips();
+        this.setState({render: true})
+    }
+
+    getTrips = async () => {
+        var travels = [];
+        await axios.get(`${url}/api/travel`).then((response) => {
+            travels =  response.data.travels;
+        });
+        for (const trip of travels) {
+            console.log(trip)
             await this.getAddress("start", trip.start_longitude, trip.start_latitude)
             await this.getAddress("stop", trip.stop_longitude, trip.stop_latitude)
-            let start = this.getDate(trip.start_time);
-            let stop = this.getDate(trip.stop_time);
+            let start = this.getDate(trip.created_at);
+            let stop = this.getDate(trip.updated_at);
             this.state.trips.push({
                 bike_id: trip.bike_id,
-                city: trip.city,
+                city: this.state.city,
                 date: stop.date,
                 year: stop.year,
                 start_time: start.time,
@@ -57,14 +42,11 @@ class History extends React.Component {
                 status: trip.status
             })
         }
-        this.setState({render: true})
     }
-
-
 
     getDate(timestamp) {
         let months = ["Januari", "Februari", "Mars", "April", "Maj", "Juni", "Juli", "Augusti", "September", "Oktober", "November", "December"]
-        let stamp = timestamp.split(" ");
+        let stamp = timestamp.split("T");
         let date = stamp[0].split("-");
         let time = stamp[1].split(":")
         let datetime = {
@@ -82,29 +64,25 @@ class History extends React.Component {
         })
         .then(result => {
             let res = (result.address !== undefined) ? result.address.ShortLabel : "Okänd adress";
+            let city = (result.address !== undefined) ? result.address.City : "Okänd Stad";
             if (spot === "start") {
                 this.setState({start: res})
+                this.setState({city: city})
             } else {
                 this.setState({stop: res})
+                this.setState({city: city})
             }
         });
 
     }
 
-    // function getCity(id) {
-        // axios.get(`${url}/city/${id}`).then((response) => {
-        //     const city = respons.data.name
-        // });
-        // return city;
-    // }
-
     render() {
+        console.log(this.props.user)
         let renderContainer = false;
         let year = "November 2021";
         if(this.state.render) {
            renderContainer =
               <div className="grid-container">
-              <h1>Dina tidigare resor</h1>
               <h2>{year}</h2><br />
                  <div className="trips-container">
                      {this.state.trips.map((trip) => {

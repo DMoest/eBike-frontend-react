@@ -1,5 +1,8 @@
 html {
-    background-color: #e0dbf0;
+    font-family: helvetica;
+    a {
+        color: #000;
+    }
 }
 
 
@@ -58,4 +61,27 @@ form {
     width: 300px;
     padding: 1.2em;
     background-color: #e0dbf0;
+}
+
+.nav__outer-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px 50px;
+    background: #fff;
+    border-bottom: 1px solid #E4E4E6;
+}
+
+.nav__brand {
+    font-weight: 500;
+}
+
+.nav__link {
+    margin-left: 45px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.active {
+    color: #1E69D1;
 }
