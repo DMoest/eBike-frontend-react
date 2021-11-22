@@ -6,6 +6,8 @@
   "dependencies": {
     "@inertiajs/inertia": "^0.10.1",
     "@inertiajs/inertia-react": "^0.7.1",
+    "@stripe/react-stripe-js": "^1.6.0",
+    "@stripe/stripe-js": "^1.21.1",
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
