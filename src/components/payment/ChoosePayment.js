@@ -14,34 +14,49 @@ class ChoosePayment extends React.Component {
         super(props);
         this.state = {
             render: false,
+            price: 0,
+            user: {},
+            consent: false,
             active: ""
         };
     }
 
 
     async componentDidMount() {
-        // await this.getTrips();
+        await axios.get(`${url}/api/user/${this.props.user}`).then((response) => {
+            this.setState({user: response.data});
+            console.log(response.data)
+        });
+        console.log(this.state.user)
         this.setState({render: true})
     }
 
-    chooseCredit = (id) => {
-        this.setState({active: "credit"});
-        // axios.put(`${url}/user/${id}`, {
-        //     body: {
-        //         _id: id,
-        //         payment_method: "credit"
-        //     }
-        // })
+    chooseCredit = async () => {
+        if (this.state.user.payment_method === "monthly" && this.state.user.payment_status === "unpaid") {
+            alert("din månadsbetalning måste vara betalad innan du kan byta till saldo.")
+        } else {
+            axios.put(`${url}/api/user`, {
+              _id: this.props.user,
+              payment_method: "credit"
+            })
+            this.setState({active: "credit"});
+        }
     }
 
-    chooseMonth = (id) => {
-        this.setState({active: "month"});
-        // axios.put(`${url}/user/${id}`, {
-        //     body: {
-        //         _id: id,
-        //         payment_method: "month"
-        //     }
-        // })
+    chooseMonth = async () => {
+        console.log("lol",this.state.consent)
+        if (this.state.consent) {
+            axios.put(`${url}/api/user`, {
+              _id: this.props.user,
+              payment_method: "month"
+            })
+            this.setState({active: "month"});
+        } else if (this.state.user.payment_method === "monthly") {
+            alert("Ditt konto är redan registrerat för månadsbetalning.")
+        } else if (this.state.user.payment_method === "credit" && this.state.user.payment_status === "unpaid") {
+            alert("Om du byter till månadsbetalning förlorar du ditt saldo")
+            this.setState({active: "agree"});
+        }
     }
 
     render() {
@@ -50,22 +65,30 @@ class ChoosePayment extends React.Component {
         let chosen;
         if (this.state.active === "month") {
           chosen = (
-            <div>
-            <p>You have chosen to pay your trips monthly</p>
-            <Elements stripe={stripePromise}>
-              <PaymentForm />
-            </Elements>
+            <div class="flex-box chosen">
+            <p>Du betalar nu alla dina resor en gång i månaden.</p>
             </div>
           )
         } else if (this.state.active === "credit") {
             chosen = (
-              <div>
-              <p>You have chosen to pay with credits</p>
+              <div class="flex-box chosen">
+              <p>Fyll på ditt saldo med den valda summan</p>
+              <div class="price" onChange={(e) => this.setState({price: e.target.value})}>
+                  <label  style={{backgroundColor: "#ffdb99"}}  class="radiobtn"><input type="radio" value="100" name="price" /> 100 kr</label><br/>
+                  <label  style={{backgroundColor: "#ffc966"}} class="radiobtn"><input type="radio" value="250" name="price" /> 250 kr</label><br/>
+                  <label  style={{backgroundColor: "#ffb732"}} class="radiobtn"><input type="radio" value="500" name="price" /> 500 kr</label>
+              </div>
               <Elements stripe={stripePromise}>
-                <PaymentForm />
+                  <PaymentForm price={this.state.price}/>
               </Elements>
               </div>
             )
+          } else if (this.state.active === "agree") {
+              chosen = (
+                <div class="flex-box chosen">
+                    <button class="pay-btn" onClick={async () => {await this.setState({consent: true}); this.chooseMonth()}}>Jag godkänner att jag förlorar mitt saldo</button>
+                </div>
+              )
         } else {
           chosen = (
             <div>
@@ -77,9 +100,9 @@ class ChoosePayment extends React.Component {
         }
         if(this.state.render) {
            renderContainer =
-              <div className="payment-container">
+              <div class="payment-container">
                   {chosen}
-                  <button onClick={this.chooseCredit}>Betala med saldo</button>
+                  <button className={this.state.active} onClick={this.chooseCredit}>Betala med saldo</button>
                   <button onClick={this.chooseMonth}>Betala varje månad</button><br />
              </div>
         }

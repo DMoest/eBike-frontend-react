@@ -1,7 +1,15 @@
-.payment-container {
+.payment-container,
+.flex-box {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.chosen {
+    height: 500px;
+    width: 500px;
+    display: flex;
+    justify-content: center;
 }
 
 .Checkout {
@@ -9,15 +17,6 @@
   max-width: 800px;
   box-sizing: border-box;
   padding: 0 5px;
-}
-
-.pay-form {
-    margin: 1em;
-    padding: 2em;
-    .card {
-        float: left;
-        margin-left: 0;
-    }
 }
 
 .pay-btn {
@@ -28,21 +27,57 @@
     height: 40px;
     line-height: 40px;
     padding: 0 14px;
-    box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
     color: #fff;
     border-radius: 4px;
     font-size: 15px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.025em;
-    background-color: #6772e5;
+    background-color: #ffa500;
     text-decoration: none;
     -webkit-transition: all 150ms ease;
     transition: all 150ms ease;
 }
 
-.StripeElement {
+.price {
+      height: 100px;
+      display: flex;
+      justify-content: space-around;
+}
 
+.radiobtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    margin: 1em;
+    padding: 1.5em 1em;
+    padding-left: 0;
+    font-size: 20px;
+    font-weight: bold;
+    width: 160px;
+    letter-spacing: 0.03em;
+}
+
+input[type=radio] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  margin-right: 15px;
+  border: 2px solid #ffa500;
+  transition: 0.2s all linear;
+}
+
+input[type=radio]:checked {
+  border: 6px solid black;
+  outline: unset !important;
+}
+
+.StripeElement {
   display: block;
   margin: 10px 0 20px 0;
   max-width: 500px;

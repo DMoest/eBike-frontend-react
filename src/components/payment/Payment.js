@@ -22,14 +22,10 @@ class Payment extends React.Component {
         };
     }
 
-    // componentDidMount() {
-    //     console.log(this.props.user)
-    // }
-
     render() {
         console.log("pay", this.props.user)
         return (
-            <div >
+            <div>
                 <div  className="button-div">
                     <button className="change-btn" onClick={() => {this.setState({active: this.toggle[this.state.active]})}}>{this.button[this.state.active]}</button>
                 </div>
@@ -39,7 +35,6 @@ class Payment extends React.Component {
                         <div><ChoosePayment user={this.props.user}/></div>
                     }
                 </div>
-
             </div>
         );
     }

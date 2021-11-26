@@ -26,6 +26,8 @@ function Home(props) {
             <Route path="/payment" element={ <Payment user={props.user} />}/>
             <Route path="/login" element={ <Login user={props.user} />}/>
         </Routes>
+        <div className="home-container">
+        </div>
     </div>
   );
 }
