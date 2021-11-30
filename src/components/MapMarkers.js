@@ -19,7 +19,7 @@ function MapMarkers(props) {
             let w = bounds.getWest();
             let e = bounds.getEast();
             
-            for (let bike of res.data.bikes) {
+            for (let bike of data.bikes) {
                 if (bike.latitude >= s &&
                     bike.latitude <= n &&
                     bike.longitude >= w &&
