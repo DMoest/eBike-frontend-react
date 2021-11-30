@@ -3,6 +3,7 @@ import { MapContainer, TileLayer } from 'react-leaflet'
 import MapMarkers from './MapMarkers'
 
 function Map() {
+
     return (
         <div>
 			<MapContainer preferCanvas={true} center={[-21.769985, 125.491771]} zoom={2} scrollWheelZoom={true}>
