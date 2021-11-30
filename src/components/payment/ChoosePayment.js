@@ -21,46 +21,64 @@ class ChoosePayment extends React.Component {
         };
     }
 
+    handlePay = async (childData) => {
+        console.log(this.state.user.payment_method)
+        console.log(this.state.price)
+        let credit = parseInt(this.state.user.payment_method[1]) + parseInt(this.state.price);
+        console.log(credit)
+        if (childData.status == 200) {
+            await axios.put(`${url}/api/user`, {
+                _id: this.props.user,
+                payment_method: ["credit", credit]
+            })
+        }
+        this.setState({active: ""})
+
+    }
 
     async componentDidMount() {
-        await axios.get(`${url}/api/user/${this.props.user}`).then((response) => {
-            this.setState({user: response.data});
-            console.log(response.data)
-        });
+        await this.getUser()
         console.log(this.state.user)
         this.setState({render: true})
     }
 
+    getUser = () => {
+        axios.get(`${url}/api/user/${this.props.user}`).then((response) => {
+            this.setState({user: response.data});
+        });
+    }
+
     chooseCredit = async () => {
-        if (this.state.user.payment_method === "monthly" && this.state.user.payment_status === "unpaid") {
+        if (this.state.user.payment_method[0] === "monthly" && this.state.user.payment_method[1] === "unpaid") {
             alert("din månadsbetalning måste vara betalad innan du kan byta till saldo.")
-        } else {
+        } else if (this.state.user.payment_method[0] === "monthly") {
             axios.put(`${url}/api/user`, {
               _id: this.props.user,
-              payment_method: "credit"
+              payment_method: ["credit", 0]
             })
+            this.setState({active: "credit"});
+        } else {
             this.setState({active: "credit"});
         }
     }
 
     chooseMonth = async () => {
-        console.log("lol",this.state.consent)
         if (this.state.consent) {
             axios.put(`${url}/api/user`, {
               _id: this.props.user,
-              payment_method: "month"
+              payment_method: ["monthly", "unpaid"]
             })
             this.setState({active: "month"});
-        } else if (this.state.user.payment_method === "monthly") {
+        } else if (this.state.user.payment_method[0] === "monthly") {
             alert("Ditt konto är redan registrerat för månadsbetalning.")
-        } else if (this.state.user.payment_method === "credit" && this.state.user.payment_status === "unpaid") {
+        } else if (this.state.user.payment_method[0] === "credit") {
             alert("Om du byter till månadsbetalning förlorar du ditt saldo")
             this.setState({active: "agree"});
         }
     }
 
     render() {
-        console.log("choose",this.props.user)
+        console.log("lol", this.state.user.payment_method )
         let renderContainer = false;
         let chosen;
         if (this.state.active === "month") {
@@ -79,7 +97,7 @@ class ChoosePayment extends React.Component {
                   <label  style={{backgroundColor: "#ffb732"}} class="radiobtn"><input type="radio" value="500" name="price" /> 500 kr</label>
               </div>
               <Elements stripe={stripePromise}>
-                  <PaymentForm price={this.state.price}/>
+                  <PaymentForm price={this.state.price} parentCallback={this.handlePay}/>
               </Elements>
               </div>
             )

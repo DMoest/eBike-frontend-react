@@ -22,8 +22,8 @@ const PaymentForm = (props) => {
           })
           .then((resp) => {
               alert("Din betalning är genomförd");
-              console.log("Din betalning är genomförd")
-              console.log(resp)
+              console.log(resp.data)
+              props.parentCallback(resp);
           })
           .catch((err) => {
               console.log(err);
