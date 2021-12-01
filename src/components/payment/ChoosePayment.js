@@ -66,7 +66,7 @@ class ChoosePayment extends React.Component {
         if (this.state.consent) {
             axios.put(`${url}/api/user`, {
               _id: this.props.user,
-              payment_method: ["monthly", "unpaid"]
+              payment_method: ["monthly", ""]
             })
             this.setState({active: "month"});
         } else if (this.state.user.payment_method[0] === "monthly") {

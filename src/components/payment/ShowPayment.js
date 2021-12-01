@@ -61,6 +61,7 @@ class ShowPayment extends React.Component {
         });
     }
 
+
     calInvoice = async () => {
         this.setState({months: []});
         let months = [["Januari", 0], ["Februari", 0], ["Mars", 0], ["April", 0], ["Maj", 0], ["Juni", 0], ["Juli", 0], ["Augusti", 0], ["September", 0], ["Oktober", 0], ["November", 0], ["December", 0]]
@@ -69,17 +70,18 @@ class ShowPayment extends React.Component {
         await this.state.trips.forEach((item, i) => {
             let month = item.created_at.split("-")[1] - 1;
             let previous = months[month-1]
-            console.log(previous, month, months[month])
             if (months[month] !== previous) {
                 previous = months[month][0]
             }
             if (item.status === "unpaid") {
-                months[month][1] += item.price;
+                months[month][1] += item.price
+                months[month][2] = "unpaid";
             }
         });
         await months.forEach((item, i) => {
-            if (i === months.length-2 && this.state.user.payment_method[1] === "unpaid") {
-                item.push("button");
+            if (i === months.length-2) {
+                let days = this.countdown();
+                item.push(days);
                 this.setState({price: item[1]});
             }
             if (item[1] !== 0) {
@@ -88,6 +90,20 @@ class ShowPayment extends React.Component {
         });
         this.setState({months: bills})
         console.log("Months", this.state.months, "trips", this.state.trips)
+    }
+
+    countdown = (month) => {
+        var currentDate = new Date();
+        var currentYear = currentDate.getFullYear();
+        var currentMonth = currentDate.getMonth();
+        var currentMonthLastDate = (new Date(currentYear, currentMonth, 0)).getDate();
+        var daysLeftInMonth = currentMonthLastDate - currentDate.getDate();
+        if (currentMonth === month) {
+            return daysLeftInMonth;
+        } else {
+            return 0;
+        }
+        console.log(daysLeftInMonth);
     }
 
     render() {
@@ -116,8 +132,9 @@ class ShowPayment extends React.Component {
                   return <div className="trips-div">
                       <p>Månad: {trip[0]}</p><br />
                       <p>Summa: {trip[1]}</p><br />
-                      {this.state.user.payment_method[0] === "monthly" ? (<p>Status: {this.state.user.payment_method[1]}</p>):(<p>Betald med saldo</p>)}<br/>
-                      {trip[2] === 'button' ? (<button onClick={() => {this.setState({active: "pay"})}}>Betala</button>):(<p>Denna månad är betalad</p>)}
+                      {this.state.user.payment_method[0] === "monthly" && trip[2] ? (<p>Status: {trip[2]}</p>):(<p>Betald med saldo</p>)}<br/>
+                      {trip[3] ? (<p>Dagar kvar till betalning: {trip[3]}</p>):(<p>Du måste betala för att kunna fortsätta resa denna månad</p>)}<br/>
+                      {trip[2] === 'unpaid' ? (<button onClick={() => {this.setState({active: "pay"})}}>Betala</button>):(<p>Denna månad är betalad</p>)}
                   </div>
               })}
            </div>)
@@ -127,7 +144,7 @@ class ShowPayment extends React.Component {
               <div>{content}</div>
            )
         }
-        if (this.state.months === []) return "Det finns inga resor i din historik";
+        if (this.state.months === []) return "Det finns inga väntande betalningar";
         return (renderContainer)
     }
 }

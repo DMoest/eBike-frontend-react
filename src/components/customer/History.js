@@ -17,7 +17,6 @@ class History extends React.Component {
         await this.getTrips();
         this.setState({render: true})
     }
-
     getTrips = async () => {
         var travels = [];
         await axios.get(`${url}/api/travel`).then((response) => {
@@ -77,13 +76,12 @@ class History extends React.Component {
     }
 
     render() {
-        console.log(this.props.user)
         let renderContainer = false;
-        let year = "November 2021";
+        // let year = "November 2021";
         if(this.state.render) {
            renderContainer =
               <div className="grid-container">
-              <h2>{year}</h2><br />
+              <h2>Tidigare resor</h2><br />
                  <div className="trips-container">
                      {this.state.trips.map((trip) => {
                            return <div className="trips-div">
