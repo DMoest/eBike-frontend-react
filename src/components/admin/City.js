@@ -1,16 +1,16 @@
 import React from 'react'
-import '../css/City.css'
+import './css/City.css'
 import { Link } from 'react-router-dom'
 
 // Img & icons
-import map from '../assets/img/city__map-test.png'
-import scooterIcon from '../assets/img/icons/icon__scooter.svg'
-import chargeIcon from '../assets/img/icons/icon__charge.svg'
-import customerIcon from '../assets/img/icons/icon__customer.svg'
+import map from './assets/img/city__map-test.png'
+import scooterIcon from './assets/img/icons/icon__scooter.svg'
+import chargeIcon from './assets/img/icons/icon__charge.svg'
+import customerIcon from './assets/img/icons/icon__customer.svg'
 
 function City({ name, desc, bikes, charge, customers }) {
     return (
-        // "State" sets the city name to a param called 
+        // "State" sets the city name to a param called
         // "cityName" in the child component
         <Link to={"/cities/" +  name.toLowerCase() } state={{ cityName: name }}>
             <div className="city__outer-wrapper">

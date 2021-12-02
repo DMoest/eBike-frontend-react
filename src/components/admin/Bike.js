@@ -1,29 +1,24 @@
 import React from 'react'
-import '../css/Table.css'
+import './css/Table.css'
+import './css/Bike.css'
 
-function ChargingStation({ id, city, capacity, address, postcode, active }) {
+function Bike({ city, latitude, longitude, status }) {
     return (
         <div className="table__outer-wrapper">
-            <div className="table__column-item">
-                {id}
-            </div>
             <div className="table__column-item">
                 {city}
             </div>
             <div className="table__column-item">
-                {capacity}
+                {latitude}
             </div>
             <div className="table__column-item">
-                {address}
+                {longitude}
             </div>
             <div className="table__column-item">
-                {postcode}
-            </div>
-            <div className="table__column-item">
-                {active}
+                {status}
             </div>
         </div>
     )
 }
 
-export default ChargingStation
+export default Bike

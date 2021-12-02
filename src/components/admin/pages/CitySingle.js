@@ -1,7 +1,7 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
-import Header from '../components/global/Header'
-import BtnBack from '../components/global/BtnBack'
+import Header from '../global/Header'
+import BtnBack from '../global/BtnBack'
 import DocumentTitle from 'react-document-title'
 
 function City() {

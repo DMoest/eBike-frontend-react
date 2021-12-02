@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import City from '../components/City'
-import Header from '../components/global/Header'
+import City from '../City'
+import Header from '../global/Header'
 import DocumentTitle from 'react-document-title'
 import axios from 'axios'
 
@@ -23,10 +23,10 @@ function Cities() {
             <div className="city__grid">
                 { cities.map((city) => {
                     return <City key={city._id}
-                        name={city.name} 
-                        // desc={city.desc} 
-                        // bikes={city.bikes} 
-                        // charge={city.charge} 
+                        name={city.name}
+                        // desc={city.desc}
+                        // bikes={city.bikes}
+                        // charge={city.charge}
                         // customers={city.customers}
                     />
                 }) }

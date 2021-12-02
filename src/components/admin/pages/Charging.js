@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import Header from '../components/global/Header'
-import ChargingStation from '../components/ChargingStation'
+import Header from '../global/Header'
+import ChargingStation from '../ChargingStation'
 import DocumentTitle from 'react-document-title'
 import axios from 'axios'
 
@@ -18,7 +18,7 @@ function Charging() {
         <div className="wrapper">
             <DocumentTitle title='Laddstationer' ></DocumentTitle>
             <Header title="Laddstationer"/>
-            
+
             {/* Break out into separate component? */}
             <input type="text" placeholder="Sök" className="input__search"></input>
 

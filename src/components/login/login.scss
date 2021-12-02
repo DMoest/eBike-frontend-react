@@ -1,0 +1,106 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 700px;
+    height: 500px;
+    margin: 15vh auto;
+}
+
+.form-div {
+    z-index: 1;
+}
+
+.form-div,
+.button-div {
+    transition: .5s ease-out;
+}
+
+.button-div {
+    width: 300px;
+    p {
+        width: 100%;
+    }
+}
+
+
+form {
+    border: 1px solid lightgray;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    padding: 1.2em;
+    background-color: #e0dbf0;
+}
+
+input,
+button {
+    margin: 5px;
+}
+
+/*INPUT*/
+input[type="text"],
+input[type="password"],
+textarea,
+select {
+    height: 30px;
+    padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
+    background-color: #fff;
+    border: 1px solid #D1D1D1;
+    border-radius: 5px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+    border: 1px solid #82ca94;
+    outline: 0;
+}
+
+
+/*BUTTON STYLING*/
+button {
+    display: inline-block;
+    height: 40px;
+    padding: 0 40px;
+    color: #555;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 38px;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    background-color: #fff;
+    border-radius: 20px;
+    border: 1px solid #d1d1d1;
+    cursor: pointer;
+}
+
+.button-primary {
+  width: 70%;
+  margin: 1em;
+  margin-left: 15%;
+  color: #FFF;
+  background-color: #82ca94;
+  border-color: #82ca94;
+}
+
+.button-primary:hover,
+{
+    background-color: #5ebb75;
+    border-color: #5ebb75;
+}
+
+.change-btn {
+    width: 300px;
+    height: 70px;
+    border-radius: 20px;
+}
+
+.change-btn:hover,
+ {
+    color: #333;
+    border-color: #888;
+    outline: 0;
+}

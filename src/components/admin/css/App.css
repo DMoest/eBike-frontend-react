@@ -48,7 +48,7 @@ p {
     grid-row-gap: 50px;
 }
 
-input {
+.search input {
     width: 100%;
     padding: 10px 15px;
     border-radius: 4px;
