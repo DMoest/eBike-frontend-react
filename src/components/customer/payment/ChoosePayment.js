@@ -7,7 +7,7 @@ import { Elements } from "@stripe/react-stripe-js";
 import PaymentForm from "./PaymentForm"; // not implemented yet
 const url = "http://127.0.0.1:8000";
 
-const stripePromise = loadStripe('pk_test_51JxuwuKh30a9IIAiSICB1wjtE3TwULgIyarKPNsteitiGFFavpdy4bjcNZaqWA20p8u3AwvAIV6fW3VuC0jh9zL3006yJMCYqP');
+const stripePromise = loadStripe(process.env.STRIPE_KEY);
 
 class ChoosePayment extends React.Component {
     constructor(props) {
