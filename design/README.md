@@ -15,7 +15,7 @@
 ### Admin bike view
 ![ebike__bikes-mobile-new](https://user-images.githubusercontent.com/54509721/144666139-2b5a011d-aa34-416e-a8cf-aa9b9bb300d3.png)
 ![ebike__bikes-mobile-new-1](https://user-images.githubusercontent.com/54509721/144666140-cc0551f1-0a96-4779-94c5-5878b0e72d55.png)
-![ebike__bikes-desktop – 18](https://user-images.githubusercontent.com/54509721/144666129-240195b9-7523-4df5-916c-e232e33f5aa9.png)
+![ebike__bikes-desktop](https://user-images.githubusercontent.com/54509721/144666130-b73e98d4-23a4-4db2-9f02-71a026b08784.png)
 
 ### Customer travel view
 ![ebike__bikes-desktop – 3](https://user-images.githubusercontent.com/54509721/144666098-3cfe904a-12d5-4bf7-88f2-9ae14f7f22b6.png)
@@ -30,9 +30,7 @@
 
 ### Customer prepaid view
 ![ebike__bikes-desktop – 15](https://user-images.githubusercontent.com/54509721/144666127-1952c323-9d0b-4e9b-b988-0b857664e0cf.png)
-
-![ebike__bikes-desktop](https://user-images.githubusercontent.com/54509721/144666130-b73e98d4-23a4-4db2-9f02-71a026b08784.png)
-
+![ebike__bikes-desktop – 18](https://user-images.githubusercontent.com/54509721/144666129-240195b9-7523-4df5-916c-e232e33f5aa9.png)
 
 ### Illustrations / Dark mode / Experiments
 ![ebike__ill-test–3](https://user-images.githubusercontent.com/54509721/144666144-eb0f022b-9a8e-4097-968f-fd0e6f2632a8.png)
