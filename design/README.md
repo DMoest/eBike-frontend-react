@@ -26,9 +26,9 @@
 ![ebike__bikes-desktop – 11](https://user-images.githubusercontent.com/54509721/144666117-f20b8038-8e7b-4e03-a3dc-0524a8bb3788.png)
 ![ebike__bikes-desktop – 12](https://user-images.githubusercontent.com/54509721/144666118-b838d4ab-064e-48f3-ab5c-2c703dc12407.png)
 ![ebike__bikes-desktop – 13](https://user-images.githubusercontent.com/54509721/144666119-2b9ced53-e4ac-468e-a5c3-3c70ea845d21.png)
+![ebike__bikes-desktop – 14](https://user-images.githubusercontent.com/54509721/144666122-9550439f-4248-4559-86c6-54186856c759.png)
 
 ### Customer prepaid view
-![ebike__bikes-desktop – 14](https://user-images.githubusercontent.com/54509721/144666122-9550439f-4248-4559-86c6-54186856c759.png)
 ![ebike__bikes-desktop – 15](https://user-images.githubusercontent.com/54509721/144666127-1952c323-9d0b-4e9b-b988-0b857664e0cf.png)
 
 ![ebike__bikes-desktop](https://user-images.githubusercontent.com/54509721/144666130-b73e98d4-23a4-4db2-9f02-71a026b08784.png)
