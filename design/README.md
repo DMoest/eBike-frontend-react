@@ -12,7 +12,6 @@
 ![ebike__bikes-desktop – 13](https://user-images.githubusercontent.com/54509721/144666119-2b9ced53-e4ac-468e-a5c3-3c70ea845d21.png)
 ![ebike__bikes-desktop – 14](https://user-images.githubusercontent.com/54509721/144666122-9550439f-4248-4559-86c6-54186856c759.png)
 ![ebike__bikes-desktop – 15](https://user-images.githubusercontent.com/54509721/144666127-1952c323-9d0b-4e9b-b988-0b857664e0cf.png)
-![ebike__bikes-desktop – 16](https://user-images.githubusercontent.com/54509721/144666128-9872e154-e888-45c3-8323-47ef9bf60415.png)
 ![ebike__bikes-desktop – 18](https://user-images.githubusercontent.com/54509721/144666129-240195b9-7523-4df5-916c-e232e33f5aa9.png)
 ![ebike__bikes-desktop](https://user-images.githubusercontent.com/54509721/144666130-b73e98d4-23a4-4db2-9f02-71a026b08784.png)
 ![ebike__bikes-mobile – 2](https://user-images.githubusercontent.com/54509721/144666136-4dde96f1-3c66-492b-9e0a-90881fd471f7.png)
@@ -22,3 +21,4 @@
 ![ebike__bikes-mobile-new-2](https://user-images.githubusercontent.com/54509721/144666142-fd9c9677-d42d-419f-af81-66d017cccc0c.png)
 ![ebike__ill-test–3](https://user-images.githubusercontent.com/54509721/144666144-eb0f022b-9a8e-4097-968f-fd0e6f2632a8.png)
 ![ebike__ill-test-4](https://user-images.githubusercontent.com/54509721/144666146-1244023e-b173-49da-8145-1dc31e0e0796.png)
+![ebike__bikes-desktop – 16](https://user-images.githubusercontent.com/54509721/144666128-9872e154-e888-45c3-8323-47ef9bf60415.png)
