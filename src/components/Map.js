@@ -1,6 +1,7 @@
 import React from 'react'
 import { MapContainer, TileLayer } from 'react-leaflet'
 import MapMarkers from './MapMarkers'
+import ParkingZones from './ParkingZones'
 
 function Map() {
 
@@ -12,6 +13,7 @@ function Map() {
 					url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
 				/>
 				<MapMarkers />
+				<ParkingZones />
 			</MapContainer>
 		</div>
     )

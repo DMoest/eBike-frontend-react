@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-
 import { Marker, Popup, useMap } from 'react-leaflet'
 import MarkerClusterGroup from 'react-leaflet-markercluster';
+
+import { iconBike, iconBikeCharge, iconBikeStopped, iconBikeChargeStopped } from './CustomMarkers'
 
 function MapMarkers(props) {
     const url = process.env.REACT_APP_API_BASE_URL + "/api/bike"
@@ -59,7 +60,18 @@ function MapMarkers(props) {
         <div>
             <MarkerClusterGroup>
                 { markers.map((marker) => {
-                    return <Marker position={[marker.latitude, marker.longitude]} key={marker._id}>
+                    let icon = null;
+
+                    if (marker.battery < 25) {
+                        icon = iconBikeCharge
+                    } else if (!marker.active) {
+                        icon = iconBikeStopped
+                    } else if (!marker.active && marker.battery < 25) {
+                        icon = iconBikeChargeStopped
+                    } else {
+                        icon = iconBike
+                    }
+                    return <Marker position={[marker.latitude, marker.longitude]} icon={icon} key={marker._id}>
                         <Popup>
                             Lat: { marker.latitude } 
                             <br /> Lan: { marker.longitude }
