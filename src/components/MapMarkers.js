@@ -63,7 +63,8 @@ function MapMarkers(props) {
                         <Popup>
                             Lat: { marker.latitude } 
                             <br /> Lan: { marker.longitude }
-                            <br /> Battery: {marker._power_level}
+                            <br /> Battery: { marker.battery }
+                            <br /> Speed: { marker.speed }
                         </Popup>
                     </Marker>
                 }) }
