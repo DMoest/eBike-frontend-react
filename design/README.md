@@ -6,10 +6,15 @@
 ![ebike__bikes-desktop – 7](https://user-images.githubusercontent.com/54509721/144666112-19603fd3-d622-4620-95fa-d7e91df23cd1.png)
 ![ebike__bikes-desktop – 9](https://user-images.githubusercontent.com/54509721/144666115-e150370e-5570-43d2-9255-92aa8d3d9bfa.png)
 ![ebike__bikes-desktop – 8](https://user-images.githubusercontent.com/54509721/144666114-511f9b55-d424-4af9-b1ad-c2c4de6d6329.png)
+![ebike__bikes-mobile-new-2](https://user-images.githubusercontent.com/54509721/144666142-fd9c9677-d42d-419f-af81-66d017cccc0c.png)
 
 ### Admin customer view
 ![ebike__bikes-desktop – 1](https://user-images.githubusercontent.com/54509721/144666089-26bf4ee8-0f45-4ab6-8715-d16fcea92c61.png)
 ![ebike__bikes-desktop – 2](https://user-images.githubusercontent.com/54509721/144666094-3d1da1c6-9163-415d-92ce-82b05aff357d.png)
+
+### Admin bike view
+![ebike__bikes-mobile-new](https://user-images.githubusercontent.com/54509721/144666139-2b5a011d-aa34-416e-a8cf-aa9b9bb300d3.png)
+![ebike__bikes-mobile-new-1](https://user-images.githubusercontent.com/54509721/144666140-cc0551f1-0a96-4779-94c5-5878b0e72d55.png)
 
 ### Customer travel view
 ![ebike__bikes-desktop – 3](https://user-images.githubusercontent.com/54509721/144666098-3cfe904a-12d5-4bf7-88f2-9ae14f7f22b6.png)
@@ -25,9 +30,8 @@
 ![ebike__bikes-desktop](https://user-images.githubusercontent.com/54509721/144666130-b73e98d4-23a4-4db2-9f02-71a026b08784.png)
 ![ebike__bikes-mobile – 2](https://user-images.githubusercontent.com/54509721/144666136-4dde96f1-3c66-492b-9e0a-90881fd471f7.png)
 ![ebike__bikes-mobile – 4](https://user-images.githubusercontent.com/54509721/144666138-8745fad8-9a72-4932-ad4f-55ce8148865b.png)
-![ebike__bikes-mobile-new](https://user-images.githubusercontent.com/54509721/144666139-2b5a011d-aa34-416e-a8cf-aa9b9bb300d3.png)
-![ebike__bikes-mobile-new-1](https://user-images.githubusercontent.com/54509721/144666140-cc0551f1-0a96-4779-94c5-5878b0e72d55.png)
-![ebike__bikes-mobile-new-2](https://user-images.githubusercontent.com/54509721/144666142-fd9c9677-d42d-419f-af81-66d017cccc0c.png)
+
+### Illustrations / Dark mode / Experiments
 ![ebike__ill-test–3](https://user-images.githubusercontent.com/54509721/144666144-eb0f022b-9a8e-4097-968f-fd0e6f2632a8.png)
 ![ebike__ill-test-4](https://user-images.githubusercontent.com/54509721/144666146-1244023e-b173-49da-8145-1dc31e0e0796.png)
 ![ebike__bikes-desktop – 16](https://user-images.githubusercontent.com/54509721/144666128-9872e154-e888-45c3-8323-47ef9bf60415.png)
