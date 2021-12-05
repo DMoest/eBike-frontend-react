@@ -33,7 +33,7 @@
 ![ebike__bikes-desktop – 14](https://user-images.githubusercontent.com/54509721/144666122-9550439f-4248-4559-86c6-54186856c759.png)
 
 ### Customer APP - home screen
-![ebike__app-homepage](https://user-images.githubusercontent.com/54509721/144752476-84ebc6ba-8b0d-4612-9232-e84f6d5946ce.png)
+![ebike__app-homepage](https://user-images.githubusercontent.com/54509721/144758423-5f1c4e5c-c060-45ac-bfa1-b8c2ecbe75ce.png)
 
 ### Illustrations / Dark mode / Experiments
 ![ebike__ill-test–3](https://user-images.githubusercontent.com/54509721/144666144-eb0f022b-9a8e-4097-968f-fd0e6f2632a8.png)
