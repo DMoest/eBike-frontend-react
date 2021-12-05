@@ -50,4 +50,5 @@ Darkmode?
 ![image](https://user-images.githubusercontent.com/54509721/144764773-77a1c5ce-c4cf-42c8-82ad-ce49520f32a6.png)
 
 ![ebike__app-alternative-menu](https://user-images.githubusercontent.com/54509721/144752997-5e2525d5-fde5-42ad-9244-6357c5cb946e.png)
-Alternative menu?
+
+Alternative bottom menu for app?
