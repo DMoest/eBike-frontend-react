@@ -2,7 +2,7 @@
 # Design things
 
 ## Admin/customer web app - Homepage
-![ebike__bikes-desktop – 10](https://user-images.githubusercontent.com/54509721/144666116-2bd81b79-b4ce-4956-9003-0b4182c8a61e.png)
+![ebike__bikes-desktop-full](https://user-images.githubusercontent.com/54509721/144764976-ba8fddb5-c85a-4584-88b3-bd1f4e31b1e6.png)
 ![ebike__bikes-desktop – 7](https://user-images.githubusercontent.com/54509721/144666112-19603fd3-d622-4620-95fa-d7e91df23cd1.png)
 ![ebike__bikes-desktop – 9](https://user-images.githubusercontent.com/54509721/144666115-e150370e-5570-43d2-9255-92aa8d3d9bfa.png)
 ![ebike__bikes-desktop – 8](https://user-images.githubusercontent.com/54509721/144666114-511f9b55-d424-4af9-b1ad-c2c4de6d6329.png)
