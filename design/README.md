@@ -46,7 +46,7 @@ Darkmode?
 ![ebike__simulation-illustration](https://user-images.githubusercontent.com/54509721/144764754-c26a4c43-d4e0-4131-9452-ade4d4b1e1f7.png)
 ![ebike__frontend-illustration](https://user-images.githubusercontent.com/54509721/144764752-e7b80d7e-aa5f-4b8a-bd7e-b22b4eeb55d6.png)
 
-#### Ideas?
+#### A bunch of trash
 ![image](https://user-images.githubusercontent.com/54509721/144764773-77a1c5ce-c4cf-42c8-82ad-ce49520f32a6.png)
 
 ![ebike__app-alternative-menu](https://user-images.githubusercontent.com/54509721/144752997-5e2525d5-fde5-42ad-9244-6357c5cb946e.png)
