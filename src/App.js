@@ -11,7 +11,7 @@ class App extends React.Component {
         super();
         this.state = {
             active: '',
-            toggle: 'home' // add customer or admin
+            toggle: 'customer' // add customer or admin
         };
     }
 
