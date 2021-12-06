@@ -57,6 +57,7 @@
 
 .home-hero__img {
     margin-bottom: 125px;
+    max-width: 100%;
 }
 
 .home-content__outer-wrapper {
@@ -88,7 +89,7 @@
 }
 
 .home-grid__img {
-    width: 100%;
+    max-width: 100%;
 }
 
 .h3__grid {
@@ -138,4 +139,24 @@
 .author__wrapper img {
     margin-right: 15px;
     width: 40px;
+}
+
+@media (max-width: 768px) {
+    .home__container {
+        width: 100%;
+    }
+
+    .home-hero__nav-center-wrapper {
+        display: none;
+    }
+
+    .home-hero__nav-right-wrapper {
+        display: none;
+    }
+    
+    .home-content__grid-wrapper{
+        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
 }
