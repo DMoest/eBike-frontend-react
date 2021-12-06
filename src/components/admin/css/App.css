@@ -27,12 +27,20 @@ h3,
 h4,
 h5 {
     font-weight: 500;
-    margin-bottom: 0.6em;
+    margin-bottom: 0.5em;
 }
 
 h1 {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
+    font-size: 4em;
+}
+
+h2 {
     font-size: 3em;
+}
+
+h3 {
+    font-size: 2em;
 }
 
 p {

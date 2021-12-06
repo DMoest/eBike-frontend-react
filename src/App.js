@@ -3,14 +3,15 @@ import Login from "./components/login/Login";
 import Logout from "./components/login/Logout";
 import CustomerApp from "./components/customer/CustomerApp";
 import AdminApp from "./components/admin/AdminApp";
-import { Route, Routes } from 'react-router-dom'
+import HomePageApp from "./components/homepage/HomePageApp";
+import { Route, Routes } from 'react-router-dom';
 
 class App extends React.Component {
     constructor() {
         super();
         this.state = {
             active: '',
-            toggle: 'customer'
+            toggle: 'admin' // add customer or admin
         };
     }
 
@@ -25,14 +26,16 @@ class App extends React.Component {
           admin: 'customer',
           customer: 'admin'
         };
-        var content;
 
+        var content;
+        
         if (this.state.active === 'customer' || this.state.toggle === 'customer') {
             content = <CustomerApp/>;
         } else if (this.state.active === 'admin' || this.state.toggle === 'admin') {
             content = <AdminApp/>;
         } else {
             content = <Login parentCallback = {this.handleLogin} />
+            // content = <HomePageApp/>;
         }
 
         return (
