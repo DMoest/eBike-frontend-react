@@ -1,7 +1,7 @@
 import L from 'leaflet';
-import greenIcon from '../assets/img/icons/green.svg';
-import redIcon from '../assets/img/icons/red.svg';
-import chargeIcon from '../assets/img/icons/charge.svg'
+import greenIcon from '../../assets/img/icons/green.svg';
+import redIcon from '../../assets/img/icons/red.svg';
+import chargeIcon from '../../assets/img/icons/charge.svg'
 
 const iconBike = new L.Icon({
     iconUrl: greenIcon,

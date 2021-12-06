@@ -4,8 +4,6 @@ import L from 'leaflet';
 import { Marker, Polygon, Popup, useMap } from 'react-leaflet'
 import MarkerClusterGroup from 'react-leaflet-markercluster';
 
-import { iconBike, iconBikeCharge, iconBikeStopped, iconBikeChargeStopped } from './CustomMarkers'
-
 function ParkingZones(props) {
     const url = process.env.REACT_APP_API_BASE_URL + "/api/parking"
     const [markers, setMarkers] = useState([])
