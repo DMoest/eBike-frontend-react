@@ -1,5 +1,6 @@
 import React from 'react'
 import './homepage.css'
+import logo from '../../assets/img/ebike__logo-white.svg'
 import heroImg from '../../assets/img/ebike__hero-ill.png'
 import ill__simulation from '../../assets/img/ebike__simulation-illustration.png'
 import ill__frontend from '../../assets/img/ebike__frontend-illustration.png'
@@ -12,7 +13,7 @@ function HomepageApp() {
                 <div className="home__container">
                     <div className="home-hero__nav-wrapper">
                         <div className="hero__brand">
-                            Ebike
+                            <img src={logo} className="hero__logo" alt="Ebike logo"/>Ebike
                         </div>
                         <div className="home-hero__nav-center-wrapper">
                             <a href="#">Home</a>
@@ -52,10 +53,13 @@ function HomepageApp() {
                             ex nec turpis iaculis porta. Duis nec eros tincidunt, egestas </p>
                         </div>
                         <div className="home-content__grid-item">
+                            <h3 className="h3__grid">Backend</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fermentum 
+                            ex nec turpis iaculis porta. Duis nec eros tincidunt, egestas </p>
                         </div>
                         <div className="home-content__grid-item">
                             <img src={ill__frontend} className="home-grid__img" alt="Hero illustration"/>
-                            <h3 className="h3__grid">Simulering</h3>
+                            <h3 className="h3__grid">Front-end</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fermentum 
                             ex nec turpis iaculis porta. Duis nec eros tincidunt, egestas </p>
                         </div>
@@ -71,7 +75,11 @@ function HomepageApp() {
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fermentum
                             </p>
                             <div className="author__wrapper">
-                                
+                                <img src={logo} className="author__img" alt="Author portrait"/>
+                                <div className="author__info">
+                                    <b>Jeff Bezos</b>
+                                    <p>Head of things @ Amazon</p>
+                                </div>
                             </div>
                         </div>
                     </div>

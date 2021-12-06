@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Moderat Regular';
+    src: local('Moderat Regular'), url(../../assets/fonts/Moderat-Extended-Regular.woff2) format('woff2');
+}
+
 .home__container {
     max-width: 1300px;
     width: 100%;
@@ -8,6 +13,15 @@
 .home-hero__outer-wrapper {
     background: #1D1E22;
     color: #fff;
+}
+
+.hero__brand {
+    display: flex;
+}
+
+.hero__brand img {
+    margin-right: 7px;
+    max-width: 15px;
 }
 
 .home-hero__nav-wrapper {
@@ -96,6 +110,10 @@
 
 .home-content__testimonial-inner-wrapper {
     max-width: 50ch;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .p__testimonial {
@@ -107,4 +125,17 @@
     display: flex;
     justify-content: space-between;
     padding: 125px 0px 50px 0px;
+}
+
+.author__wrapper {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.author__wrapper img {
+    margin-right: 15px;
+    width: 40px;
 }

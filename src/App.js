@@ -11,7 +11,7 @@ class App extends React.Component {
         super();
         this.state = {
             active: '',
-            toggle: 'admin' // add customer or admin
+            toggle: 'home' // add customer or admin
         };
     }
 
@@ -24,7 +24,8 @@ class App extends React.Component {
     render() {
         const toggle = {
           admin: 'customer',
-          customer: 'admin'
+          customer: 'admin',
+          home: 'home'
         };
 
         var content;
@@ -33,9 +34,10 @@ class App extends React.Component {
             content = <CustomerApp/>;
         } else if (this.state.active === 'admin' || this.state.toggle === 'admin') {
             content = <AdminApp/>;
+        } else if (this.state.active === 'home' || this.state.toggle === 'home') {
+            content = <HomePageApp/>;
         } else {
             content = <Login parentCallback = {this.handleLogin} />
-            // content = <HomePageApp/>;
         }
 
         return (
