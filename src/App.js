@@ -25,8 +25,8 @@ class App extends React.Component {
     render() {
         const toggle = {
           admin: 'customer',
-          customer: 'admin',
-          home: 'home',
+          customer: 'home',
+          home: 'admin'
         };
 
         var content;
