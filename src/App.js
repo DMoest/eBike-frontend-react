@@ -25,13 +25,14 @@ class App extends React.Component {
         const toggle = {
           admin: 'customer',
           customer: 'admin',
-          home: 'home'
+          home: 'home',
+          test_user: "61a0eebb8ac18115b353cacb"
         };
 
         var content;
-        
+
         if (this.state.active === 'customer' || this.state.toggle === 'customer') {
-            content = <CustomerApp/>;
+            content = <CustomerApp user={this.state.test_user}/>;
         } else if (this.state.active === 'admin' || this.state.toggle === 'admin') {
             content = <AdminApp/>;
         } else if (this.state.active === 'home' || this.state.toggle === 'home') {
