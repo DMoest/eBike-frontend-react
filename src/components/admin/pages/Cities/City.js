@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../css/City.css'
+import './City.css'
 import { Link } from 'react-router-dom'
 
 // Img & icons
