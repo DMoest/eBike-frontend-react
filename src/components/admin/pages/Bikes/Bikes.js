@@ -29,14 +29,23 @@ function Bikes() {
                     <Header title="Cyklar"/>
                     
                     <div className="data__inner-wrapper">
-                        {bikes.map((bike) => {
-                            return <Bike key={bike._id}
+                        <table className="data__table">
+                            <tr>
+                                <th>Stad</th>
+                                <th>Latitude</th>
+                                <th>Longitude</th>
+                                <th>Status</th>
+                            </tr>
+                            {bikes.map((bike) => {
+                            return <Bike 
+                                key={bike._id}
                                 city={bike.city}
                                 latitude={bike.latitude}
                                 longitude={bike.longitude}
                                 status={bike.status}
                             />
-                        })}
+                            })}
+                        </table>
                     </div>
                 </div>
                 <div className="map__wrapper">

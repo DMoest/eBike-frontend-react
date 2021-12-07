@@ -13,7 +13,7 @@
 }
 
 .data__wrapper {
-    width: 100%;
+    width: 44vw;
     padding: 25px;
 }
 
@@ -26,4 +26,21 @@
 
 .data__inner-wrapper {
     margin-top: 50px;
+}
+
+.data__table {
+    width: 100%;
+}
+
+.data__table tr th {
+    text-align: left;
+    padding-bottom: 20px;
+}
+
+.data__table tr td {
+    padding: 20px 0px;
+}
+
+.data__table tr:nth-child(even) {
+    background-color: #F7F8F8;
 }
