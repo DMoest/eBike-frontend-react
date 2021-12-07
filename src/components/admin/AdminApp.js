@@ -14,7 +14,7 @@ import Logout from '../login/Logout'
 import CitySingle from './pages/Cities/CitySingle'
 
 // Global components
-import Nav from './global/Nav'
+import Nav from './components/global/Nav'
 import NavTemp from '../global/Nav'
 
 // TODO: Figure out global state

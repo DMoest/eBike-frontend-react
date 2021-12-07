@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import City from './City';
-import Header from '../../global/Header';
+import Header from '../../components/global/Header';
 import DocumentTitle from 'react-document-title';
 import axios from 'axios';
 

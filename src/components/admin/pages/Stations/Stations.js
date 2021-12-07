@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import Header from '../../global/Header'
+import Header from '../../components/global/Header'
 import ChargingStation from './StationSingle'
 import DocumentTitle from 'react-document-title'
 import axios from 'axios'
