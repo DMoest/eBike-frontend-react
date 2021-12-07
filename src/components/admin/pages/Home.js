@@ -1,9 +1,12 @@
-import React from 'react'
+import DocumentTitle from 'react-document-title'
+
+// CSS
 import '../css/Other.css'
 import '../css/App.css'
+
+// Components
 import Header from '../components/global/Header'
 import Map from '../components/maps/Map'
-import DocumentTitle from 'react-document-title'
 
 function Home() {
     return (

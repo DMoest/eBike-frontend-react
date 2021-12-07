@@ -1,7 +1,7 @@
-import React from 'react'
+// CSS
 import '../../css/Table.css'
 
-function ChargingStation({ id, city, capacity, address, postcode, active }) {
+function StationSingle({ id, city, capacity, address, postcode, active }) {
     return (
         <div className="table__outer-wrapper">
             <div className="table__column-item">
@@ -26,4 +26,4 @@ function ChargingStation({ id, city, capacity, address, postcode, active }) {
     )
 }
 
-export default ChargingStation
+export default StationSingle

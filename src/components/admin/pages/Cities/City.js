@@ -1,6 +1,7 @@
-import React from 'react'
-import '../../css/City.css'
 import { Link } from 'react-router-dom'
+
+// CSS
+import './City.css'
 
 // Img & icons
 import map from '../../assets/img/city__map-test.png'
