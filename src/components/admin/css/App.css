@@ -74,3 +74,7 @@ p {
     max-width: 95vw;
     margin-left: 5vw;
 }
+
+.header__top {
+    font-size: 2em;
+}

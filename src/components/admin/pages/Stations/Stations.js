@@ -5,6 +5,7 @@ import axios from 'axios'
 // Components
 import Header from '../../components/global/Header'
 import ChargingStation from './StationSingle'
+import Map from '../../components/maps/Map'
 
 function Stations() {
     const url = process.env.REACT_APP_API_BASE_URL + "/api/station"
@@ -18,24 +19,33 @@ function Stations() {
     }, [url])
 
     return (
-        <div className="wrapper">
+        <>
             <DocumentTitle title='Laddstationer' ></DocumentTitle>
-            <Header title="Laddstationer"/>
+            <div className="data-map__wrapper">
+                <div className="data__wrapper">
+                    <Header title="Laddstationer"/>
 
-            {/* Break out into separate component? */}
-            <input type="text" placeholder="Sök" className="input__search"></input>
+                    {/* Break out into separate component? */}
+                    {/* <input type="text" placeholder="Sök" className="input__search"></input> */}
 
-            {stations.map((station) => {
-                return <ChargingStation key={station._id}
-                    id={station._id}
-                    city={station.city}
-                    capacity={station.capacity}
-                    address={station.adress}
-                    postcode={station.postcode}
-                    active={station.active}
-                />
-            })}
-        </div>
+                    <div className="data__inner-wrapper">
+                        {stations.map((station) => {
+                            return <ChargingStation key={station._id}
+                                id={station._id}
+                                city={station.city}
+                                capacity={station.capacity}
+                                address={station.adress}
+                                postcode={station.postcode}
+                                active={station.active}
+                            />
+                        })}
+                    </div>
+                </div>
+                <div className="map__wrapper">
+                    <Map />
+                </div>
+            </div>
+        </>
     )
 }
 
