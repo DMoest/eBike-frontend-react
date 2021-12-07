@@ -6,7 +6,7 @@ import axios from 'axios'
 import Header from '../../components/global/Header'
 import ChargingStation from './StationSingle'
 
-function Charging() {
+function Stations() {
     const url = process.env.REACT_APP_API_BASE_URL + "/api/station"
     const [stations, setStations] = useState([])
 
@@ -39,4 +39,4 @@ function Charging() {
     )
 }
 
-export default Charging
+export default Stations
