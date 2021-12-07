@@ -5,16 +5,16 @@ import { Route, Routes } from 'react-router-dom'
 // Pages
 import Home from './pages/Home'
 import About from './pages/About'
-import Cities from './pages/Cities'
-import Bikes from './pages/Bikes'
-import Charging from './pages/Charging'
+import Cities from './pages/Cities/Cities'
+import Bikes from './pages/Bikes/Bikes'
+import Charging from './pages/Stations/Stations'
 import Logout from '../login/Logout'
 
 // For the single city page. Needed?
-import CitySingle from './pages/CitySingle'
+import CitySingle from './pages/Cities/CitySingle'
 
 // Global components
-import Nav from './global/Nav'
+import Nav from './components/global/Nav'
 import NavTemp from '../global/Nav'
 
 // TODO: Figure out global state

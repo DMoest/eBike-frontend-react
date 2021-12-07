@@ -1,6 +1,6 @@
 import React from 'react'
 import { MapContainer, TileLayer } from 'react-leaflet'
-import MapMarkers from './MapMarkers'
+import MapMarkers from './markers/MapMarkers'
 import ParkingZones from './ParkingZones'
 
 function Map() {

@@ -1,6 +1,6 @@
 import React from 'react'
-import '../css/Nav.css'
-import '../css/App.css'
+import '../../css/Nav.css'
+import '../../css/App.css'
 import { Link, NavLink } from 'react-router-dom'
 
 // Icons
