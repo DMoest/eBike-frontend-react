@@ -1,8 +1,8 @@
 import React from 'react'
 import axios from 'axios'
 
-import Bike from '../Bike'
-import Header from '../global/Header'
+import Bike from './BikeSingle'
+import Header from '../../global/Header'
 import DocumentTitle from 'react-document-title'
 
 import { useState, useEffect } from 'react'

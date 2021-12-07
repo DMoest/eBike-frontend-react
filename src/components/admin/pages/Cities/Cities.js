@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-import City from '../City';
-import Header from '../global/Header';
+import City from './City';
+import Header from '../../global/Header';
 import DocumentTitle from 'react-document-title';
 import axios from 'axios';
 
-import '../css/App.css';
+import '../../css/App.css';
 
 function Cities() {
     const url = process.env.REACT_APP_API_BASE_URL + '/api/city';

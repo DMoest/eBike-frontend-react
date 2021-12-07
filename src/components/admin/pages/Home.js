@@ -2,7 +2,7 @@ import React from 'react'
 import '../css/Other.css'
 import '../css/App.css'
 import Header from '../global/Header'
-import Map from '../Map'
+import Map from '../Maps/Map'
 import DocumentTitle from 'react-document-title'
 
 function Home() {

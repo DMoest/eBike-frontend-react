@@ -1,6 +1,6 @@
 import React from 'react'
-import './css/Table.css'
-import './css/Bike.css'
+import '../../css/Table.css'
+import './Bike.css'
 
 function Bike({ city, latitude, longitude, status }) {
     return (
