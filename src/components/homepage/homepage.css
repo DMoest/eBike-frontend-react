@@ -141,6 +141,15 @@
     width: 40px;
 }
 
+.home-nav__link {
+    transition: opacity 0.2s ease-in-out;
+    opacity: 1;
+}
+
+.home-nav__link:hover {
+    opacity: 0.5;
+}
+
 @media (max-width: 768px) {
     .home__container {
         width: 100%;

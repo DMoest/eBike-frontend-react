@@ -15,22 +15,26 @@ import CitySingle from './pages/CitySingle'
 
 // Global components
 import Nav from './global/Nav'
+import NavTemp from '../global/Nav'
 
 // TODO: Figure out global state
 
 function AdminApp() {
   return (
     <div className="App">
-      <Nav />
-      <Routes>
-        <Route path="/home" element={ <Home /> }/>
-        <Route path="/about" element={ <About /> }/>
-        <Route path="/cities" element={ <Cities /> }/>
-        <Route path="/cities/:city" element={ <CitySingle />}/>
-        <Route path="/bikes" element={ <Bikes /> }/>
-        <Route path="/charging" element={ <Charging />}/>
-        <Route path="/logout" element={ <Logout />}/>
-      </Routes>
+      {/* <Nav /> */}
+      <NavTemp />
+      <div className="container__main">
+        <Routes>
+          <Route path="/home" element={ <Home /> }/>
+          <Route path="/about" element={ <About /> }/>
+          <Route path="/cities" element={ <Cities /> }/>
+          <Route path="/cities/:city" element={ <CitySingle />}/>
+          <Route path="/bikes" element={ <Bikes /> }/>
+          <Route path="/charging" element={ <Charging />}/>
+          <Route path="/logout" element={ <Logout />}/>
+        </Routes>
+      </div>
     </div>
   );
 }
