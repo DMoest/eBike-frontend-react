@@ -5,7 +5,6 @@ import heroImg from '../../assets/img/ebike__hero-ill.png'
 import ill__simulation from '../../assets/img/ebike__simulation-illustration.png'
 import ill__frontend from '../../assets/img/ebike__frontend-illustration.png'
 
-
 function HomepageApp() {
     return (
         <div>
@@ -16,12 +15,12 @@ function HomepageApp() {
                             <img src={logo} className="hero__logo" alt="Ebike logo"/>Ebike
                         </div>
                         <div className="home-hero__nav-center-wrapper">
-                            <a href="#">Home</a>
-                            <a href="#">Om</a>
-                            <a href="#">Rapport</a>
+                            <a href="#" className="home-nav__link">Home</a>
+                            <a href="#" className="home-nav__link">Om</a>
+                            <a href="#" className="home-nav__link">Rapport</a>
                         </div>
                         <div className="home-hero__nav-right-wrapper">
-                            <a href="#">Logga in</a>
+                            <a href="#" className="home-nav__link">Logga in</a>
                         </div>
                     </div>
                     <div className="home-hero__content-outer-wrapper">
