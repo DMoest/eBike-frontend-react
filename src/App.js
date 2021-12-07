@@ -43,7 +43,7 @@ class App extends React.Component {
 
         return (
             <div>
-                <button style={{ position: 'absolute', 'z-index': 100 }} onClick={() => {this.setState({toggle: toggle[this.state.toggle]})}}>{toggle[this.state.toggle]}</button>
+                <button style={{ position: 'absolute', zIndex: 100, right: '0' }} onClick={() => {this.setState({toggle: toggle[this.state.toggle]})}}>{toggle[this.state.toggle]}</button>
                 {content}
                 <Routes>
                     <Route path="/login" element={ <Login parentCallback = {this.handleLogin}/> }/>

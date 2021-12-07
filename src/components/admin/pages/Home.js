@@ -1,7 +1,6 @@
 import DocumentTitle from 'react-document-title'
 
 // CSS
-import '../css/Other.css'
 import '../css/App.css'
 
 // Components

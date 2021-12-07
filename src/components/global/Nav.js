@@ -1,6 +1,6 @@
 import React from 'react'
 import './Nav.css'
-import { Link, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import icon__scooter from '../admin/assets/img/icons/icon__scooter-white.svg'
 import icon__charge from '../admin/assets/img/icons/icon__charge-white.svg'
 import icon__profile from '../admin/assets/img/icons/icon__profile-white.svg'

@@ -6,20 +6,12 @@ import './Bikes.css'
 
 function Bike({ city, latitude, longitude, status }) {
     return (
-        <div className="table__outer-wrapper">
-            <div className="table__column-item">
-                {city}
-            </div>
-            <div className="table__column-item">
-                {latitude}
-            </div>
-            <div className="table__column-item">
-                {longitude}
-            </div>
-            <div className="table__column-item">
-                {status}
-            </div>
-        </div>
+        <tr>
+            <td>{city}</td>
+            <td>{latitude}</td>
+            <td>{longitude}</td>
+            <td>{status}</td>
+        </tr>
     )
 }
 
