@@ -1,13 +1,16 @@
 import { useState, useEffect } from 'react'
-import Header from '../../components/global/Header'
-import ChargingStation from './StationSingle'
 import DocumentTitle from 'react-document-title'
 import axios from 'axios'
+
+// Components
+import Header from '../../components/global/Header'
+import ChargingStation from './StationSingle'
 
 function Charging() {
     const url = process.env.REACT_APP_API_BASE_URL + "/api/station"
     const [stations, setStations] = useState([])
 
+    // API call
     useEffect(() => {
         axios.get(url).then((res) => {
           setStations(res.data.stations)

@@ -1,4 +1,6 @@
 import React from 'react'
+
+// CSS
 import '../../css/Table.css'
 import './Bike.css'
 

@@ -1,8 +1,10 @@
-import './css/App.css';
-import './css/Other.css'
 import { Route, Routes } from 'react-router-dom'
 
-// Pages
+// CSS
+import './css/App.css';
+import './css/Other.css'
+
+// Page components
 import Home from './pages/Home'
 import About from './pages/About'
 import Cities from './pages/Cities/Cities'
@@ -16,8 +18,6 @@ import CitySingle from './pages/Cities/CitySingle'
 // Global components
 import Nav from './components/global/Nav'
 import NavTemp from '../global/Nav'
-
-// TODO: Figure out global state
 
 function AdminApp() {
   return (

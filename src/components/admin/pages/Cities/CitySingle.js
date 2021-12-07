@@ -1,8 +1,9 @@
-import React from 'react'
 import { useLocation } from 'react-router-dom'
+import DocumentTitle from 'react-document-title'
+
+// Components
 import Header from '../../components/global/Header'
 import BtnBack from '../../components/global/BtnBack'
-import DocumentTitle from 'react-document-title'
 
 function City() {
     // Gets the city name
