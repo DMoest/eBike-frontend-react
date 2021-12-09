@@ -2,6 +2,7 @@ import React from 'react'
 import { MapContainer, TileLayer } from 'react-leaflet'
 import MapMarkers from './MapMarkers'
 import ParkingZones from './ParkingZones'
+import Chargers from './Chargers'
 
 function Map() {
 
@@ -14,6 +15,7 @@ function Map() {
 				/>
 				<MapMarkers />
 				<ParkingZones />
+				<Chargers />
 			</MapContainer>
 		</div>
     )

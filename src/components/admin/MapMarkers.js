@@ -62,22 +62,30 @@ function MapMarkers(props) {
                 { markers.map((marker) => {
                     let icon = null;
 
-                    if (marker.battery < 25) {
-                        icon = iconBikeCharge
-                    } else if (!marker.active) {
-                        icon = iconBikeStopped
+                    if (marker.active && marker.battery < 25) {
+                        icon = iconBikeCharge;
                     } else if (!marker.active && marker.battery < 25) {
-                        icon = iconBikeChargeStopped
+                        icon = iconBikeChargeStopped;
                     } else {
-                        icon = iconBike
+                        icon = iconBike;
                     }
+
+
                     return <Marker position={[marker.latitude, marker.longitude]} icon={icon} key={marker._id}>
+                        {marker.active && marker.battery >= 25 ?
                         <Popup>
                             Lat: { marker.latitude } 
                             <br /> Lan: { marker.longitude }
                             <br /> Battery: { marker.battery }
                             <br /> Speed: { marker.speed }
-                        </Popup>
+                        </Popup> :
+                        <Popup>
+                            <ul className="popup-list">
+                                <li>
+                                    Send to charger
+                                </li>
+                            </ul>
+                        </Popup>}
                     </Marker>
                 }) }
             </MarkerClusterGroup>

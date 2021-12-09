@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import L from 'leaflet';
-import { Marker, Polygon, Popup, useMap } from 'react-leaflet'
-import MarkerClusterGroup from 'react-leaflet-markercluster';
+import { Polygon, useMap } from 'react-leaflet'
 
 function ParkingZones(props) {
     const url = process.env.REACT_APP_API_BASE_URL + "/api/parking"
@@ -35,7 +33,7 @@ function ParkingZones(props) {
                         [marker.se_latitude, marker.se_longitude],
                         [marker.sw_latitude, marker.sw_longitude],
                         [marker.nw_latitude, marker.nw_longitude]
-                    ]} />
+                    ]} key={marker._id} />
                 }
             }) }
         </div>
