@@ -11,7 +11,6 @@ import Chargers from './markers/Chargers'
 function Map() {
 
     return (
-        <>
 			<MapContainer preferCanvas={true} center={[59.334591, 18.063240]} zoom={15} scrollWheelZoom={true}>
 				<TileLayer
 					attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
@@ -21,7 +20,6 @@ function Map() {
 				<ParkingZones />
 				<Chargers />
 			</MapContainer>
-		</>
     )
 }
 
