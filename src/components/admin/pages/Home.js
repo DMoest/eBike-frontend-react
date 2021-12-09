@@ -1,9 +1,11 @@
-import React from 'react'
-import '../css/Other.css'
-import '../css/App.css'
-import Header from '../global/Header'
-import Map from '../Map'
 import DocumentTitle from 'react-document-title'
+
+// CSS
+import '../css/App.css'
+
+// Components
+import Header from '../components/global/Header'
+import Map from '../components/maps/Map'
 
 function Home() {
     return (

@@ -8,15 +8,12 @@ function ParkingZones(props) {
 
     var map = useMap();
 
-
-    function fetchData() {
-        axios.get(url).then((res) => {
-            setMarkers(res.data.parking_zones);
-        })
-    }
-
-
     useEffect(() => {
+        const fetchData = () => {
+            axios.get(url).then((res) => {
+                setMarkers(res.data.parking_zones);
+            })
+        }
 
         // Fetching immediately the first time
         fetchData()
@@ -27,7 +24,7 @@ function ParkingZones(props) {
     return (
         <div>
             { markers.map((marker) => {
-                if (marker.city == "Umeå") {
+                if (marker.city === "Umeå") {
                     return <Polygon pathOptions={ {color: 'green'} } positions={[
                         [marker.ne_latitude, marker.ne_longitude],
                         [marker.se_latitude, marker.se_longitude],
