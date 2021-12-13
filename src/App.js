@@ -1,10 +1,14 @@
 import React from "react";
-import Login from "./components/login/Login";
-import Logout from "./components/login/Logout";
+import { Route, Routes } from 'react-router-dom';
+
+// Sections
 import CustomerApp from "./components/customer/CustomerApp";
 import AdminApp from "./components/admin/AdminApp";
 import HomePageApp from "./components/homepage/HomePageApp";
-import { Route, Routes } from 'react-router-dom';
+
+// Components
+import Login from "./components/login/Login";
+import Logout from "./components/login/Logout";
 
 class App extends React.Component {
     constructor() {

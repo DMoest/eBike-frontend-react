@@ -31,16 +31,16 @@ function Stations() {
                     <div className="data__inner-wrapper">
                         <table className="data__table">
                             <tr>
-                                <th>Id</th>
+                                {/* <th>Id</th> */}
                                 <th>Stad</th>
                                 <th>Kapacitet</th>
                                 <th>Address</th>
                                 <th>Postnummer</th>
-                                <th>Aktiv</th>
+                                <th>Aktiva</th>
                             </tr>
                             {stations.map((station) => {
                                 return <ChargingStation key={station._id}
-                                    id={station._id}
+                                    // id={station._id}
                                     city={station.city}
                                     capacity={station.capacity}
                                     address={station.adress}

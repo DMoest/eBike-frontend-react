@@ -1,10 +1,10 @@
 // CSS
 import '../../css/Table.css'
 
-function StationSingle({ id, city, capacity, address, postcode, active }) {
+function StationSingle({ city, capacity, address, postcode, active }) {
     return (
         <tr>
-            <td>{id}</td>
+            {/* <td>{id}</td> */}
             <td>{city}</td>
             <td>{capacity}</td>
             <td>{address}</td>
