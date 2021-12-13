@@ -141,6 +141,10 @@
     width: 40px;
 }
 
+.author__info p {
+    font-weight: 400;
+}
+
 .home-nav__link {
     transition: opacity 0.2s ease-in-out;
     opacity: 1;
@@ -167,5 +171,44 @@
         grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
         grid-column-gap: 0px;
         grid-row-gap: 0px;
+    }
+}
+
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .home-hero__content-outer-wrapper {
+        padding: 50px 0px;
+    }
+
+    .home-hero__img {
+        margin-bottom: 50px;
+    }
+
+    .home-content__outer-wrapper {
+        padding: 50px 0px;
+    }
+
+    .home-content__content-outer-wrapper {
+        margin-bottom: 50px;
+    }
+
+    .home-content__grid-item {
+        margin-bottom: 50px;
+    }
+
+    .home-content__testimonial-wrapper {
+        padding: 100px 0px;
+    }
+
+    .home-footer__inner-wrapper {
+        padding: 50px 0px;
     }
 }

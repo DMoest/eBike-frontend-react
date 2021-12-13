@@ -3,7 +3,9 @@ import './homepage.css'
 import logo from '../../assets/img/ebike__logo-white.svg'
 import heroImg from '../../assets/img/ebike__hero-ill.png'
 import ill__simulation from '../../assets/img/ebike__simulation-illustration.png'
+import ill__backend from '../../assets/img/ebike__backend-illustration.png'
 import ill__frontend from '../../assets/img/ebike__frontend-illustration.png'
+import mock__profile from '../../assets/img/mock__profile-pic.png'
 
 function HomepageApp() {
     return (
@@ -52,6 +54,7 @@ function HomepageApp() {
                             ex nec turpis iaculis porta. Duis nec eros tincidunt, egestas </p>
                         </div>
                         <div className="home-content__grid-item">
+                            <img src={ill__backend} className="home-grid__img" alt="Hero illustration"/>
                             <h3 className="h3__grid">Backend</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fermentum 
                             ex nec turpis iaculis porta. Duis nec eros tincidunt, egestas </p>
@@ -74,9 +77,9 @@ function HomepageApp() {
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fermentum
                             </p>
                             <div className="author__wrapper">
-                                <img src={logo} className="author__img" alt="Author portrait"/>
+                                <img src={mock__profile} className="author__img" alt="Author portrait"/>
                                 <div className="author__info">
-                                    <b>Jeff Bezos</b>
+                                    Jeff Bezos
                                     <p>Head of things @ Amazon</p>
                                 </div>
                             </div>
