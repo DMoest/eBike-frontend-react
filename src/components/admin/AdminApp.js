@@ -5,18 +5,17 @@ import './css/App.css';
 import './css/Global.css'
 
 // Page components
-import Home from './pages/Home'
-import About from './pages/About'
-import Cities from './pages/Cities/Cities'
 import Bikes from './pages/Bikes/Bikes'
 import Charging from './pages/Stations/Stations'
 import Logout from '../login/Logout'
+import Customers from './pages/Customers.js'
 
 // For the single city page. Needed?
-import CitySingle from './pages/Cities/CitySingle'
+// import Cities from './pages/Cities/Cities'
+// import CitySingle from './pages/Cities/CitySingle'
 
 // Global components
-import Nav from './components/global/Nav'
+// import Nav from './components/global/Nav'
 import NavTemp from '../global/Nav'
 
 function AdminApp() {
@@ -26,13 +25,12 @@ function AdminApp() {
       <NavTemp />
       <div className="container__main">
         <Routes>
-          <Route path="/home" element={ <Home /> }/>
-          <Route path="/about" element={ <About /> }/>
-          <Route path="/cities" element={ <Cities /> }/>
-          <Route path="/cities/:city" element={ <CitySingle />}/>
+          {/* <Route path="/cities" element={ <Cities /> }/>
+          <Route path="/cities/:city" element={ <CitySingle />}/> */}
           <Route path="/bikes" element={ <Bikes /> }/>
           <Route path="/charging" element={ <Charging />}/>
           <Route path="/logout" element={ <Logout />}/>
+          <Route path="/customers" element={ <Customers /> }/>
         </Routes>
       </div>
     </div>

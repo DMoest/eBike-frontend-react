@@ -30,11 +30,14 @@
 
 .data__table {
     width: 100%;
+    border-collapse: collapse;
 }
 
 .data__table tr th {
     text-align: left;
     padding-bottom: 20px;
+    font-size: 12px;
+    font-weight: 500;
 }
 
 .data__table tr td {

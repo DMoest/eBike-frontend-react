@@ -20,7 +20,7 @@ function NavTemp() {
                 <NavLink to="/charging" className="nav-left__menu-item">
                     <img src={icon__charge} alt={icon__charge} className="nav-left__menu-item-icon" />
                 </NavLink>
-                <NavLink to="/profile" className="nav-left__menu-item">
+                <NavLink to="/customers" className="nav-left__menu-item">
                     <img src={icon__profile} alt={icon__profile} className="nav-left__menu-item-icon" />
                 </NavLink>
             </div>
