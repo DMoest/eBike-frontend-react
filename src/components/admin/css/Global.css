@@ -13,7 +13,7 @@
 }
 
 .data__wrapper {
-    width: 44vw;
+    width: 45vw;
     padding: 25px;
 }
 
@@ -31,6 +31,7 @@
 .data__table {
     width: 100%;
     border-collapse: collapse;
+    font-size: 14px;
 }
 
 .data__table tr th {
@@ -41,7 +42,7 @@
 }
 
 .data__table tr td {
-    padding: 20px 0px;
+    padding: 15px 0px;
 }
 
 .data__table tr:nth-child(even) {

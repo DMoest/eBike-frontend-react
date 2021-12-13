@@ -3,7 +3,7 @@
     top: 0;
     left: 0;
     height: 100vh;
-    width: 5vw;
+    width: 4vw;
     background: #1D1E22;
 
     display: flex;
@@ -43,9 +43,9 @@
     .nav-left__outer-wrapper {
         position: static;
         width: 100%;
-        height: 4vh;
+        height: 100%;
         flex-direction: row;
-        padding: 25px;
+        padding: 10px 25px;
     }
 
     .nav-left__menu-wrapper {
