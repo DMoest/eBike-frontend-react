@@ -3,7 +3,7 @@
     top: 0;
     left: 0;
     height: 100vh;
-    width: 5vw;
+    width: 4vw;
     background: #1D1E22;
 
     display: flex;
@@ -11,7 +11,7 @@
     justify-content: space-between;
     color: #fff;
     align-items: center;
-    padding: 25px 0px;
+    padding: 15px 0px;
 }
 
 .nav-left__menu-wrapper {
@@ -23,7 +23,7 @@
 }
 
 .nav-left__menu-item {
-    padding: 35px 0px;
+    padding: 25px 0px;
     width: 100%;
 }
 
@@ -36,16 +36,20 @@
 }
 
 .nav-left__menu-item-icon {
-    height: 20px;
+    height: 18px;
+}
+
+.user__name {
+    font-size: 12px;
 }
 
 @media(max-width: 1000px) {
     .nav-left__outer-wrapper {
         position: static;
         width: 100%;
-        height: 4vh;
+        height: 100%;
         flex-direction: row;
-        padding: 25px;
+        padding: 10px 25px;
     }
 
     .nav-left__menu-wrapper {

@@ -25,9 +25,10 @@ function NavTemp() {
                 </NavLink>
             </div>
             <div className="nav-left__bottom-wrapper">
-                <NavLink to="/bikes" className="nav-left__bottom-item">
+                {/* <NavLink to="/bikes" className="nav-left__bottom-item">
                     <img src={icon__profile_bottom} alt={icon__profile_bottom} className="nav-leftleft__menu-item-icon" />
-                </NavLink>
+                </NavLink> */}
+                <p className="user__name">Admin</p>
             </div>
         </div>
     )
