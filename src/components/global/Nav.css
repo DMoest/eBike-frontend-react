@@ -38,3 +38,47 @@
 .nav-left__menu-item-icon {
     height: 20px;
 }
+
+@media(max-width: 1000px) {
+    .nav-left__outer-wrapper {
+        position: static;
+        width: 100%;
+        height: 4vh;
+        flex-direction: row;
+        padding: 25px;
+    }
+
+    .nav-left__menu-wrapper {
+        flex-direction: row !important;
+        justify-content: center;
+    }
+
+    .nav-left__menu-item {
+        width: 10%;
+        padding: 0px 25px !important;
+    }
+
+    .container__main {
+        max-width: 100vw;
+        margin-left: 0vw;
+    }
+
+    .data-map__wrapper {
+        flex-direction: column-reverse !important;
+    }
+
+    .data__wrapper {
+        width: 100%;
+    }
+
+    .map__wrapper {
+        height: 50vh;
+        position: static;
+        width: 100%;
+    }
+
+    .leaflet-container {
+        width: 100%;
+        height: 100%;
+    }
+}
