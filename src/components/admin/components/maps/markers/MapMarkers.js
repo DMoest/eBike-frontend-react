@@ -6,9 +6,15 @@ import { iconBike, iconBikeCharge, iconBikeStopped, iconBikeChargeStopped } from
 
 function MapMarkers(props) {
     const url = process.env.REACT_APP_API_BASE_URL + '/api/bike';
+    const stations_url = process.env.REACT_APP_API_BASE_URL + '/api/station';
     const [markers, setMarkers] = useState([]);
+    const [stations, setStations] = useState([]);
 
     var map = useMap();
+
+   function addToStation() {
+        //Todo: Axios request to add bike to station.
+    }
 
     useEffect(() => {
         const fetchData = () => {
@@ -16,6 +22,14 @@ function MapMarkers(props) {
                 let bikes = getBikesWithinBounds(res.data);
     
                 setMarkers(bikes);
+            })
+        }
+
+        const fetchStations = () => {
+            axios.get(stations_url).then((res) => {
+                let stations = getBikesWithinBounds(res.data);
+    
+                setStations(stations);
             })
         }
 
@@ -43,10 +57,12 @@ function MapMarkers(props) {
 
         // Fetching immediately the first time
         fetchData();
+        fetchStations();
 
         // Fetching every 10 seconds
         const fetchDataInterval = setInterval(() => {
             fetchData();
+            fetchStations();
         }, 10000);
 
         // Clearing is needed
@@ -59,28 +75,34 @@ function MapMarkers(props) {
                 { markers.map((marker) => {
                     let icon = null;
 
-                    // if (marker.battery < 25) {
-                    //     icon = iconBikeCharge;
-                    // } else if (!marker.active) {
-                    //     icon = iconBikeStopped;
-                    // } else if (!marker.active && marker.battery < 25) {
-                    //     icon = iconBikeChargeStopped;
-                    // } else {
-                    //     icon = iconBike;
-                    // }
-
                     marker.battery < 25 ? icon = iconBikeCharge
                     : !marker.active ? icon = iconBikeStopped
                     : !marker.active && marker.battery < 25 ? icon = iconBikeChargeStopped
                     : icon = iconBike;
 
                     return <Marker position={[marker.latitude, marker.longitude]} icon={icon} key={marker._id}>
-                        <Popup>
-                            Lat: { marker.latitude } 
-                            <br /> Lan: { marker.longitude }
-                            <br /> Battery: { marker.battery }
-                            <br /> Speed: { marker.speed }
-                        </Popup>
+                        {
+                            !marker.active && marker.battery < 25 ?
+                            <Popup>
+                                <select>
+                                    <option selected>
+                                        Send to charger
+                                    </option>
+                                    {
+                                        stations.map((station) => {
+                                            return <option onClick={addToStation}>{ station.display_id }</option>
+                                        })
+                                    }
+                                </select>
+                            </Popup> :
+                            <Popup>
+                                Lat: { marker.latitude } 
+                                <br /> Lan: { marker.longitude }
+                                <br /> Battery: { marker.battery }
+                                <br /> Speed: { marker.speed }
+                            </Popup>
+                        }
+                        
                     </Marker>
                 }) }
             </MarkerClusterGroup>
