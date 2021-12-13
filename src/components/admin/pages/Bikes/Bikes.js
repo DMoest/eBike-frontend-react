@@ -15,15 +15,14 @@ function Bikes() {
     useEffect(() => {
         axios.get(url).then((res) => {
           setBikes(res.data.bikes)
+        }).catch((err) => {
+            console.log(err)
         });
     }, [url])
 
     return (
         <>
             <DocumentTitle title='Cyklar' ></DocumentTitle>
-
-            {/* <input type="text" placeholder="Sök" className="input__search"></input> */}
-
             <div className="data-map__wrapper">
                 <div className="data__wrapper">
                     <Header title="Cyklar"/>
@@ -37,12 +36,20 @@ function Bikes() {
                                 <th>Status</th>
                             </tr>
                             {bikes.map((bike) => {
+
+                            // Set bike status color
+                            bike.status === 'available' ? bike.statusColor = '#28C941' 
+                            : bike.status === 'in_service' ? bike.statusColor = '#F4D25E'
+                            : bike.status === 'broken' ? bike.statusColor = '#EE6A6A'
+                            : bike.statusColor = '#EE6A6A'
+
                             return <Bike 
                                 key={bike._id}
                                 city={bike.city}
                                 latitude={bike.latitude}
                                 longitude={bike.longitude}
                                 status={bike.status}
+                                statusColor={bike.statusColor}
                             />
                             })}
                         </table>
