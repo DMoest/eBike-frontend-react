@@ -8,7 +8,7 @@ import ChargingStation from './StationSingle'
 import Map from '../../components/maps/Map'
 import BtnMap from '../../components/global/BtnMap'
 
-function Stations() {
+function Stations({city, updateCity}) {
     const url = process.env.REACT_APP_API_BASE_URL + "/api/station"
     const [stations, setStations] = useState([])
 

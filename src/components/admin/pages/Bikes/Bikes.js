@@ -8,7 +8,7 @@ import Header from '../../components/global/Header'
 import Map from '../../components/maps/Map'
 import BtnMap from '../../components/global/BtnMap'
 
-function Bikes() {
+function Bikes({city, updateCity}) {
     const url = process.env.REACT_APP_API_BASE_URL + "/api/bike"
     const [bikes, setBikes] = useState([])
 

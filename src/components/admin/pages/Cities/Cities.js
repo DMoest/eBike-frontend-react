@@ -9,7 +9,7 @@ import '../../css/App.css';
 import City from './City';
 import Header from '../../components/global/Header';
 
-function Cities() {
+function Cities({city, updateCity}) {
     const url = process.env.REACT_APP_API_BASE_URL + '/api/city';
     const [cities, setCities] = useState([]);
 
