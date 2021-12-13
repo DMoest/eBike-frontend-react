@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-// import L from 'leaflet';
 import { Polygon, useMap } from 'react-leaflet'
-// import MarkerClusterGroup from 'react-leaflet-markercluster';
 
 function ParkingZones(props) {
     const url = process.env.REACT_APP_API_BASE_URL + "/api/parking"
