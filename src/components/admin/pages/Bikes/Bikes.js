@@ -31,9 +31,10 @@ function Bikes() {
                         <table className="data__table">
                             <tr>
                                 <th>Stad</th>
-                                <th>Latitude</th>
-                                <th>Longitude</th>
+                                <th>Hastighet</th>
+                                <th>Batteri</th>
                                 <th>Status</th>
+                                <th>Aktiv</th>
                             </tr>
                             {bikes.map((bike) => {
 
@@ -43,13 +44,16 @@ function Bikes() {
                             : bike.status === 'broken' ? bike.statusColor = '#EE6A6A'
                             : bike.statusColor = '#EE6A6A'
 
+                            bike.active === 'true' ? bike.active = 'Ja' : bike.active = 'Nej'
+
                             return <Bike 
                                 key={bike._id}
                                 city={bike.city}
-                                latitude={bike.latitude}
-                                longitude={bike.longitude}
+                                speed={bike.speed}
+                                battery={bike.battery}
                                 status={bike.status}
                                 statusColor={bike.statusColor}
+                                active={bike.active}
                             />
                             })}
                         </table>
