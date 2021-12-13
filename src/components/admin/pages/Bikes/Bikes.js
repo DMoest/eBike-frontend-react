@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react'
 import Bike from './BikeSingle'
 import Header from '../../components/global/Header'
 import Map from '../../components/maps/Map'
+import BtnMap from '../../components/global/BtnMap'
 
 function Bikes() {
     const url = process.env.REACT_APP_API_BASE_URL + "/api/bike"
@@ -23,6 +24,7 @@ function Bikes() {
     return (
         <>
             <DocumentTitle title='Cyklar' ></DocumentTitle>
+            <BtnMap />
             <div className="data-map__wrapper">
                 <div className="data__wrapper">
                     <Header title="Cyklar"/>

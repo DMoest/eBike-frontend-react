@@ -6,6 +6,7 @@ import axios from 'axios'
 import Header from '../../components/global/Header'
 import ChargingStation from './StationSingle'
 import Map from '../../components/maps/Map'
+import BtnMap from '../../components/global/BtnMap'
 
 function Stations() {
     const url = process.env.REACT_APP_API_BASE_URL + "/api/station"
@@ -21,6 +22,7 @@ function Stations() {
     return (
         <>
             <DocumentTitle title='Laddstationer' ></DocumentTitle>
+            <BtnMap />
             <div className="data-map__wrapper">
                 <div className="data__wrapper">
                     <Header title="Laddstationer"/>
