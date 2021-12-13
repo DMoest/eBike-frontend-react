@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 
-const startApp = () => {
+const renderReactDom = () => {
   ReactDOM.render(
     <React.StrictMode>
       <BrowserRouter>
@@ -12,11 +12,12 @@ const startApp = () => {
     </React.StrictMode>,
     document.getElementById('root')
   );
-  registerServiceWorker();
 };
 
-if(window.cordova) {
-  document.addEventListener('deviceready', startApp, false);
+if (window.cordova) {
+  document.addEventListener('deviceready', () => {
+    renderReactDom();
+  }, false);
 } else {
-  startApp();
+  renderReactDom();
 }

@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "./static/css/main.129db371.chunk.css",
+    "main.js": "./static/js/main.4ccf707d.chunk.js",
+    "main.js.map": "./static/js/main.4ccf707d.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.bd9f377c.js",
+    "runtime-main.js.map": "./static/js/runtime-main.bd9f377c.js.map",
+    "static/js/2.436d0514.chunk.js": "./static/js/2.436d0514.chunk.js",
+    "static/js/2.436d0514.chunk.js.map": "./static/js/2.436d0514.chunk.js.map",
+    "index.html": "./index.html",
+    "static/css/main.129db371.chunk.css.map": "./static/css/main.129db371.chunk.css.map",
+    "static/js/2.436d0514.chunk.js.LICENSE.txt": "./static/js/2.436d0514.chunk.js.LICENSE.txt",
+    "static/media/homepage.css": "./static/media/Moderat-Extended-Regular.85beec7d.woff2",
+    "static/media/charge.0bdfb42d.svg": "./static/media/charge.0bdfb42d.svg",
+    "static/media/charge_red.174d78a4.svg": "./static/media/charge_red.174d78a4.svg",
+    "static/media/charger.972d0a0c.svg": "./static/media/charger.972d0a0c.svg",
+    "static/media/city__map-test.dbeb735c.png": "./static/media/city__map-test.dbeb735c.png",
+    "static/media/ebike__frontend-illustration.da37e62f.png": "./static/media/ebike__frontend-illustration.da37e62f.png",
+    "static/media/ebike__hero-ill.38824f3a.png": "./static/media/ebike__hero-ill.38824f3a.png",
+    "static/media/ebike__logo-white.f82ece3c.svg": "./static/media/ebike__logo-white.f82ece3c.svg",
+    "static/media/ebike__simulation-illustration.e63f583d.png": "./static/media/ebike__simulation-illustration.e63f583d.png",
+    "static/media/green.abc4a239.svg": "./static/media/green.abc4a239.svg",
+    "static/media/icon__charge-white.d126ffd2.svg": "./static/media/icon__charge-white.d126ffd2.svg",
+    "static/media/icon__charge.cc921c00.svg": "./static/media/icon__charge.cc921c00.svg",
+    "static/media/icon__customer.56e9ea47.svg": "./static/media/icon__customer.56e9ea47.svg",
+    "static/media/icon__logo-white.909bfb11.svg": "./static/media/icon__logo-white.909bfb11.svg",
+    "static/media/icon__profile-white.f8aa7012.svg": "./static/media/icon__profile-white.f8aa7012.svg",
+    "static/media/icon__scooter-white.261fcb65.svg": "./static/media/icon__scooter-white.261fcb65.svg",
+    "static/media/icon__scooter.8f7c4e27.svg": "./static/media/icon__scooter.8f7c4e27.svg",
+    "static/media/red.86654950.svg": "./static/media/red.86654950.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bd9f377c.js",
+    "static/js/2.436d0514.chunk.js",
+    "static/css/main.129db371.chunk.css",
+    "static/js/main.4ccf707d.chunk.js"
+  ]
+}
