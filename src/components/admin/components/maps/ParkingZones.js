@@ -8,7 +8,7 @@ function ParkingZones(props) {
     const url = process.env.REACT_APP_API_BASE_URL + "/api/parking"
     const [markers, setMarkers] = useState([])
 
-    var map = useMap();
+    // var map = useMap();
 
     useEffect(() => {
         const fetchData = () => {

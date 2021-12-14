@@ -6,8 +6,9 @@ import { useState, useEffect } from 'react'
 import Bike from './BikeSingle'
 import Header from '../../components/global/Header'
 import Map from '../../components/maps/Map'
+import BtnMap from '../../components/global/BtnMap'
 
-function Bikes() {
+function Bikes({city, updateCity}) {
     const url = process.env.REACT_APP_API_BASE_URL + "/api/bike"
     const [bikes, setBikes] = useState([])
 
@@ -23,6 +24,7 @@ function Bikes() {
     return (
         <>
             <DocumentTitle title='Cyklar' ></DocumentTitle>
+            <BtnMap />
             <div className="data-map__wrapper">
                 <div className="data__wrapper">
                     <Header title="Cyklar"/>
@@ -37,30 +39,29 @@ function Bikes() {
                                 <th>Aktiv</th>
                             </tr>
                             {bikes.map((bike) => {
+                                // Set bike status color
+                                bike.status === 'available' ? bike.statusColor = '#28C941' 
+                                : bike.status === 'in_service' ? bike.statusColor = '#F4D25E'
+                                : bike.status === 'broken' ? bike.statusColor = '#EE6A6A'
+                                : bike.statusColor = '#EE6A6A'
 
-                            // Set bike status color
-                            bike.status === 'available' ? bike.statusColor = '#28C941' 
-                            : bike.status === 'in_service' ? bike.statusColor = '#F4D25E'
-                            : bike.status === 'broken' ? bike.statusColor = '#EE6A6A'
-                            : bike.statusColor = '#EE6A6A'
+                                bike.active === 'true' ? bike.active = 'Ja' : bike.active = 'Nej'
 
-                            bike.active === 'true' ? bike.active = 'Ja' : bike.active = 'Nej'
-
-                            return <Bike 
-                                key={bike._id}
-                                city={bike.city}
-                                speed={bike.speed}
-                                battery={bike.battery}
-                                status={bike.status}
-                                statusColor={bike.statusColor}
-                                active={bike.active}
-                            />
+                                return <Bike 
+                                    key={bike._id}
+                                    city={bike.city}
+                                    speed={bike.speed}
+                                    battery={bike.battery}
+                                    status={bike.status}
+                                    statusColor={bike.statusColor}
+                                    active={bike.active}
+                                />
                             })}
                         </table>
                     </div>
                 </div>
                 <div className="map__wrapper">
-                    <Map />
+                    <Map positionData={bikes}/>
                 </div>
             </div>
         </>

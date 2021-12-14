@@ -76,9 +76,7 @@
     }
 
     .map__wrapper {
-        height: 50vh;
-        position: static;
-        width: 100%;
+        display: none;
     }
 
     .leaflet-container {

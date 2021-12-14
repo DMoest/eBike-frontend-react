@@ -1,0 +1,16 @@
+.btn__map {
+    display: none;
+}
+
+@media(max-width: 1000px) {
+    .btn__map {
+        display: block;
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        background: #000;
+        border-radius: 4px;
+        width: 35px;
+        height: 35px;
+    }
+}
