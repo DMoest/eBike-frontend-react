@@ -59,16 +59,6 @@ function MapMarkers({props}) {
                 { markers.map((marker) => {
                     let icon = null;
 
-                    // if (marker.battery < 25) {
-                    //     icon = iconBikeCharge;
-                    // } else if (!marker.active) {
-                    //     icon = iconBikeStopped;
-                    // } else if (!marker.active && marker.battery < 25) {
-                    //     icon = iconBikeChargeStopped;
-                    // } else {
-                    //     icon = iconBike;
-                    // }
-
                     marker.battery < 25 ? icon = iconBikeCharge
                     : !marker.active ? icon = iconBikeStopped
                     : !marker.active && marker.battery < 25 ? icon = iconBikeChargeStopped

@@ -11,6 +11,7 @@ import BtnMap from '../../components/global/BtnMap'
 function Bikes({city, updateCity}) {
     const url = process.env.REACT_APP_API_BASE_URL + "/api/bike"
     const [bikes, setBikes] = useState([])
+    const [showMap, setShowMap] = useState(false)
 
     // API call
     useEffect(() => {
@@ -24,7 +25,7 @@ function Bikes({city, updateCity}) {
     return (
         <>
             <DocumentTitle title='Cyklar' ></DocumentTitle>
-            <BtnMap />
+            <BtnMap/>
             <div className="data-map__wrapper">
                 <div className="data__wrapper">
                     <Header title="Cyklar"/>
@@ -60,7 +61,7 @@ function Bikes({city, updateCity}) {
                         </table>
                     </div>
                 </div>
-                <div className="map__wrapper">
+                <div className="map__wrapper map__hidden">
                     <Map positionData={bikes}/>
                 </div>
             </div>
