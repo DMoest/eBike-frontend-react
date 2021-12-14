@@ -5,7 +5,7 @@ import icon__scooter from '../admin/assets/img/icons/icon__scooter-white.svg'
 import icon__charge from '../admin/assets/img/icons/icon__charge-white.svg'
 import icon__profile from '../admin/assets/img/icons/icon__profile-white.svg'
 import icon__logo from '../admin/assets/img/icons/icon__logo-white.svg'
-import icon__profile_bottom from '../admin/assets/img/icons/icon__profile-bottom-test.png'
+// import icon__profile_bottom from '../admin/assets/img/icons/icon__profile-bottom-test.png'
 
 function NavTemp() {
     return (

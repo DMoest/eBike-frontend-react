@@ -4,7 +4,7 @@ import { Marker, Popup, useMap } from 'react-leaflet';
 import MarkerClusterGroup from 'react-leaflet-markercluster';
 import { iconBike, iconBikeCharge, iconBikeStopped, iconBikeChargeStopped } from './CustomMarkers';
 
-function MapMarkers(props) {
+function MapMarkers({props}) {
     const url = process.env.REACT_APP_API_BASE_URL + '/api/bike';
     const [markers, setMarkers] = useState([]);
 

@@ -39,30 +39,29 @@ function Bikes({city, updateCity}) {
                                 <th>Aktiv</th>
                             </tr>
                             {bikes.map((bike) => {
+                                // Set bike status color
+                                bike.status === 'available' ? bike.statusColor = '#28C941' 
+                                : bike.status === 'in_service' ? bike.statusColor = '#F4D25E'
+                                : bike.status === 'broken' ? bike.statusColor = '#EE6A6A'
+                                : bike.statusColor = '#EE6A6A'
 
-                            // Set bike status color
-                            bike.status === 'available' ? bike.statusColor = '#28C941' 
-                            : bike.status === 'in_service' ? bike.statusColor = '#F4D25E'
-                            : bike.status === 'broken' ? bike.statusColor = '#EE6A6A'
-                            : bike.statusColor = '#EE6A6A'
+                                bike.active === 'true' ? bike.active = 'Ja' : bike.active = 'Nej'
 
-                            bike.active === 'true' ? bike.active = 'Ja' : bike.active = 'Nej'
-
-                            return <Bike 
-                                key={bike._id}
-                                city={bike.city}
-                                speed={bike.speed}
-                                battery={bike.battery}
-                                status={bike.status}
-                                statusColor={bike.statusColor}
-                                active={bike.active}
-                            />
+                                return <Bike 
+                                    key={bike._id}
+                                    city={bike.city}
+                                    speed={bike.speed}
+                                    battery={bike.battery}
+                                    status={bike.status}
+                                    statusColor={bike.statusColor}
+                                    active={bike.active}
+                                />
                             })}
                         </table>
                     </div>
                 </div>
                 <div className="map__wrapper">
-                    <Map />
+                    <Map positionData={bikes}/>
                 </div>
             </div>
         </>

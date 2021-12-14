@@ -9,11 +9,10 @@ import './css/Global.css'
 import Bikes from './pages/Bikes/Bikes'
 import Charging from './pages/Stations/Stations'
 import Logout from '../login/Logout'
-import Customers from './pages/Customers.js'
+import Customers from './pages/Customers/Customers.js'
 import NavTemp from '../global/Nav'
 
 function AdminApp() {
-  // Global city state
   const [city, setCity] = useState('Stockholm');
 
   const updateCity = city => {
