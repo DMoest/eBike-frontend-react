@@ -18,8 +18,61 @@
 .split__left {
     background: #1D1E22;
     color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.split__logo {
+    max-width: 100px;
+}
+
+.split__bg-logo {
+    position: absolute;
+    height: 150%;
+    right: 0;
 }
 
 .form__wrapper {
-    width: 75%;
+    width: 50%;
+}
+
+.form__main {
+    background: none;
+    padding: none;
+    border: none;
+    margin: none;
+    width: 65%;
+}
+
+.form__input {
+    border: none;
+    border-bottom: 1px solid #000;
+    outline: none;
+    font-size: 1em;
+    padding-bottom: 5px;
+    margin-bottom: 30px;
+    opacity: 0.5;
+}
+
+.form__active {
+    opacity: 1 !important;
+}
+
+.form__btn-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.form__btn-wrapper p {
+    font-size: 0.8em;
+}
+
+.form__button {
+    background: #2BB786;
+    border-radius: 4px;
+    color: #fff;
 }
