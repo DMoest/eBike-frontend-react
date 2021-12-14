@@ -1,0 +1,25 @@
+.split__wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+}
+
+.split__left,
+.split__right {
+    width: 50%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.split__left {
+    background: #1D1E22;
+    color: #fff;
+}
+
+.form__wrapper {
+    width: 75%;
+}
