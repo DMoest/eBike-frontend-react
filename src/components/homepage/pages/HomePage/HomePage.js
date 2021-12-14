@@ -1,4 +1,5 @@
-import React from 'react'
+import { NavLink } from 'react-router-dom'
+import DocumentTitle from 'react-document-title'
 
 // CSS
 import './HomePage.css';
@@ -15,18 +16,19 @@ function HomePage() {
     return (
         <>
             <div className="home-hero__outer-wrapper">
+                <DocumentTitle title='Hem' ></DocumentTitle>
                 <div className="home__container">
                     <div className="home-hero__nav-wrapper">
                         <div className="hero__brand">
                             <img src={logo} className="hero__logo" alt="Ebike logo"/>Ebike
                         </div>
                         <div className="home-hero__nav-center-wrapper">
-                            <a href="#" className="home-nav__link">Home</a>
-                            <a href="#" className="home-nav__link">Om</a>
-                            <a href="#" className="home-nav__link">Rapport</a>
+                            <NavLink to="/" className="home-nav__link">Hem</NavLink>
+                            <NavLink to="/" className="home-nav__link">Om</NavLink>
+                            <NavLink to="/" className="home-nav__link">Rapport</NavLink>
                         </div>
                         <div className="home-hero__nav-right-wrapper">
-                            <a href="#" className="home-nav__link">Logga in</a>
+                            <NavLink to="/login" className="home-nav__link">Logga in</NavLink>
                         </div>
                     </div>
                     <div className="home-hero__content-outer-wrapper">
