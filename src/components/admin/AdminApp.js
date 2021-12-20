@@ -1,36 +1,35 @@
-import './css/App.css';
-import './css/Other.css'
 import { Route, Routes } from 'react-router-dom'
+import { useState } from 'react'
 
-// Pages
-import Home from './pages/Home'
-import About from './pages/About'
-import Cities from './pages/Cities'
-import Bikes from './pages/Bikes'
-import Charging from './pages/Charging'
+// CSS
+import './css/App.css';
+import './css/Global.css'
+
+// Page components
+import Bikes from './pages/Bikes/Bikes'
+import Charging from './pages/Stations/Stations'
 import Logout from '../login/Logout'
-
-// For the single city page. Needed?
-import CitySingle from './pages/CitySingle'
-
-// Global components
-import Nav from './global/Nav'
-
-// TODO: Figure out global state
+import Customers from './pages/Customers/Customers.js'
+import NavTemp from '../global/Nav'
 
 function AdminApp() {
+  const [city, setCity] = useState('Stockholm');
+
+  const updateCity = city => {
+    setCity(city);
+  }
+
   return (
     <div className="App">
-      <Nav />
-      <Routes>
-        <Route path="/home" element={ <Home /> }/>
-        <Route path="/about" element={ <About /> }/>
-        <Route path="/cities" element={ <Cities /> }/>
-        <Route path="/cities/:city" element={ <CitySingle />}/>
-        <Route path="/bikes" element={ <Bikes /> }/>
-        <Route path="/charging" element={ <Charging />}/>
-        <Route path="/logout" element={ <Logout />}/>
-      </Routes>
+      <NavTemp />
+      <div className="container__main">
+        <Routes>
+          <Route path="/" element={ <Bikes city={city} updateCity={updateCity}/> }/>
+          <Route path="/charging" element={ <Charging city={city} updateCity={updateCity}/>}/>
+          <Route path="/customers" element={ <Customers city={city} updateCity={updateCity}/> }/>
+          <Route path="/logout" element={ <Logout />}/>
+        </Routes>
+      </div>
     </div>
   );
 }

@@ -1,0 +1,50 @@
+.hero__outer-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0px;
+}
+
+.data-map__wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.data__wrapper {
+    width: 45vw;
+    padding: 25px;
+}
+
+.map__wrapper {
+    max-width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+.data__inner-wrapper {
+    margin-top: 50px;
+}
+
+.data__table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.data__table tr th {
+    text-align: left;
+    padding-bottom: 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.data__table tr td {
+    padding: 15px 0px;
+}
+
+.data__table tr:nth-child(even) {
+    background-color: #F7F8F8;
+}
