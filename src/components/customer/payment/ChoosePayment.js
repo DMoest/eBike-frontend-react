@@ -7,7 +7,7 @@ import { Elements } from "@stripe/react-stripe-js";
 import PaymentForm from "./PaymentForm"; // not implemented yet
 const url = "http://127.0.0.1:8000";
 
-const stripePromise = loadStripe(process.env.STRIPE_KEY);
+const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 
 class ChoosePayment extends React.Component {
     constructor(props) {
@@ -78,46 +78,47 @@ class ChoosePayment extends React.Component {
     }
 
     render() {
-        console.log("lol", this.state.user.payment_method )
+        console.log("betalningsmetod", this.state.user.payment_method,  )
         let renderContainer = false;
-        let chosen;
-        if (this.state.active === "month") {
-          chosen = (
-            <div class="flex-box chosen">
-            <p>Du betalar nu alla dina resor en gång i månaden.</p>
-            </div>
-          )
-        } else if (this.state.active === "credit") {
-            chosen = (
-              <div class="flex-box chosen">
-              <p>Fyll på ditt saldo med den valda summan</p>
-              <div class="price" onChange={(e) => this.setState({price: e.target.value})}>
-                  <label  style={{backgroundColor: "#ffdb99"}}  class="radiobtn"><input type="radio" value="100" name="price" /> 100 kr</label><br/>
-                  <label  style={{backgroundColor: "#ffc966"}} class="radiobtn"><input type="radio" value="250" name="price" /> 250 kr</label><br/>
-                  <label  style={{backgroundColor: "#ffb732"}} class="radiobtn"><input type="radio" value="500" name="price" /> 500 kr</label>
-              </div>
-              <Elements stripe={stripePromise}>
-                  <PaymentForm price={this.state.price} parentCallback={this.handlePay}/>
-              </Elements>
-              </div>
-            )
-          } else if (this.state.active === "agree") {
+        if(this.state.render) {
+            let chosen;
+            if (this.state.active === "month") {
               chosen = (
                 <div class="flex-box chosen">
-                    <button class="pay-btn" onClick={async () => {await this.setState({consent: true}); this.chooseMonth()}}>Jag godkänner att jag förlorar mitt saldo</button>
+                <p>Du betalar nu alla dina resor en gång i månaden.</p>
                 </div>
               )
-        } else {
-          chosen = (
-            <div>
-            <p>Du kan välja mellan att betala alla dina resor en gång i månaden</p>
-            <p>eller så kan du fylla på ditt saldo, då kan du betala dina resor och åka tills saldot är slut. </p>
-            <p>För att byta till saldo från månadsbetalning måste du ha betalat månadens faktura.</p>
-            </div>
-          )
-        }
-        if(this.state.render) {
-           renderContainer =
+            } else if (this.state.active === "credit") {
+                chosen = (
+                  <div class="flex-box chosen">
+                  <p>Fyll på ditt saldo med den valda summan</p>
+                  <div class="price" onChange={(e) => this.setState({price: e.target.value})}>
+                      <label  style={{backgroundColor: "#ffdb99"}}  class="radiobtn"><input type="radio" value="100" name="price" /> 100 kr</label><br/>
+                      <label  style={{backgroundColor: "#ffc966"}} class="radiobtn"><input type="radio" value="250" name="price" /> 250 kr</label><br/>
+                      <label  style={{backgroundColor: "#ffb732"}} class="radiobtn"><input type="radio" value="500" name="price" /> 500 kr</label>
+                  </div>
+                  <Elements stripe={stripePromise}>
+                      <PaymentForm price={this.state.price} parentCallback={this.handlePay}/>
+                  </Elements>
+                  </div>
+                )
+              } else if (this.state.active === "agree") {
+                  chosen = (
+                    <div class="flex-box chosen">
+                        <button class="pay-btn" onClick={async () => {await this.setState({consent: true}); this.chooseMonth()}}>Jag godkänner att jag förlorar mitt saldo</button>
+                    </div>
+                  )
+            } else {
+              chosen = (
+                <div>
+                    <p>Du kan välja mellan att betala alla dina resor en gång i månaden</p>
+                    <p>eller så kan du fylla på ditt saldo, då kan du betala dina resor och åka tills saldot är slut. </p>
+                    <p>För att byta till saldo från månadsbetalning måste du ha betalat månadens faktura.</p>
+                </div>
+              )
+            }
+
+            renderContainer =
               <div class="payment-container">
                   {chosen}
                   <button className={this.state.active} onClick={this.chooseCredit}>Betala med saldo</button>

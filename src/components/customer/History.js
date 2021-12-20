@@ -85,13 +85,13 @@ class History extends React.Component {
                  <div className="trips-container">
                      {this.state.trips.map((trip) => {
                            return <div className="trips-div">
-                               <p>Cykel-id: {trip.bike_id}</p><br />
-                               <p>Stad: {trip.city}</p><br />
-                               <p>Datum: {trip.date}</p><br />
-                               <p>Start: {trip.start_spot}, {trip.start_time}</p><br />
-                               <p>Stop: {trip.stop_spot}, {trip.stop_time}</p><br />
-                               <p>Pris: {trip.price} kr</p><br />
-                               <p>Status: {trip.status}</p>
+                               <p>Cykel-id <br/> {trip.bike_id}</p><br />
+                               <p>Stad <br/> {trip.city}</p><br />
+                               <p>Datum <br/> {trip.date}</p><br />
+                               <p>Start <br/> {trip.start_spot} <br /> {trip.start_time}</p><br />
+                               <p>Stop <br/> {trip.stop_spot} <br /> {trip.stop_time}</p><br />
+                               <p>Pris <br/> {trip.price} kr</p><br />
+                               <p>Status <br/> {trip.status}</p>
                            </div>
                        })}
                    </div>
