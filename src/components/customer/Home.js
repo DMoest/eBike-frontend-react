@@ -28,7 +28,7 @@ class Home extends React.Component {
         let renderContainer = false;
         if (this.state.render) {
             let user = this.state.user.payment_method;
-            console.log(user[1])
+            // console.log(user[1])
             if (this.state.user.payment_method[0] === "credit") {
               user = (
                 <div>

@@ -3,14 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
     "@stripe/react-stripe-js": "^1.6.0",
     "@stripe/stripe-js": "^1.21.1",
+    "@testing-library/user-event": "^12.1.10",
     "axios": "^0.24.0",
-    "node-sass": "^6.0.1",
     "leaflet": "^1.7.1",
+    "node-sass": "^6.0.1",
     "react": "^17.0.2",
     "react-document-title": "^2.0.3",
     "react-dom": "^17.0.2",
@@ -24,13 +22,12 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --silent",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
-      "react-app",
-      "react-app/jest"
+      "react-app"
     ]
   },
   "browserslist": [
@@ -38,5 +35,10 @@
     "not dead",
     "not op_mini all"
   ],
-  "homepage": "https://dmoest.github.io/eBike-frontend-react/build"
+  "homepage": "https://dmoest.github.io/eBike-frontend-react/build",
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^11.2.7",
+    "react-test-renderer": "^17.0.2"
+  }
 }
