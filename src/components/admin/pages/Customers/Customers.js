@@ -16,11 +16,22 @@ function Customers({ city }) {
     useEffect(() => {
         axios.get(url).then((res) => {
           setCustomers(res.data.users)
-          console.log(res.data.users)
         }).catch((err) => {
             console.log(err)
         });
-    }, [url])
+    }, [customers])
+
+    // Deletes a customer
+    const handleDeleteCustomers = (customers) => {
+        // axios.delete(url + '/' + customers._id).then((res) => {
+        //     console.log(res)
+        //     setCustomers(customers.filter((customer) => customer._id !== customers._id))
+        // }).catch((err) => {
+        //     console.log(err)
+        // })
+
+        console.log("Customer deleted")
+    }
 
     return (
         <div className="data__wrapper fullwidth">
@@ -41,6 +52,7 @@ function Customers({ city }) {
                                 <th>Email</th>
                                 <th>Betalningsmetod</th>
                                 <th>Betalningsstatus</th>
+                                <th> </th>
                             </tr>
                             {customers.map((customer) => {
                                 if (customer.city === city) {
@@ -55,6 +67,7 @@ function Customers({ city }) {
                                         email={customer.email}
                                         paymentMethod={customer.payment_method}
                                         paymentStatus={customer.payment_status}
+                                        handleDeleteCustomers={handleDeleteCustomers}
                                     />
                                 }
                             })}
