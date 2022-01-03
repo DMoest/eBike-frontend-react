@@ -18,7 +18,6 @@ function AdminApp() {
   // Is this type of handling needed?
   function handleSetCity (city) {
     setCity(city);
-    console.log(city);
   }
 
   return (

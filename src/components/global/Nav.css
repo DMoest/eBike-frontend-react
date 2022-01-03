@@ -27,7 +27,7 @@
     width: 100%;
 }
 
-.menu-item__active {
+.active {
     background: #333842;
 }
 
