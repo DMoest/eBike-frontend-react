@@ -19,7 +19,7 @@ function Customers({ city }) {
         }).catch((err) => {
             console.log(err)
         });
-    }, [customers])
+    }, [customers, url])
 
     // Deletes a customer
     const handleDeleteCustomers = (customers) => {
