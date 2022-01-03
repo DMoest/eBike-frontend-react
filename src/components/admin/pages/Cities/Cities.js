@@ -9,7 +9,7 @@ import '../../css/App.css';
 import City from './City';
 import Header from '../../components/global/Header';
 
-function Cities() {
+function Cities({ city }) {
     const url = process.env.REACT_APP_API_BASE_URL + '/api/city';
     const [cities, setCities] = useState([]);
 
@@ -25,14 +25,16 @@ function Cities() {
             <DocumentTitle title='Städer' ></DocumentTitle>
             <Header title="Städer"/>
             <div className="city__grid">
-                { cities.map((city) => {
-                    return <City key={city._id}
-                        name={city.name}
-                        // desc={city.desc}
-                        // bikes={city.bikes}
-                        // charge={city.charge}
-                        // customers={city.customers}
-                    />
+                { cities.map((cityData) => {
+                    if (cityData.name === city) {
+                        return <City key={cityData._id}
+                            name={cityData.name}
+                            // desc={city.desc}
+                            // bikes={city.bikes}
+                            // charge={city.charge}
+                            // customers={city.customers}
+                        />
+                    }
                 }) }
             </div>
         </div>

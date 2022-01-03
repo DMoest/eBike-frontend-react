@@ -8,7 +8,7 @@ import DocumentTitle from 'react-document-title'
 
 import './Customers.css'
 
-function Customers() {
+function Customers({ city }) {
     const url = process.env.REACT_APP_API_BASE_URL + "/api/user"
     const [customers, setCustomers] = useState([])
 
@@ -43,18 +43,20 @@ function Customers() {
                                 <th>Betalningsstatus</th>
                             </tr>
                             {customers.map((customer) => {
-                                return <Customer 
-                                    key={customer._id}
-                                    firstname={customer.firstname}
-                                    lastname={customer.lastname}
-                                    adress={customer.adress}
-                                    postcode={customer.postcode}
-                                    city={customer.city}
-                                    phone={customer.phone}
-                                    email={customer.email}
-                                    paymentMethod={customer.payment_method}
-                                    paymentStatus={customer.payment_status}
-                                />
+                                if (customer.city === city) {
+                                    return <Customer 
+                                        key={customer._id}
+                                        firstname={customer.firstname}
+                                        lastname={customer.lastname}
+                                        adress={customer.adress}
+                                        postcode={customer.postcode}
+                                        city={customer.city}
+                                        phone={customer.phone}
+                                        email={customer.email}
+                                        paymentMethod={customer.payment_method}
+                                        paymentStatus={customer.payment_status}
+                                    />
+                                }
                             })}
                         </table>
                     </div>

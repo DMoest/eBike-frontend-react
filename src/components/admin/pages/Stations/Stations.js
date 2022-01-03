@@ -8,7 +8,7 @@ import ChargingStation from './StationSingle'
 import Map from '../../components/maps/Map'
 import BtnMap from '../../components/global/BtnMap'
 
-function Stations({city, updateCity}) {
+function Stations({ city }) {
     const url = process.env.REACT_APP_API_BASE_URL + "/api/station"
     const [stations, setStations] = useState([])
 
@@ -41,14 +41,16 @@ function Stations({city, updateCity}) {
                                 <th>Aktiva</th>
                             </tr>
                             {stations.map((station) => {
-                                return <ChargingStation key={station._id}
-                                    // id={station._id}
-                                    city={station.city}
-                                    capacity={station.capacity}
-                                    address={station.adress}
-                                    postcode={station.postcode}
-                                    active={station.active}
-                                />
+                                if (station.city === city) {
+                                    return <ChargingStation key={station._id}
+                                        // id={station._id}
+                                        city={station.city}
+                                        capacity={station.capacity}
+                                        address={station.adress}
+                                        postcode={station.postcode}
+                                        active={station.active}
+                                    />
+                                }  
                             })}
                         </table>
                     </div>

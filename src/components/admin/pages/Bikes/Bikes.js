@@ -8,7 +8,7 @@ import Header from '../../components/global/Header'
 import Map from '../../components/maps/Map'
 import BtnMap from '../../components/global/BtnMap'
 
-function Bikes({city, updateCity}) {
+function Bikes({ city }) {
     const url = process.env.REACT_APP_API_BASE_URL + "/api/bike"
     const [bikes, setBikes] = useState([])
     const [showMap, setShowMap] = useState(false)
@@ -48,7 +48,8 @@ function Bikes({city, updateCity}) {
 
                                 bike.active === 'true' ? bike.active = 'Ja' : bike.active = 'Nej'
 
-                                return <Bike 
+                                if (bike.city === city) {
+                                    return <Bike 
                                     key={bike._id}
                                     city={bike.city}
                                     speed={bike.speed}
@@ -56,7 +57,8 @@ function Bikes({city, updateCity}) {
                                     status={bike.status}
                                     statusColor={bike.statusColor}
                                     active={bike.active}
-                                />
+                                    />
+                                }
                             })}
                         </table>
                     </div>
