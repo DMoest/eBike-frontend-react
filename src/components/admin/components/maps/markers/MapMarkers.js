@@ -23,17 +23,18 @@ function MapMarkers({props}) {
             let bounds = map.getBounds();
                 let bikesWithinBounds = [];
     
-                let s = bounds.getSouth();
-                let n = bounds.getNorth();
-                let w = bounds.getWest();
-                let e = bounds.getEast();
+                let south = bounds.getSouth();
+                let north = bounds.getNorth();
+                let west = bounds.getWest();
+                let east = bounds.getEast();
                 
                 for (let bike of data.bikes) {
-                    if (bike.latitude >= s &&
-                        bike.latitude <= n &&
-                        bike.longitude >= w &&
-                        bike.longitude <= e) {
-                            bikesWithinBounds.push(bike);
+                    if (bike.latitude >= south &&
+                        bike.latitude <= north &&
+                        bike.longitude >= west &&
+                        bike.longitude <= east) 
+                    {
+                        bikesWithinBounds.push(bike);
                     }
     
                 }
@@ -48,6 +49,8 @@ function MapMarkers({props}) {
         const fetchDataInterval = setInterval(() => {
             fetchData();
         }, 10000);
+
+        console.log(markers)
 
         // Clearing is needed
         return () => clearInterval(fetchDataInterval);
@@ -66,7 +69,8 @@ function MapMarkers({props}) {
 
                     return <Marker position={[marker.latitude, marker.longitude]} icon={icon} key={marker._id}>
                         <Popup>
-                            Lat: { marker.latitude } 
+                            ID: { marker._id }
+                            <br /> Lat: { marker.latitude } 
                             <br /> Lan: { marker.longitude }
                             <br /> Battery: { marker.battery }
                             <br /> Speed: { marker.speed }
