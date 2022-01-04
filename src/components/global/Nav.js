@@ -15,13 +15,13 @@ function Nav({ handleSetCity }) {
                 <img src={icon__logo} alt={icon__logo}/>
             </div>
             <div className="nav-left__menu-wrapper">
-                <NavLink to="/" className="nav-left__menu-item" activeClassName="active">
+                <NavLink to="/" className="nav-left__menu-item">
                     <img src={icon__scooter} alt={icon__scooter} className="nav-left__menu-item-icon" />
                 </NavLink>
-                <NavLink to="/charging" className="nav-left__menu-item" activeClassName="active">
+                <NavLink to="/charging" className="nav-left__menu-item">
                     <img src={icon__charge} alt={icon__charge} className="nav-left__menu-item-icon" />
                 </NavLink>
-                <NavLink to="/customers" className="nav-left__menu-item" activeClassName="active">
+                <NavLink to="/customers" className="nav-left__menu-item">
                     <img src={icon__profile} alt={icon__profile} className="nav-left__menu-item-icon" />
                 </NavLink>
                 <button classNam="btn__city" onClick={() => handleSetCity('Stockholm')}>Stockholm</button>

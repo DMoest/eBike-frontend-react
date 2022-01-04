@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 // import L from 'leaflet';
-import { Polygon, useMap } from 'react-leaflet'
+import { Polygon } from 'react-leaflet'; //, useMap
 // import MarkerClusterGroup from 'react-leaflet-markercluster';
 
 function ParkingZones() {
@@ -26,7 +26,7 @@ function ParkingZones() {
     return (
         <div>
             { markers.map((marker) => {
-                return <Polygon pathOptions={ {color: 'green'} } positions={[
+                return <Polygon key={marker._id} pathOptions={ {color: 'green'} } positions={[
                     [marker.ne_latitude, marker.ne_longitude],
                     [marker.se_latitude, marker.se_longitude],
                     [marker.sw_latitude, marker.sw_longitude],

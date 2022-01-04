@@ -9,18 +9,29 @@ import Map from '../../components/maps/Map'
 import BtnMap from '../../components/global/BtnMap'
 
 function Bikes({ city }) {
-    const url = process.env.REACT_APP_API_BASE_URL + "/api/bike"
-    const [bikes, setBikes] = useState([])
-    const [showMap, setShowMap] = useState(false)
+    const url = process.env.REACT_APP_API_BASE_URL + "/api/bike/city/" + city;
+    const [bikes, setBikes] = useState([]);
 
-    // API call
+    // Getting bikes
+    const getBikes = async () => {
+        try {
+            const res = await axios.get(url);
+            setBikes(res.data.bikes);
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
     useEffect(() => {
-        axios.get(url).then((res) => {
-          setBikes(res.data.bikes)
-        }).catch((err) => {
-            console.log(err)
-        });
-    }, [url])
+        getBikes();
+
+        const fetchDataInterval = setInterval(() => {
+            getBikes();
+            console.log('New positions set');
+        }, 10000);
+
+        return () => clearInterval(fetchDataInterval);
+    }, [city]);
 
     return (
         <>
@@ -41,30 +52,35 @@ function Bikes({ city }) {
                             </tr>
                             {bikes.map((bike) => {
                                 // Set bike status color
-                                bike.status === 'available' ? bike.statusColor = '#28C941' 
+                                bike.status === 'available' ? bike.statusColor = '#28C941'
                                 : bike.status === 'in_service' ? bike.statusColor = '#F4D25E'
                                 : bike.status === 'broken' ? bike.statusColor = '#EE6A6A'
-                                : bike.statusColor = '#EE6A6A'
+                                : bike.statusColor = '#EE6A6A';
 
-                                bike.active === 'true' ? bike.active = 'Ja' : bike.active = 'Nej'
+                                // Set bike status in Swedish
+                                bike.status === 'available' ? bike.status_swedish = 'Tillgänglig'
+                                : bike.status === 'in_service' ? bike.status_swedish = 'Repereras'
+                                : bike.status === 'broken' ? bike.status_swedish = 'Ur funktion'
+                                : bike.status_swedish = 'Ingen information';
 
-                                if (bike.city === city) {
-                                    return <Bike 
+                                // Set bike active in Swedish
+                                bike.active === 'true' ? bike.active = 'Ja' : bike.active = 'Nej';
+
+                                return <Bike 
                                     key={bike._id}
                                     city={bike.city}
                                     speed={bike.speed}
                                     battery={bike.battery}
-                                    status={bike.status}
+                                    status={bike.status_swedish}
                                     statusColor={bike.statusColor}
                                     active={bike.active}
-                                    />
-                                }
+                                />
                             })}
                         </table>
                     </div>
                 </div>
                 <div className="map__wrapper map__hidden">
-                    <Map positionData={bikes}/>
+                    <Map type={'bike'} data={bikes} city={city} />
                 </div>
             </div>
         </>

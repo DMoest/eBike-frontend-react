@@ -9,7 +9,7 @@ import DocumentTitle from 'react-document-title'
 import './Customers.css'
 
 function Customers({ city }) {
-    const url = process.env.REACT_APP_API_BASE_URL + "/api/user"
+    const url = process.env.REACT_APP_API_BASE_URL + "/api/user/city/" + city;
     const [customers, setCustomers] = useState([])
 
     // API call
@@ -23,14 +23,20 @@ function Customers({ city }) {
 
     // Deletes a customer
     const handleDeleteCustomers = (customers) => {
-        // axios.delete(url + '/' + customers._id).then((res) => {
+        // axios.request({
+        //     method: 'DELETE',
+        //     url: url,
+        //     data: {
+        //         _id: customers._id
+        //     }
+        // }).then(res => {
         //     console.log(res)
         //     setCustomers(customers.filter((customer) => customer._id !== customers._id))
-        // }).catch((err) => {
+        // }).catch(err => {
         //     console.log(err)
         // })
 
-        console.log("Customer deleted")
+        console.log("Customer deleted", customers)
     }
 
     return (
