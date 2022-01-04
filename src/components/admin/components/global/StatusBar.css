@@ -1,0 +1,20 @@
+.statusbar__outer-wrapper {
+    position: fixed;
+    width: 95vw;
+    height: 100vh;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    pointer-events: none;
+}
+
+.statusbar__inner-wrapper {
+    background: #1D1E22;
+    border-radius: 4px;
+    color: #fff;
+    background: #1D1E22;
+    align-self: flex-end;
+    padding: 15px;
+    margin: 25px;
+}

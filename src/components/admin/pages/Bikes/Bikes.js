@@ -7,6 +7,8 @@ import Bike from './BikeSingle'
 import Header from '../../components/global/Header'
 import Map from '../../components/maps/Map'
 import BtnMap from '../../components/global/BtnMap'
+import StatusBar from '../../components/global/StatusBar'
+
 
 function Bikes({ city }) {
     const url = process.env.REACT_APP_API_BASE_URL + "/api/bike/city/" + city;
@@ -36,7 +38,8 @@ function Bikes({ city }) {
     return (
         <>
             <DocumentTitle title='Cyklar' ></DocumentTitle>
-            <BtnMap/>
+            <BtnMap />
+            <StatusBar city={city} />
             <div className="data-map__wrapper">
                 <div className="data__wrapper">
                     <Header title="Cyklar"/>
