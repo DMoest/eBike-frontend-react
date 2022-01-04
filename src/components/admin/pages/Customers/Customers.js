@@ -1,23 +1,23 @@
-import { useState, useEffect } from 'react'
-import axios from 'axios'
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 // Components
-import Customer from './CustomerSingle'
+import Customer from './CustomerSingle';
 import Header from '../../components/global/Header';
-import DocumentTitle from 'react-document-title'
+import DocumentTitle from 'react-document-title';
 
 import './Customers.css'
 
 function Customers({ city }) {
     const url = process.env.REACT_APP_API_BASE_URL + "/api/user/city/" + city;
-    const [customers, setCustomers] = useState([])
+    const [customers, setCustomers] = useState([]);
 
     // API call
     useEffect(() => {
         axios.get(url).then((res) => {
-          setCustomers(res.data.users)
+          setCustomers(res.data.users);
         }).catch((err) => {
-            console.log(err)
+            console.log(err);
         });
     }, [customers, url])
 
@@ -37,7 +37,7 @@ function Customers({ city }) {
         // })
 
         console.log("Customer deleted", customers)
-    }
+    };
 
     return (
         <div className="data__wrapper fullwidth">
@@ -61,21 +61,19 @@ function Customers({ city }) {
                                 <th> </th>
                             </tr>
                             {customers.map((customer) => {
-                                if (customer.city === city) {
-                                    return <Customer 
-                                        key={customer._id}
-                                        firstname={customer.firstname}
-                                        lastname={customer.lastname}
-                                        adress={customer.adress}
-                                        postcode={customer.postcode}
-                                        city={customer.city}
-                                        phone={customer.phone}
-                                        email={customer.email}
-                                        paymentMethod={customer.payment_method}
-                                        paymentStatus={customer.payment_status}
-                                        handleDeleteCustomers={handleDeleteCustomers}
-                                    />
-                                }
+                                return <Customer 
+                                    key={customer._id}
+                                    firstname={customer.firstname}
+                                    lastname={customer.lastname}
+                                    adress={customer.adress}
+                                    postcode={customer.postcode}
+                                    city={customer.city}
+                                    phone={customer.phone}
+                                    email={customer.email}
+                                    paymentMethod={customer.payment_method}
+                                    paymentStatus={customer.payment_status}
+                                    handleDeleteCustomers={handleDeleteCustomers}
+                                />
                             })}
                         </table>
                     </div>

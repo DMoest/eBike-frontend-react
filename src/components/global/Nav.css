@@ -43,6 +43,16 @@
     font-size: 12px;
 }
 
+.nav-left__btn-city-wrapper {
+    position: relative;
+}
+
+.nav-left__city-menu {
+    position: absolute;
+    z-index: 99;
+    left: 5vw;
+}
+
 @media(max-width: 1000px) {
     .nav-left__outer-wrapper {
         position: static;

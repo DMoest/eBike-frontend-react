@@ -11,30 +11,30 @@ function BikeMarkers({ data }) {
 
     let map = useMap();
 
-    function getMarkersWithinBounds(data) {
-        let bounds = map.getBounds();
-        let bikesWithinBounds = [];
-
-        let south = bounds.getSouth();
-        let north = bounds.getNorth();
-        let west = bounds.getWest();
-        let east = bounds.getEast();
-        
-        for (let bike of data) {
-            if (bike.latitude >= south &&
-                bike.latitude <= north &&
-                bike.longitude >= west &&
-                bike.longitude <= east) 
-            {
-                bikesWithinBounds.push(bike);
+    useEffect(() => {
+        function getMarkersWithinBounds(data) {
+            let bounds = map.getBounds();
+            let bikesWithinBounds = [];
+    
+            let south = bounds.getSouth();
+            let north = bounds.getNorth();
+            let west = bounds.getWest();
+            let east = bounds.getEast();
+            
+            for (let bike of data) {
+                if (bike.latitude >= south &&
+                    bike.latitude <= north &&
+                    bike.longitude >= west &&
+                    bike.longitude <= east) 
+                {
+                    bikesWithinBounds.push(bike);
+                }
+    
             }
-
+    
+            return bikesWithinBounds;
         }
 
-        return bikesWithinBounds;
-    }
-
-    useEffect(() => {
         let markers = getMarkersWithinBounds(data);
         setMarkers(markers);
         console.log('Markers set') 

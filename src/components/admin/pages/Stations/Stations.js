@@ -48,16 +48,14 @@ function Stations({ city }) {
                                 <th>Aktiva</th>
                             </tr>
                             {stations.map((station) => {
-                                if (station.city === city) {
-                                    return <ChargingStation key={station._id}
-                                        // id={station._id}
-                                        city={station.city}
-                                        capacity={station.capacity}
-                                        address={station.adress}
-                                        postcode={station.postcode}
-                                        active={station.active}
-                                    />
-                                }  
+                                return <ChargingStation key={station._id}
+                                    // id={station._id}
+                                    city={station.city}
+                                    capacity={station.capacity}
+                                    address={station.adress}
+                                    postcode={station.postcode}
+                                    active={station.active}
+                                />
                             })}
                         </table>
                     </div>
