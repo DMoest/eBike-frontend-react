@@ -8,19 +8,36 @@ import DocumentTitle from 'react-document-title'
 
 import './Customers.css'
 
-function Customers() {
-    const url = process.env.REACT_APP_API_BASE_URL + "/api/user"
+function Customers({ city }) {
+    const url = process.env.REACT_APP_API_BASE_URL + "/api/user/city/" + city;
     const [customers, setCustomers] = useState([])
 
     // API call
     useEffect(() => {
         axios.get(url).then((res) => {
           setCustomers(res.data.users)
-          console.log(res.data.users)
         }).catch((err) => {
             console.log(err)
         });
-    }, [url])
+    }, [customers, url])
+
+    // Deletes a customer
+    const handleDeleteCustomers = (customers) => {
+        // axios.request({
+        //     method: 'DELETE',
+        //     url: url,
+        //     data: {
+        //         _id: customers._id
+        //     }
+        // }).then(res => {
+        //     console.log(res)
+        //     setCustomers(customers.filter((customer) => customer._id !== customers._id))
+        // }).catch(err => {
+        //     console.log(err)
+        // })
+
+        console.log("Customer deleted", customers)
+    }
 
     return (
         <div className="data__wrapper fullwidth">
@@ -41,20 +58,24 @@ function Customers() {
                                 <th>Email</th>
                                 <th>Betalningsmetod</th>
                                 <th>Betalningsstatus</th>
+                                <th> </th>
                             </tr>
                             {customers.map((customer) => {
-                                return <Customer 
-                                    key={customer._id}
-                                    firstname={customer.firstname}
-                                    lastname={customer.lastname}
-                                    adress={customer.adress}
-                                    postcode={customer.postcode}
-                                    city={customer.city}
-                                    phone={customer.phone}
-                                    email={customer.email}
-                                    paymentMethod={customer.payment_method}
-                                    paymentStatus={customer.payment_status}
-                                />
+                                if (customer.city === city) {
+                                    return <Customer 
+                                        key={customer._id}
+                                        firstname={customer.firstname}
+                                        lastname={customer.lastname}
+                                        adress={customer.adress}
+                                        postcode={customer.postcode}
+                                        city={customer.city}
+                                        phone={customer.phone}
+                                        email={customer.email}
+                                        paymentMethod={customer.payment_method}
+                                        paymentStatus={customer.payment_status}
+                                        handleDeleteCustomers={handleDeleteCustomers}
+                                    />
+                                }
                             })}
                         </table>
                     </div>

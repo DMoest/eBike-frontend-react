@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Customer({ firstname, lastname, adress, postcode, city, phone, email, paymentMethod, paymentStatus }) {
+function Customer({ firstname, lastname, adress, postcode, city, phone, email, paymentMethod, paymentStatus, handleDeleteCustomers }) {
     return (
         <tr>
             <td>{firstname}</td>
@@ -12,6 +12,7 @@ function Customer({ firstname, lastname, adress, postcode, city, phone, email, p
             <td>{email}</td>
             <td>{paymentMethod}</td>
             <td>{paymentStatus}</td>
+            <td><button onClick={handleDeleteCustomers}>Ta bort</button></td>
         </tr>
     )
 }
