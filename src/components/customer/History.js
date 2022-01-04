@@ -23,7 +23,6 @@ class History extends React.Component {
             travels =  response.data.travels;
         });
         for (const trip of travels) {
-            console.log(trip)
             await this.getAddress("start", trip.start_longitude, trip.start_latitude)
             await this.getAddress("stop", trip.stop_longitude, trip.stop_latitude)
             let start = this.getDate(trip.created_at);
