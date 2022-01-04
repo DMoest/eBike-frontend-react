@@ -26,6 +26,11 @@
     padding: 25px 0px;
     width: 100%;
     cursor: pointer !important;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-left__menu-item:hover {
+    background: #333842;
 }
 
 .active {
