@@ -25,6 +25,7 @@
 .nav-left__menu-item {
     padding: 25px 0px;
     width: 100%;
+    cursor: pointer !important;
 }
 
 .active {
@@ -51,6 +52,12 @@
     position: absolute;
     z-index: 99;
     left: 5vw;
+    top: -50%;
+    background: #1D1E22;
+}
+
+.btn__city {
+
 }
 
 @media(max-width: 1000px) {
