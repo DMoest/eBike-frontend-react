@@ -1,6 +1,7 @@
 import axios from 'axios'
 import DocumentTitle from 'react-document-title'
 import { useState, useEffect } from 'react'
+import Lottie from 'react-lottie';
 
 // Components
 import Bike from './BikeSingle'
@@ -9,10 +10,13 @@ import Map from '../../components/maps/Map'
 import BtnMap from '../../components/global/BtnMap'
 import StatusBar from '../../components/global/StatusBar'
 
+// Lottie
+import loading__lottie from '../../assets/lottie/loading__lottie.json';
 
 function Bikes({ city }) {
     const url = process.env.REACT_APP_API_BASE_URL + "/api/bike/city/" + city;
     const [bikes, setBikes] = useState([]);
+    const [lottieIsStopped, setLottieIsStopped] = useState(true);
 
     // Getting bikes
     const getBikes = async () => {
@@ -30,10 +34,23 @@ function Bikes({ city }) {
         const fetchDataInterval = setInterval(() => {
             getBikes();
             console.log('New positions set');
+            setLottieIsStopped(false);
         }, 10000);
 
         return () => clearInterval(fetchDataInterval);
     }, [city]);
+
+    const defaultLottieOptions = {
+        loop: false,
+        autoplay: true,
+        animationData: loading__lottie,
+        rendererSettings: {
+          preserveAspectRatio: "xMidYMid slice"
+        }
+    };
+
+    defaultLottieOptions.onComplete = function() {
+    }
 
     return (
         <>
@@ -42,7 +59,22 @@ function Bikes({ city }) {
             <StatusBar city={city} />
             <div className="data-map__wrapper">
                 <div className="data__wrapper">
-                    <Header title="Cyklar"/>
+                    {/* <Header title="Cyklar"/> */}
+                    <div className="data__heading-wrapper">
+                        <h1 className="header__top">Cyklar</h1>
+                        <Lottie 
+                            options={defaultLottieOptions}
+                            height={30}
+                            width={30}
+                            isStopped={lottieIsStopped}
+                            eventListeners={[
+                                {
+                                  eventName: 'complete',
+                                  callback: () => setLottieIsStopped(true)
+                                }
+                            ]}
+                        />
+                    </div>
                     
                     <div className="data__inner-wrapper">
                         <table className="data__table">

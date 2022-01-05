@@ -48,3 +48,14 @@
 .data__table tr:nth-child(even) {
     background-color: #F7F8F8;
 }
+
+.data__heading-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+[role="button"]{
+    margin: 0 !important;
+}
