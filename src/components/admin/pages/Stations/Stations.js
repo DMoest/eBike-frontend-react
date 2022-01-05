@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import DocumentTitle from 'react-document-title';
 import axios from 'axios';
-import Lottie from 'react-lottie';
 
 // Components
 import Header from '../../components/global/Header';
@@ -23,7 +22,6 @@ function Stations({ city }) {
         }
     };
 
-    // API call
     useEffect(() => {
         getStations();
     }, [city]);

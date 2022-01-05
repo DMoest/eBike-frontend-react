@@ -62,10 +62,6 @@
     border-radius: 4px;
 }
 
-.btn__city {
-
-}
-
 @media(max-width: 1000px) {
     .nav-left__outer-wrapper {
         position: static;

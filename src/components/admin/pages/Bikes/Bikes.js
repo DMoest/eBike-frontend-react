@@ -5,12 +5,11 @@ import Lottie from 'react-lottie';
 
 // Components
 import Bike from './BikeSingle'
-import Header from '../../components/global/Header'
 import Map from '../../components/maps/Map'
 import BtnMap from '../../components/global/BtnMap'
 import StatusBar from '../../components/global/StatusBar'
 
-// Lottie
+// Lottie animations
 import loading__lottie from '../../assets/lottie/loading__lottie.json';
 
 function Bikes({ city }) {
@@ -18,7 +17,6 @@ function Bikes({ city }) {
     const [bikes, setBikes] = useState([]);
     const [lottieIsStopped, setLottieIsStopped] = useState(true);
 
-    // Getting bikes
     const getBikes = async () => {
         try {
             const res = await axios.get(url);
@@ -40,6 +38,7 @@ function Bikes({ city }) {
         return () => clearInterval(fetchDataInterval);
     }, [city]);
 
+    // Lottie animation options
     const defaultLottieOptions = {
         loop: false,
         autoplay: true,
@@ -48,7 +47,25 @@ function Bikes({ city }) {
           preserveAspectRatio: "xMidYMid slice"
         }
     };
-    
+
+    function getBikeStatusColor(bike) {
+        return bike.status === 'available' ? '#28C941'
+        : bike.status === 'in_service' ? '#F4D25E'
+        : bike.status === 'broken' ? '#EE6A6A'
+        : '#EE6A6A';
+    }
+
+    function getBikeStatusSwedish(bike) {
+        return bike.status === 'available' ? 'Tillgänglig'
+        : bike.status === 'in_service' ? 'Repereras'
+        : bike.status === 'broken' ? 'Ur funktion'
+        : 'Ingen information';
+    }
+
+    function getBikeActiveSwedish(bike) {
+        return bike.active === 'true' ? 'Ja' : 'Nej';
+    }
+
     return (
         <>
             <DocumentTitle title='Cyklar' ></DocumentTitle>
@@ -56,7 +73,6 @@ function Bikes({ city }) {
             <StatusBar city={city} />
             <div className="data-map__wrapper">
                 <div className="data__wrapper">
-                    {/* <Header title="Cyklar"/> */}
                     <div className="data__heading-wrapper">
                         <h1 className="header__top">Cyklar</h1>
                         <Lottie 
@@ -83,20 +99,9 @@ function Bikes({ city }) {
                                 <th>Aktiv</th>
                             </tr>
                             {bikes.map((bike) => {
-                                // Set bike status color
-                                bike.status === 'available' ? bike.statusColor = '#28C941'
-                                : bike.status === 'in_service' ? bike.statusColor = '#F4D25E'
-                                : bike.status === 'broken' ? bike.statusColor = '#EE6A6A'
-                                : bike.statusColor = '#EE6A6A';
-
-                                // Set bike status in Swedish
-                                bike.status === 'available' ? bike.status_swedish = 'Tillgänglig'
-                                : bike.status === 'in_service' ? bike.status_swedish = 'Repereras'
-                                : bike.status === 'broken' ? bike.status_swedish = 'Ur funktion'
-                                : bike.status_swedish = 'Ingen information';
-
-                                // Set bike active in Swedish
-                                bike.active === 'true' ? bike.active = 'Ja' : bike.active = 'Nej';
+                                bike.statusColor = getBikeStatusColor(bike);
+                                bike.status_swedish = getBikeStatusSwedish(bike);
+                                bike.active = getBikeActiveSwedish(bike);
 
                                 return <Bike 
                                     key={bike._id}

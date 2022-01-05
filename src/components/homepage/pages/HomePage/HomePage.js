@@ -10,7 +10,6 @@ import heroImg from '../../../../assets/img/ebike__hero-ill.png';
 import ill__simulation from '../../../../assets/img/ebike__simulation-illustration.png';
 import ill__backend from '../../../../assets/img/ebike__backend-illustration.png';
 import ill__frontend from '../../../../assets/img/ebike__frontend-illustration.png';
-import mock__profile from '../../../../assets/img/mock__profile-pic.png';
 
 function HomePage() {
     return (
