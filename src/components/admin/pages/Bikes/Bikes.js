@@ -28,6 +28,7 @@ function Bikes({ city }) {
 
     useEffect(() => {
         getBikes();
+        setLottieIsStopped(false);
 
         const fetchDataInterval = setInterval(() => {
             getBikes();
@@ -41,7 +42,7 @@ function Bikes({ city }) {
     // Lottie animation options
     const defaultLottieOptions = {
         loop: false,
-        autoplay: true,
+        autoplay: false,
         animationData: loading__lottie,
         rendererSettings: {
           preserveAspectRatio: "xMidYMid slice"

@@ -43,7 +43,6 @@ function Customers({ city }) {
     return (
         <>
             <StatusBar city={city} />
-            <div className="data__wrapper fullwidth">
                 <DocumentTitle title='Kunder' ></DocumentTitle>
                 <div className="data-map__wrapper">
                     <div className="data__wrapper fullwidth">
@@ -82,7 +81,6 @@ function Customers({ city }) {
                         </div>
                     </div>
                 </div>
-            </div>
         </>
     )
 }
