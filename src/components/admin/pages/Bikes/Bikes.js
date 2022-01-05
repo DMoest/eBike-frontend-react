@@ -48,10 +48,7 @@ function Bikes({ city }) {
           preserveAspectRatio: "xMidYMid slice"
         }
     };
-
-    defaultLottieOptions.onComplete = function() {
-    }
-
+    
     return (
         <>
             <DocumentTitle title='Cyklar' ></DocumentTitle>

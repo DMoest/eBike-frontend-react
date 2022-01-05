@@ -74,25 +74,6 @@ function HomePage() {
                     </div>
                 </div>
             </div>
-            <div className="home-content__testimonial-wrapper">
-                <div className="home__container">
-                    <div className="home-content__testimonial-outer-wrapper">
-                        <div className="home-content__testimonial-inner-wrapper">
-                            <h4>Våra kunder</h4>
-                            <p className="p__testimonial">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fermentum
-                            </p>
-                            <div className="author__wrapper">
-                                <img src={mock__profile} className="author__img" alt="Author portrait"/>
-                                <div className="author__info">
-                                    Jeff Bezos
-                                    <p>Head of things @ Amazon</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div className="home-footer__wrapper">
                 <div className="home__container">
                     <div className="home-footer__inner-wrapper">
