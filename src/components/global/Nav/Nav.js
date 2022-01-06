@@ -13,7 +13,7 @@ import icon__charge from '../../admin/assets/img/icons/icon__charge-white.svg';
 import icon__profile from '../../admin/assets/img/icons/icon__profile-white.svg';
 import icon__logo from '../../admin/assets/img/icons/icon__logo-white.svg';
 import icon__city from '../../admin/assets/img/icons/city_white.svg';
-
+import icon__logout from '../../admin/assets/img/icons/icon__logout.svg';
 
 function Nav({ handleSetCity, city }) {
     const [cityNav, setCityNav] = useState(false);
@@ -41,7 +41,7 @@ function Nav({ handleSetCity, city }) {
                 </div>
             </div>
             <div className="nav-left__bottom-wrapper">
-                <p className="user__name">Admin</p>
+                <img src={icon__logout} alt={icon__logout} className="nav-left__menu-item-icon" />
             </div>
         </div>
     )

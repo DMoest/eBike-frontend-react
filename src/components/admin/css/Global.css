@@ -59,3 +59,46 @@
 [role="button"]{
     margin: 0 !important;
 }
+
+@media screen and (max-width: 1000px) {
+    .data__table {
+        border: 0;
+    }
+
+    .data__table thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    .data__table tr {
+        border-bottom: 1px solid #ddd;
+        display: block;
+    }
+
+    .data__table td {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: 1em;
+        text-align: right;
+    }
+
+    .data__table td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: 500;
+    }
+
+    .data__table td:last-child {
+        border-bottom: 0;
+    }
+
+    .header__top {
+        margin-bottom: 0;
+    }
+}

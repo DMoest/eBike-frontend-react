@@ -4,7 +4,7 @@ import axios from 'axios';
 // Components
 import Customer from './CustomerSingle';
 import DocumentTitle from 'react-document-title';
-import StatusBar from '../../components/global/StatusBar'
+import StatusBar from '../../components/global/Statusbar/StatusBar'
 
 // CSS
 import './Customers.css'
@@ -50,6 +50,7 @@ function Customers({ city }) {
                     <h1 className="header__top">Kunder</h1>
                     <div className="data__inner-wrapper">
                         <table className="data__table fullwidth">
+                            <thead>
                             <tr>
                                 <th>Förnamn</th>
                                 <th>Efternamn</th>
@@ -60,8 +61,10 @@ function Customers({ city }) {
                                 <th>Email</th>
                                 <th>Betalningsmetod</th>
                                 <th>Betalningsstatus</th>
-                                <th> </th>
+                                <th>Hantera</th>
                             </tr>
+                            </thead>
+                            <tbody>
                             {customers.map((customer) => {
                                 return <Customer 
                                     key={customer._id}
@@ -77,6 +80,7 @@ function Customers({ city }) {
                                     handleDeleteCustomers={handleDeleteCustomers}
                                 />
                             })}
+                            </tbody>
                         </table>
                     </div>
                 </div>

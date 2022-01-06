@@ -15,7 +15,7 @@ class App extends React.Component {
         super();
         this.state = {
             active: '',
-            toggle: 'home', // Default to home
+            toggle: 'home',
             test_user: "61a0eebb8ac18115b353cacb"
         };
     }

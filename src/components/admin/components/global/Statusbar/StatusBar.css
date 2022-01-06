@@ -26,3 +26,12 @@
     height: 18px;
     margin-right: 5px;
 }
+
+@media screen and (max-width: 700px) {
+    .statusbar__outer-wrapper {
+        height: 93vh;
+        width: 100vw;
+        justify-content: left;
+        display: none;
+    }
+}

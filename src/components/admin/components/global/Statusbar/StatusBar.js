@@ -1,5 +1,5 @@
 import './StatusBar.css'
-import icon__city from '../../assets/img/icons/city_white.svg'
+import icon__city from '../../../assets/img/icons/city_white.svg'
 
 function StatusBar({ city }) {
     return (

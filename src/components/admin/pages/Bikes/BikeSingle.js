@@ -2,17 +2,18 @@
 import '../../css/Table.css'
 import './Bikes.css'
 
-function Bike({ city, speed, battery, status, statusColor, active }) {
+function Bike({ id, city, speed, battery, status, statusColor, active }) {
     return (
         <tr>
-            <td>{city}</td>
-            <td>{speed} km/h</td>
-            <td>{battery}%</td>
-            <td className="bike__status-wrapper">
+            <td data-label="Id">{id}</td>
+            <td data-label="Stad">{city}</td>
+            <td data-label="Hastighet">{speed} km/h</td>
+            <td data-label="Batteri">{battery}%</td>
+            <td data-label="Status" className="bike__status-wrapper">
                 <div className="bike__status-dot" style={{backgroundColor: statusColor}}></div>
                 {status}
             </td>
-            <td>{active}</td>
+            <td data-label="Aktivitet">{active}</td>
         </tr>
     )
 }

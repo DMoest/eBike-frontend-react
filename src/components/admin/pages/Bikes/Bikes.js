@@ -6,8 +6,8 @@ import Lottie from 'react-lottie';
 // Components
 import Bike from './BikeSingle'
 import Map from '../../components/maps/Map'
-import BtnMap from '../../components/global/BtnMap'
-import StatusBar from '../../components/global/StatusBar'
+import BtnMap from '../../components/global/BtnMap/BtnMap'
+import StatusBar from '../../components/global/Statusbar/StatusBar'
 
 // Lottie animations
 import loading__lottie from '../../assets/lottie/loading__lottie.json';
@@ -17,6 +17,7 @@ function Bikes({ city }) {
     const [bikes, setBikes] = useState([]);
     const [lottieIsStopped, setLottieIsStopped] = useState(true);
 
+    // TODO: Breakout this
     const getBikes = async () => {
         try {
             const res = await axios.get(url);
@@ -95,13 +96,17 @@ function Bikes({ city }) {
                     
                     <div className="data__inner-wrapper">
                         <table className="data__table">
-                            <tr>
-                                <th>Stad</th>
-                                <th>Hastighet</th>
-                                <th>Batteri</th>
-                                <th>Status</th>
-                                <th>Aktiv</th>
-                            </tr>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Stad</th>
+                                    <th>Hastighet</th>
+                                    <th>Batteri</th>
+                                    <th>Status</th>
+                                    <th>Aktiv</th>
+                                </tr>
+                            </thead>
+                            <tbody>
                             {bikes.map((bike) => {
                                 bike.statusColor = getBikeStatusColor(bike);
                                 bike.status_swedish = getBikeStatusSwedish(bike);
@@ -109,6 +114,7 @@ function Bikes({ city }) {
 
                                 return <Bike 
                                     key={bike._id}
+                                    id={bike._id}
                                     city={bike.city}
                                     speed={bike.speed}
                                     battery={bike.battery}
@@ -117,6 +123,7 @@ function Bikes({ city }) {
                                     active={bike.active}
                                 />
                             })}
+                            </tbody>
                         </table>
                     </div>
                 </div>
