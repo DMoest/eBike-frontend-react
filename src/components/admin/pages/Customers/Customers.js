@@ -43,44 +43,44 @@ function Customers({ city }) {
     return (
         <>
             <StatusBar city={city} />
-                <DocumentTitle title='Kunder' ></DocumentTitle>
-                <div className="data-map__wrapper">
-                    <div className="data__wrapper fullwidth">
-                        <Header title="Kunder"/>
-                        
-                        <div className="data__inner-wrapper">
-                            <table className="data__table fullwidth">
-                                <tr>
-                                    <th>Förnamn</th>
-                                    <th>Efternamn</th>
-                                    <th>Address</th>
-                                    <th>Postnummer</th>
-                                    <th>Stad</th>
-                                    <th>Telefon</th>
-                                    <th>Email</th>
-                                    <th>Betalningsmetod</th>
-                                    <th>Betalningsstatus</th>
-                                    <th> </th>
-                                </tr>
-                                {customers.map((customer) => {
-                                    return <Customer 
-                                        key={customer._id}
-                                        firstname={customer.firstname}
-                                        lastname={customer.lastname}
-                                        adress={customer.adress}
-                                        postcode={customer.postcode}
-                                        city={customer.city}
-                                        phone={customer.phone}
-                                        email={customer.email}
-                                        paymentMethod={customer.payment_method}
-                                        paymentStatus={customer.payment_status}
-                                        handleDeleteCustomers={handleDeleteCustomers}
-                                    />
-                                })}
-                            </table>
-                        </div>
+            <DocumentTitle title='Kunder' ></DocumentTitle>
+
+            <div className="data-map__wrapper">
+                <div className="data__wrapper fullwidth">
+                    <h1 className="header__top">Kunder</h1>
+                    <div className="data__inner-wrapper">
+                        <table className="data__table fullwidth">
+                            <tr>
+                                <th>Förnamn</th>
+                                <th>Efternamn</th>
+                                <th>Address</th>
+                                <th>Postnummer</th>
+                                <th>Stad</th>
+                                <th>Telefon</th>
+                                <th>Email</th>
+                                <th>Betalningsmetod</th>
+                                <th>Betalningsstatus</th>
+                                <th> </th>
+                            </tr>
+                            {customers.map((customer) => {
+                                return <Customer 
+                                    key={customer._id}
+                                    firstname={customer.firstname}
+                                    lastname={customer.lastname}
+                                    adress={customer.adress}
+                                    postcode={customer.postcode}
+                                    city={customer.city}
+                                    phone={customer.phone}
+                                    email={customer.email}
+                                    paymentMethod={customer.payment_method}
+                                    paymentStatus={customer.payment_status}
+                                    handleDeleteCustomers={handleDeleteCustomers}
+                                />
+                            })}
+                        </table>
                     </div>
                 </div>
+            </div>
         </>
     )
 }

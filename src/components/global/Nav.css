@@ -57,9 +57,40 @@
     position: absolute;
     z-index: 99;
     left: 5vw;
-    top: -50%;
+    top: -35%;
     background: #1D1E22;
     border-radius: 4px;
+    padding: 5px 15px;
+    text-align: left;
+}
+
+.btn__city {
+    margin: 10px 0px;
+}
+
+.nav-left__city-menu-icon {
+    position: absolute;
+    top: 40%;
+    left: -10%;
+}
+
+.btn__city-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.btn__city-dot  {
+    width: 5px;
+    height: 5px;
+    background: #fff;
+    opacity: 0.2;
+    border-radius: 50%;
+    margin-right: 7px;
+}
+
+.btn__city-active {
+    opacity: 1 !important;
 }
 
 @media(max-width: 1000px) {

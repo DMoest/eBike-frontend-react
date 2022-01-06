@@ -24,7 +24,7 @@ function AdminApp() {
 
   return (
     <div className="App">
-      <Nav handleSetCity={handleSetCity}/>
+      <Nav handleSetCity={ handleSetCity } city= { city }/>
       <div className="container__main">
         <Routes>
           <Route path="/charging" element={ <Charging city={city} />}/>

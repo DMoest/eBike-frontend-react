@@ -49,6 +49,7 @@ function Bikes({ city }) {
         }
     };
 
+    // Status color
     function getBikeStatusColor(bike) {
         return bike.status === 'available' ? '#28C941'
         : bike.status === 'in_service' ? '#F4D25E'
@@ -56,6 +57,7 @@ function Bikes({ city }) {
         : '#EE6A6A';
     }
 
+    // Status to swedish
     function getBikeStatusSwedish(bike) {
         return bike.status === 'available' ? 'Tillgänglig'
         : bike.status === 'in_service' ? 'Repereras'
@@ -63,6 +65,7 @@ function Bikes({ city }) {
         : 'Ingen information';
     }
 
+    // Activity to swedish
     function getBikeActiveSwedish(bike) {
         return bike.active === 'true' ? 'Ja' : 'Nej';
     }

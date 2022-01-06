@@ -33,11 +33,7 @@ function Stations({ city }) {
             <StatusBar city={city} />
             <div className="data-map__wrapper">
                 <div className="data__wrapper">
-                    <Header title="Laddstationer"/>
-
-                    {/* Break out into separate component? */}
-                    {/* <input type="text" placeholder="Sök" className="input__search"></input> */}
-
+                    <h1 className="header__top">Stationer</h1>
                     <div className="data__inner-wrapper">
                         <table className="data__table">
                             <tr>

@@ -1,5 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import { useState } from 'react'
+
+// CSS
 import './Nav.css'
 
 // Icons
@@ -8,10 +10,12 @@ import icon__charge from '../admin/assets/img/icons/icon__charge-white.svg'
 import icon__profile from '../admin/assets/img/icons/icon__profile-white.svg'
 import icon__logo from '../admin/assets/img/icons/icon__logo-white.svg'
 import icon__city from '../admin/assets/img/icons/city_white.svg'
+import icon__city_menu from '../admin/assets/img/icons/city-menu__arrow.svg'
 
 
-function Nav({ handleSetCity }) {
+function Nav({ handleSetCity, city }) {
     const [cityNav, setCityNav] = useState(false);
+
     return (
         <div className="nav-left__outer-wrapper">
             <div classNAme="nav-left__brand-wrapper">
@@ -27,13 +31,24 @@ function Nav({ handleSetCity }) {
                 <NavLink to="/customers" className="nav-left__menu-item">
                     <img src={icon__profile} alt={icon__profile} className="nav-left__menu-item-icon" />
                 </NavLink>
-                <div className="nav-left__btn-city-wrapper nav-left__menu-item">
-                    <img src={icon__city} alt={icon__city} className="nav-left__menu-item-icon" onClick={() => setCityNav(!cityNav)}/>
+                <div className="nav-left__btn-city-wrapper nav-left__menu-item" onClick={() => setCityNav(!cityNav)}>
+                    <img src={icon__city} alt={icon__city} className="nav-left__menu-item-icon"/>
                     { cityNav ?  
                         <div className="nav-left__city-menu">
-                            <button className="btn__city" onClick={() => handleSetCity('Stockholm')}>Stockholm</button>
-                            <button className="btn__city" onClick={() => handleSetCity('Göteborg')}>Göteborg</button>
-                            <button className="btn__city" onClick={() => handleSetCity('Umeå')}>Umeå</button>
+                            <img src={icon__city_menu} alt={icon__city_menu} className="nav-left__city-menu-icon"/>
+
+                            <div className="btn__city-wrapper">
+                                <div className={"btn__city-dot " + (city === 'Stockholm' ? 'btn__city-active': '')}></div>
+                                <div className="btn__city" onClick={() => handleSetCity('Stockholm')}>Stockholm</div>
+                            </div>
+                            <div className="btn__city-wrapper">
+                                <div className={"btn__city-dot " + (city === 'Göteborg' ? 'btn__city-active': '')}></div>
+                                <div className="btn__city" onClick={() => handleSetCity('Göteborg')}>Göteborg</div>
+                            </div>
+                            <div className="btn__city-wrapper">
+                                <div className={"btn__city-dot " + (city === 'Umeå' ? 'btn__city-active': '')}></div>
+                                <div className="btn__city" onClick={() => handleSetCity('Umeå')}>Umeå</div>
+                            </div>
                         </div>
                     : null }
                 </div>
