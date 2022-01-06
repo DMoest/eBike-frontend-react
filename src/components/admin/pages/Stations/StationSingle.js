@@ -1,6 +1,3 @@
-// CSS
-import '../../css/Table.css'
-
 function StationSingle({ city, capacity, address, postcode, active }) {
     return (
         <tr>

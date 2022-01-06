@@ -1,5 +1,3 @@
-import React from 'react'
-
 // CSS
 import '../../css/Table.css'
 import './Bikes.css'

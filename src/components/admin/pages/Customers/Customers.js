@@ -3,10 +3,10 @@ import axios from 'axios';
 
 // Components
 import Customer from './CustomerSingle';
-import Header from '../../components/global/Header';
 import DocumentTitle from 'react-document-title';
 import StatusBar from '../../components/global/StatusBar'
 
+// CSS
 import './Customers.css'
 
 function Customers({ city }) {

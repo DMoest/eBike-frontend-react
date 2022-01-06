@@ -1,5 +1,3 @@
-import React from 'react'
-
 function Customer({ firstname, lastname, adress, postcode, city, phone, email, paymentMethod, paymentStatus, handleDeleteCustomers }) {
     return (
         <tr>

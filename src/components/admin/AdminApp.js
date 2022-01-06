@@ -12,7 +12,7 @@ import Logout from '../login/Logout'
 import Customers from './pages/Customers/Customers.js'
 
 // Global components
-import Nav from '../global/Nav'
+import Nav from '../global/Nav/Nav'
 
 function AdminApp() {
   const [city, setCity] = useState('Stockholm');
