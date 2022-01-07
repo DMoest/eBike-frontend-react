@@ -1,22 +1,26 @@
-import React from 'react'
-
 // CSS
-import '../../css/Table.css'
-import './Bikes.css'
+import "../../css/Table.css";
+import "./Bikes.css";
 
-function Bike({ city, speed, battery, status, statusColor, active }) {
-    return (
-        <tr>
-            <td>{city}</td>
-            <td>{speed} km/h</td>
-            <td>{battery}%</td>
-            <td className="bike__status-wrapper">
-                <div className="bike__status-dot" style={{backgroundColor: statusColor}}></div>
-                {status}
-            </td>
-            <td>{active}</td>
-        </tr>
-    )
+function Bike({ id, city, speed, battery, status, statusColor, active }) {
+  return (
+    <tr>
+      <td data-label="Id">{id}</td>
+      <td data-label="Stad">{city}</td>
+      <td data-label="Hastighet">{speed} km/h</td>
+      <td data-label="Batteri">{battery}%</td>
+      <td data-label="Status">
+        <div className="bike__status-wrapper">
+          <div
+            className="bike__status-dot"
+            style={{ backgroundColor: statusColor }}
+          ></div>
+          {status}
+        </div>
+      </td>
+      <td data-label="Aktiv">{active}</td>
+    </tr>
+  );
 }
 
-export default Bike
+export default Bike;

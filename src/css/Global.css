@@ -1,0 +1,17 @@
+@font-face {
+  font-family: "Moderat Regular";
+  src: url("../assets/fonts/Moderat-Extended-Regular.woff2");
+}
+
+@font-face {
+  font-family: "Moderat Medium";
+  src: url("../assets/fonts/Moderat-Extended-Medium.woff2");
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Moderat Regular", sans-serif !important;
+}

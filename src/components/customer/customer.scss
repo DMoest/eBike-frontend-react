@@ -1,40 +1,38 @@
 html {
-    font-family: helvetica;
-    a {
-        color: #000;
-    }
+  font-family: helvetica;
+  a {
+    color: #000;
+  }
 }
-
-
 
 .grid-container {
-    background-color: #fff;
-    margin-left: 5%;
-    margin-right: 15%;
-    margin-top: 2%;
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-    padding: 4em;
-    padding-top: 0;
-    border-radius: 70px;
-    h1 {
-        text-align: center;
-        margin-bottom: 1em;
-        font-size: 25px;
-    }
-    h2 {
-        text-align: left;
-        margin: 0;
-        font-size: 20px;
-    }
+  background-color: #fff;
+  margin-left: 5%;
+  margin-right: 15%;
+  margin-top: 2%;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  padding: 4em;
+  padding-top: 0;
+  border-radius: 70px;
+  h1 {
+    text-align: center;
+    margin-bottom: 1em;
+    font-size: 25px;
+  }
+  h2 {
+    text-align: left;
+    margin: 0;
+    font-size: 20px;
+  }
 }
 .trips-container {
-    background-color: #fff;
-    width: 70%;
-    display: flex;
-    flex-direction: row;
-    border-radius: 70px;
+  background-color: #fff;
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  border-radius: 70px;
 }
 
 .trips-div {
@@ -49,39 +47,39 @@ html {
   border-radius: 15px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   p {
-      padding: 0;
-      margin: 0;
+    padding: 0;
+    margin: 0;
   }
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    width: 300px;
-    padding: 1.2em;
-    background-color: #e0dbf0;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 300px;
+  padding: 1.2em;
+  background-color: #e0dbf0;
 }
 
 .nav__outer-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 30px 50px;
-    background: #fff;
-    border-bottom: 1px solid #E4E4E6;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 30px 50px;
+  background: #fff;
+  border-bottom: 1px solid #e4e4e6;
 }
 
 .nav__brand {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 .nav__link {
-    margin-left: 45px;
-    text-decoration: none;
-    font-weight: 500;
+  margin-left: 45px;
+  text-decoration: none;
+  font-weight: 500;
 }
 
 .active {
-    color: #1E69D1;
+  color: #1e69d1;
 }

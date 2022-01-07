@@ -1,5 +1,5 @@
 function Logout(props) {
-    window.localStorage.clear();
+  window.localStorage.clear();
 }
 
 export default Logout;
