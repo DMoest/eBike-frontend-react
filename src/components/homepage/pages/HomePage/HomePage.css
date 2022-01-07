@@ -1,13 +1,21 @@
-@font-face {
-  /* font-family: 'Moderat Regular'; */
-  /* src: local('Moderat Regular'), url(../../../assets/fonts/Moderat-Extended-Regular.woff2) format('woff2'); */
-}
-
 .home__container {
   max-width: 1300px;
   width: 100%;
   margin: 0 auto;
-  padding: 0px 20px;
+  padding: 0px 50px;
+}
+
+.home-hero__img-wrapper {
+  position: relative;
+}
+
+.home-hero__bg-color-spacer {
+  background: #fff;
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  bottom: 0;
+  z-index: 1;
 }
 
 .home-hero__outer-wrapper {
@@ -22,6 +30,11 @@
 .hero__brand img {
   margin-right: 7px;
   max-width: 15px;
+}
+
+.hero__brand span {
+  font-family: "Moderat Medium";
+  color: #fff;
 }
 
 .home-hero__nav-wrapper {
@@ -56,8 +69,9 @@
 }
 
 .home-hero__img {
-  margin-bottom: 125px;
   max-width: 100%;
+  position: relative;
+  z-index: 2;
 }
 
 .home-content__outer-wrapper {
@@ -125,7 +139,7 @@
 .home-footer__inner-wrapper {
   display: flex;
   justify-content: space-between;
-  padding: 125px 0px 50px 0px;
+  padding: 0px 0px 50px 0px;
 }
 
 .author__wrapper {
@@ -186,6 +200,10 @@
 }
 
 @media (max-width: 600px) {
+  .home__container {
+    padding: 0px 25px;
+  }
+
   h1 {
     font-size: 2.5em;
   }

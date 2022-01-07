@@ -22,7 +22,7 @@ class Home extends React.Component {
       console.log(response.data);
     });
   };
-  
+
   render() {
     let renderContainer = false;
     if (this.state.render) {
@@ -38,6 +38,7 @@ class Home extends React.Component {
       } else if (this.state.user.payment_method[0] === "monthly") {
         user = <p>Du betalar dina resor sista dagen varje månad.</p>;
       }
+
       renderContainer = (
         <div className="grid-container">
           <h2>Hej {this.state.user.firstname}!</h2>
@@ -46,7 +47,8 @@ class Home extends React.Component {
         </div>
       );
 
-    return renderContainer;
+      return renderContainer;
+    }
   }
 }
 
