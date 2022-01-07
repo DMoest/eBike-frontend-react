@@ -1,37 +1,37 @@
 .statusbar__outer-wrapper {
-    position: fixed;
-    width: 95vw;
-    height: 100vh;
-    z-index: 999;
-    display: flex;
-    align-items: center;
-    justify-content: right;
-    pointer-events: none;
+  position: fixed;
+  width: 95vw;
+  height: 100vh;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  pointer-events: none;
 }
 
 .statusbar__inner-wrapper {
-    background: #1D1E22;
-    border-radius: 4px;
-    color: #fff;
-    background: #1D1E22;
-    align-self: flex-end;
-    padding: 15px;
-    margin: 25px;
-    display: flex;
-    align-items: center;
-    font-size: 0.9em;
+  background: #1d1e22;
+  border-radius: 4px;
+  color: #fff;
+  background: #1d1e22;
+  align-self: flex-end;
+  padding: 15px;
+  margin: 25px;
+  display: flex;
+  align-items: center;
+  font-size: 0.9em;
 }
 
 .statusbar__city-icon {
-    height: 18px;
-    margin-right: 5px;
+  height: 18px;
+  margin-right: 5px;
 }
 
-@media screen and (max-width: 700px) {
-    .statusbar__outer-wrapper {
-        height: 93vh;
-        width: 100vw;
-        justify-content: left;
-        display: none;
-    }
+@media screen and (max-width: 1000px) {
+  .statusbar__outer-wrapper {
+    height: 93vh;
+    width: 100vw;
+    justify-content: left;
+    display: none;
+  }
 }

@@ -1,11 +1,18 @@
 .bike__status-wrapper {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .bike__status-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 100%;
-    margin-right: 5px;
+  width: 7px;
+  height: 7px;
+  border-radius: 100%;
+  margin-right: 5px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .bike__status-wrapper {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
 }

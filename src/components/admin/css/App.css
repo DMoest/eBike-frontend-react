@@ -1,24 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    background: #fff;
+  font-family: "Inter", sans-serif;
+  background: #fff;
 }
 
 .wrapper {
-    width: 100%;
-    padding: 50px 50px;
+  width: 100%;
+  padding: 50px 50px;
 }
 
 a {
-    color: #000;
-    text-decoration: none;
+  color: #000;
+  text-decoration: none;
 }
 
 h1,
@@ -26,55 +26,55 @@ h2,
 h3,
 h4,
 h5 {
-    font-weight: 500;
-    margin-bottom: 0.5em;
+  font-weight: 500;
+  margin-bottom: 0.5em;
 }
 
 h1 {
-    margin-bottom: 20px;
-    font-size: 4em;
+  margin-bottom: 20px;
+  font-size: 4em;
 }
 
 h2 {
-    font-size: 3em;
+  font-size: 3em;
 }
 
 h3 {
-    font-size: 2em;
+  font-size: 2em;
 }
 
 p {
-    opacity: 0.7;
-    line-height: 1.5em;
+  opacity: 0.7;
+  line-height: 1.5em;
 }
 
 .city__grid {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    grid-column-gap: 50px;
-    grid-row-gap: 50px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-column-gap: 50px;
+  grid-row-gap: 50px;
 }
 
 .search input {
-    width: 100%;
-    padding: 10px 15px;
-    border-radius: 4px;
-    outline: none;
-    font-size: 18px;
-    border: 1px solid #a7a7a7;
-    background: #FCFBFE;
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 4px;
+  outline: none;
+  font-size: 18px;
+  border: 1px solid #a7a7a7;
+  background: #fcfbfe;
 }
 
 .input__search {
-    margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 .container__main {
-    max-width: 96vw;
-    margin-left: 4vw;
+  max-width: 96vw;
+  margin-left: 4vw;
 }
 
 .header__top {
-    font-size: 2em;
+  font-size: 2em;
 }
