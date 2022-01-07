@@ -22,7 +22,7 @@ class Home extends React.Component {
       console.log(response.data);
     });
   };
-
+  
   render() {
     let renderContainer = false;
     if (this.state.render) {
@@ -45,7 +45,7 @@ class Home extends React.Component {
           <div className="trips-container">{user}</div>
         </div>
       );
-    }
+
     return renderContainer;
   }
 }

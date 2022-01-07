@@ -26,13 +26,12 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --silent",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
-      "react-app",
-      "react-app/jest"
+      "react-app"
     ]
   },
   "browserslist": [
@@ -40,5 +39,10 @@
     "not dead",
     "not op_mini all"
   ],
-  "homepage": "https://dmoest.github.io/eBike-frontend-react/build"
+  "homepage": "https://dmoest.github.io/eBike-frontend-react/build",
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^11.2.7",
+    "react-test-renderer": "^17.0.2"
+  }
 }
