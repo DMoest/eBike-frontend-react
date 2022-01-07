@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import DocumentTitle from "react-document-title";
+// import Test from "@/assets/img/ebike__hero-ill.png";
 
 // CSS
 import "./HomePage.css";
@@ -20,7 +21,7 @@ function HomePage() {
           <div className="home-hero__nav-wrapper">
             <div className="hero__brand">
               <img src={logo} className="hero__logo" alt="Ebike logo" />
-              Ebike
+              <span>Ebike</span>
             </div>
             <div className="home-hero__nav-center-wrapper">
               <NavLink to="/" className="home-nav__link">
@@ -41,27 +42,29 @@ function HomePage() {
           </div>
           <div className="home-hero__content-outer-wrapper">
             <div className="home-hero__content-inner-wrapper">
-              <h1>Skriv en rubrik här och lite mer text</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <h1>Den ultimata elsparkcykel-simulatorn</h1>
+              <p>Logga in, ställ dig på cykeln och kör.</p>
               <button className="home-hero__button">Registrera dig</button>
             </div>
           </div>
-          <img
-            src={heroImg}
-            className="home-hero__img"
-            alt="Hero illustration"
-          />
+        </div>
+        <div className="home-hero__img-wrapper">
+          <div className="home-hero__bg-color-spacer"></div>
+          <div className="home__container">
+            <img
+              src={heroImg}
+              className="home-hero__img"
+              alt="Hero illustration"
+            />
+          </div>
         </div>
       </div>
       <div className="home-content__outer-wrapper">
         <div className="home__container">
           <div className="home-content__content-outer-wrapper">
             <div className="home-content__content-inner-wrapper">
-              <h2>Skriv en rubrik här och lite mer text</h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-                fermentum ex nec turpis iaculis porta.{" "}
-              </p>
+              <h2>Tre vackra, samverkande delar</h2>
+              <p>Skriv nått här, jag har ingen aning lmao.</p>
             </div>
           </div>
           <div className="home-content__grid-wrapper">
