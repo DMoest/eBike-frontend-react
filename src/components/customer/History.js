@@ -6,6 +6,7 @@ const GEOCODE_URL =
 const url = "http://127.0.0.1:8000";
 
 class History extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {
