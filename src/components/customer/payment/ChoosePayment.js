@@ -28,7 +28,7 @@ class ChoosePayment extends React.Component {
       parseInt(this.state.user.payment_method[1]) + parseInt(this.state.price);
     console.log(credit);
     if (childData.status === 200) {
-      await axios.put(`${url}/api/user`, {
+      await axios.put(`${url}/api/v1/user`, {
         _id: this.props.user,
         payment_method: ["credit", credit],
       });
@@ -43,7 +43,7 @@ class ChoosePayment extends React.Component {
   }
 
   getUser = () => {
-    axios.get(`${url}/api/user/${this.props.user}`).then((response) => {
+    axios.get(`${url}/api/v1/user/${this.props.user}`).then((response) => {
       this.setState({ user: response.data });
     });
   };
@@ -57,7 +57,7 @@ class ChoosePayment extends React.Component {
         "din månadsbetalning måste vara betalad innan du kan byta till saldo."
       );
     } else if (this.state.user.payment_method[0] === "monthly") {
-      axios.put(`${url}/api/user`, {
+      axios.put(`${url}/api/v1/user`, {
         _id: this.props.user,
         payment_method: ["credit", 0],
       });
@@ -69,7 +69,7 @@ class ChoosePayment extends React.Component {
 
   chooseMonth = async () => {
     if (this.state.consent) {
-      axios.put(`${url}/api/user`, {
+      axios.put(`${url}/api/v1/user`, {
         _id: this.props.user,
         payment_method: ["monthly", "paid"],
       });

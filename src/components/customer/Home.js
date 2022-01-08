@@ -17,7 +17,7 @@ class Home extends React.Component {
         this.setState({render: true})
     }
     getUser = async () => {
-        await axios.get(`${url}/api/user/${this.props.user}`).then((response) => {
+        await axios.get(`${url}/api/v1/user/${this.props.user}`).then((response) => {
             this.setState({user: response.data});
             console.log(response.data)
         });

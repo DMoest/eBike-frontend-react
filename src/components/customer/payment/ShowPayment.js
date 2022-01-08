@@ -23,7 +23,7 @@ class ShowPayment extends React.Component {
 
     async componentDidMount() {
         await this.getUser();
-        await axios.get(`${url}/api/travel`).then((response) => {
+        await axios.get(`${url}/api/v1/travel`).then((response) => {
             this.setState({trips: response.data.travels});
             console.log("trips", response.data.travels)
         });
@@ -37,7 +37,7 @@ class ShowPayment extends React.Component {
     }
 
     getUser = () => {
-        axios.get(`${url}/api/user/${this.props.user}`).then((response) => {
+        axios.get(`${url}/api/v1/user/${this.props.user}`).then((response) => {
             this.setState({user: response.data});
         });
     }
@@ -45,7 +45,7 @@ class ShowPayment extends React.Component {
     checkPayStatus = async () => {
         console.log(this.state.current[1])
         if (this.state.current[1] > 0) {
-            axios.put(`${url}/api/user`, {
+            axios.put(`${url}/api/v1/user`, {
               _id: this.props.user,
               payment_method: ["monthly", "unpaid"]
             })
@@ -55,7 +55,7 @@ class ShowPayment extends React.Component {
     payUnpaid = async () => {
         await this.state.trips.forEach((item, i) => {
               if (item.status === "unpaid") {
-                axios.put(`${url}/api/travel`, {
+                axios.put(`${url}/api/v1/travel`, {
                     _id: item._id,
                     status: "paid"
                 })

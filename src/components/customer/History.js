@@ -6,7 +6,6 @@ const GEOCODE_URL =
 const url = "http://127.0.0.1:8000";
 
 class History extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -21,7 +20,7 @@ class History extends React.Component {
   }
   getTrips = async () => {
     var travels = [];
-    await axios.get(`${url}/api/travel`).then((response) => {
+    await axios.get(`${url}/api/v1/travel`).then((response) => {
       travels = response.data.travels;
     });
     for (const trip of travels) {

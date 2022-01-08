@@ -16,7 +16,7 @@ const PaymentForm = (props) => {
     if (!error) {
       console.log(token);
       axios
-        .post("http://localhost:8000/api/charge", {
+        .post("http://localhost:8000/api/v1/charge", {
           token: token.id,
           currency: "SEK",
           price: props.price * 100, // or 10 pounds (10*100). Stripe charges with the smallest price unit allowed
