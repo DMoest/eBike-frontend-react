@@ -1,6 +1,6 @@
 import axios from "axios";
 import React from "react";
-import "../customer.scss";
+import '../customer.scss';
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import PaymentForm from "./PaymentForm"; // not implemented yet
@@ -36,15 +36,11 @@ class ShowPayment extends React.Component {
         this.setState({render: true});
     }
 
-  async componentDidMount() {
-    await this.getUser();
-    await axios.get(`${url}/api/travel`).then((response) => {
-      this.setState({ trips: response.data.travels });
-      console.log("trips", response.data.travels);
-    });
-    this.calInvoice();
-    this.setState({ render: true });
-  }
+    getUser = () => {
+        axios.get(`${url}/api/user/${this.props.user}`).then((response) => {
+            this.setState({user: response.data});
+        });
+    }
 
     checkPayStatus = async () => {
         console.log(this.state.current[1])
@@ -109,7 +105,6 @@ class ShowPayment extends React.Component {
         var daysLeftInMonth = currentMonthLastDate - currentDate.getDate();
         return daysLeftInMonth;
     }
-  };
 
     render() {
         let renderContainer = false;
@@ -160,9 +155,6 @@ class ShowPayment extends React.Component {
         if (this.state.months === []) return "Det finns inga väntande betalningar";
         return (renderContainer)
     }
-    if (this.state.months === []) return "Det finns inga väntande betalningar";
-    return renderContainer;
-  }
 }
 
 export default ShowPayment;
