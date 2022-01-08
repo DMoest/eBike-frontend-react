@@ -1,0 +1,21 @@
+.btn__map {
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+  .btn__map {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #000;
+    border-radius: 4px;
+    width: 35px;
+    height: 35px;
+    color: #fff;
+    z-index: 9999;
+  }
+}

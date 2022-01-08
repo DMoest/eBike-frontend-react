@@ -1,41 +1,53 @@
 import React from "react";
-import '../customer.scss'
+import "../customer.scss";
 import ChoosePayment from "./ChoosePayment";
-import ShowPayment from "./ShowPayment";;
+import ShowPayment from "./ShowPayment";
 
 class Payment extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            render: true,
-            active: "choose",
-        };
-        this.toggle = {
-            choose: 'show',
-            show: 'choose'
-        };
-        this.button = {
-            choose: 'Välj betalningsmetod',
-            show: 'Visa mina betalningar'
-        };
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      render: true,
+      active: "choose",
+    };
+    this.toggle = {
+      choose: "show",
+      show: "choose",
+    };
+    this.button = {
+      choose: "Välj betalningsmetod",
+      show: "Visa mina betalningar",
+    };
+  }
 
-    render() {
-        console.log("pay", this.props.user)
-        return (
+  render() {
+    console.log("pay", this.props.user);
+    return (
+      <div>
+        <div className="button-div">
+          <button
+            className="change-btn"
+            onClick={() => {
+              this.setState({ active: this.toggle[this.state.active] });
+            }}
+          >
+            {this.button[this.state.active]}
+          </button>
+        </div>
+        <div className="form-div">
+          {this.state.active === "choose" ? (
             <div>
-                <div  className="button-div">
-                    <button className="change-btn" onClick={() => {this.setState({active: this.toggle[this.state.active]})}}>{this.button[this.state.active]}</button>
-                </div>
-                <div  className="form-div">
-                    {this.state.active === 'choose' ?
-                        <div><ShowPayment user={this.props.user}/></div>:
-                        <div><ChoosePayment user={this.props.user}/></div>
-                    }
-                </div>
+              <ShowPayment user={this.props.user} />
             </div>
-        );
-    }
+          ) : (
+            <div>
+              <ChoosePayment user={this.props.user} />
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  }
 }
 
 export default Payment;

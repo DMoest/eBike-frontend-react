@@ -1,6 +1,6 @@
 import React from "react";
-import './login.scss';
-import axios from 'axios';
+import "./login.scss";
+import axios from "axios";
 
 class Login extends React.Component {
     constructor() {
@@ -45,6 +45,7 @@ class Login extends React.Component {
             })
         }
     }
+  };
 
     render() {
         console.log(this.props.user)

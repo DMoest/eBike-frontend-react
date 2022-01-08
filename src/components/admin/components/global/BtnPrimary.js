@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function BtnPrimary({ btnText }) {
-    return (
-        <button className="btn__primary">
-            { btnText }
-        </button>
-    )
+  return <button className="btn__primary">{btnText}</button>;
 }
 
-export default BtnPrimary
+export default BtnPrimary;
