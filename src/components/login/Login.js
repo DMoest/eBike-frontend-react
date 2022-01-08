@@ -14,7 +14,7 @@ class Login extends React.Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        let url = "http://localhos:8000/auth/github";
+        let url = "http://localhos:8000";
         if (this.state.form === 'login') {
             axios.get(`${url}/oauth/authorize`).then((response) => {
                 this.setState({ user: response.data });
@@ -52,15 +52,17 @@ class Login extends React.Component {
             <div className="container">
             <div className="form-div">
                 <p style={{textAlign: "center"}}>Är du redan medlem?'</p>
-                <button className="change-btn" onClick={() => {this.setState({form: "login"})}}>Logga in</button>
+                <button className="change-btn" onClick={() => window.location.href="http://localhost:8000/oauth/authorize"}>Logga in</button>
             </div>
                 <div className="button-div">
                     <p style={{textAlign: "center"}}>Har du inget konto? Registrera dig här!</p>
-                    <button className="change-btn" onClick={() => {this.setState({form: "register"})}}>Registrera dig</button>
+                    <button className="change-btn" onClick={() => window.location.href="http://localhost:8000/register"}>Registrera dig</button>
                 </div>
             </div>
         );
     }
 }
+// {this.setState({form: "login"})}
+// {this.setState({form: "register"})}
 
 export default Login;
