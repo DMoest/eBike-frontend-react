@@ -8,12 +8,12 @@ import CityMenu from "./CityMenu";
 import "./Nav.css";
 
 // Icons
-import icon__scooter from "../../admin/assets/img/icons/icon__scooter-white.svg";
-import icon__charge from "../../admin/assets/img/icons/icon__charge-white.svg";
-import icon__profile from "../../admin/assets/img/icons/icon__profile-white.svg";
-import icon__logo from "../../admin/assets/img/icons/icon__logo-white.svg";
-import icon__city from "../../admin/assets/img/icons/city_white.svg";
-import icon__logout from "../../admin/assets/img/icons/icon__logout.svg";
+import icon__scooter from "@/components/admin/assets/img/icons/icon__scooter-white.svg";
+import icon__charge from "@/components/admin/assets/img/icons/icon__charge-white.svg";
+import icon__profile from "@/components/admin/assets/img/icons/icon__profile-white.svg";
+import icon__logo from "@/components/admin/assets/img/icons/icon__logo-white.svg";
+import icon__city from "@/components/admin/assets/img/icons/city_white.svg";
+import icon__logout from "@/components/admin/assets/img/icons/icon__logout.svg";
 
 function Nav({ handleSetCity, city }) {
   const [cityNav, setCityNav] = useState(false);
