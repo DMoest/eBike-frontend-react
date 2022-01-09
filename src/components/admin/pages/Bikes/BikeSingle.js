@@ -1,5 +1,4 @@
 // CSS
-import "../../css/Table.css";
 import "./Bikes.css";
 
 function Bike({ id, city, speed, battery, status, statusColor, active }) {

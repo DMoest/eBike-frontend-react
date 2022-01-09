@@ -1,10 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { useState } from "react";
 
-// CSS
-import "./css/App.css";
-import "./css/Global.css";
-
 // Pages
 import Bikes from "./pages/Bikes/Bikes";
 import Charging from "./pages/Stations/Stations";
@@ -17,7 +13,6 @@ import Nav from "../global/Nav/Nav";
 function AdminApp() {
   const [city, setCity] = useState("Stockholm");
 
-  // Is this type of handling needed?
   function handleSetCity(city) {
     setCity(city);
   }
