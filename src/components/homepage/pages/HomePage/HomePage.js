@@ -1,22 +1,21 @@
 import { NavLink } from "react-router-dom";
 import DocumentTitle from "react-document-title";
-// import Test from "@/assets/img/ebike__hero-ill.png";
 
 // CSS
 import "./HomePage.css";
 
 // Img
-import logo from "../../../../assets/img/ebike__logo-white.svg";
-import heroImg from "../../../../assets/img/ebike__hero-ill.png";
-import ill__simulation from "../../../../assets/img/ebike__simulation-illustration.png";
-import ill__backend from "../../../../assets/img/ebike__backend-illustration.png";
-import ill__frontend from "../../../../assets/img/ebike__frontend-illustration.png";
+import logo from "@/assets/img/ebike__logo-white.svg";
+import heroImg from "@/assets/img/ebike__hero-ill.png";
+import ill__simulation from "@/assets/img/ebike__simulation-illustration.png";
+import ill__backend from "@/assets/img/ebike__backend-illustration.png";
+import ill__frontend from "@/assets/img/ebike__frontend-illustration.png";
 
 function HomePage() {
   return (
     <>
       <div className="home-hero__outer-wrapper">
-        <DocumentTitle title="Hem"></DocumentTitle>
+        <DocumentTitle title="Ebike - Hem"></DocumentTitle>
         <div className="home__container">
           <div className="home-hero__nav-wrapper">
             <div className="hero__brand">
@@ -76,9 +75,8 @@ function HomePage() {
               />
               <h3 className="h3__grid">Simulering</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-                fermentum ex nec turpis iaculis porta. Duis nec eros tincidunt,
-                egestas{" "}
+                När simuleringsprogrammet körs igång skapas en stor mängd små
+                scootrar och kunder som körs omkring i systemet.
               </p>
             </div>
             <div className="home-content__grid-item">
@@ -87,11 +85,10 @@ function HomePage() {
                 className="home-grid__img"
                 alt="Hero illustration"
               />
-              <h3 className="h3__grid">Backend</h3>
+              <h3 className="h3__grid">Back-end</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-                fermentum ex nec turpis iaculis porta. Duis nec eros tincidunt,
-                egestas{" "}
+                Systemets back-end, byggt i Laravel (PHP), hanterar all data som
+                skickas mellan systemets olika delar.
               </p>
             </div>
             <div className="home-content__grid-item">
@@ -102,9 +99,9 @@ function HomePage() {
               />
               <h3 className="h3__grid">Front-end</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-                fermentum ex nec turpis iaculis porta. Duis nec eros tincidunt,
-                egestas{" "}
+                För att kunna använda sig av systemet behövs även en visuell
+                del, vilket i detta fall består av 2 olika applikationer byggda
+                i React.js.
               </p>
             </div>
           </div>
