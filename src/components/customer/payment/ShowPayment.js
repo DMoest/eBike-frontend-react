@@ -5,9 +5,9 @@ import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import PaymentForm from "./PaymentForm"; // not implemented yet
 const url = "http://127.0.0.1:8000";
-const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
+const stripepromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 
-class ShowPayment extends React.Component {
+class Showpayment extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -24,8 +24,8 @@ class ShowPayment extends React.Component {
     async componentDidMount() {
         await this.getUser();
         await axios.get(`${url}/api/v1/travel`).then((response) => {
-            this.setState({trips: response.data.travels});
-            console.log("trips", response.data.travels)
+            this.setState({trips: response.data});
+            console.log("trips", response.data)
         });
         this.calInvoice();
         const date = this.countdown();
@@ -47,17 +47,18 @@ class ShowPayment extends React.Component {
         if (this.state.current[1] > 0) {
             axios.put(`${url}/api/v1/user`, {
               _id: this.props.user,
-              payment_method: ["monthly", "unpaid"]
+              payment_method: "monthly",
+              payment_status: "unpaid"
             })
         }
     }
 
     payUnpaid = async () => {
         await this.state.trips.forEach((item, i) => {
-              if (item.status === "unpaid") {
+              if (item.payment_status === "unpaid") {
                 axios.put(`${url}/api/v1/travel`, {
                     _id: item._id,
-                    status: "paid"
+                    payment_status: "paid"
                 })
             }
         });
@@ -77,7 +78,7 @@ class ShowPayment extends React.Component {
             if (months[month] !== previous) {
                 previous = months[month][0]
             }
-            if (month === m && item.status === "unpaid") {
+            if (month === m && item.payment_status === "unpaid") {
                 unpaid += item.price;
             } else {
                 months[month][1] += item.price
@@ -114,8 +115,8 @@ class ShowPayment extends React.Component {
             content = (
               <div class="flex-box">
               <br/><p>Fyll i kortuppgifter för att betala månadens resor.</p><br/>
-              <Elements stripe={stripePromise}>
-                  <PaymentForm price={this.state.price} parentCallback={this.handlePay}/>
+              <Elements stripe={stripepromise}>
+                  <PaymentForm price={this.state.price} parentCallback={this.handlepay}/>
               </Elements>
               </div>
             )
@@ -157,4 +158,4 @@ class ShowPayment extends React.Component {
     }
 }
 
-export default ShowPayment;
+export default Showpayment;
