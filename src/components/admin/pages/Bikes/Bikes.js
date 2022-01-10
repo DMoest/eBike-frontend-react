@@ -13,7 +13,7 @@ import StatusBar from "../../components/global/Statusbar/StatusBar";
 import loading__lottie from "../../assets/lottie/loading__lottie.json";
 
 function Bikes({ city }) {
-  const url = process.env.REACT_APP_API_BASE_URL + "/api/bike/city/" + city;
+  const url = process.env.REACT_APP_API_BASE_URL + "/bike/city/" + city;
   const [bikes, setBikes] = useState([]);
   const [lottieIsStopped, setLottieIsStopped] = useState(true);
   const [hideMap, setHideMap] = useState(true);
