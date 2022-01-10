@@ -5,7 +5,8 @@ import DocumentTitle from "react-document-title";
 import "./HomePage.css";
 
 // Img
-import logo from "@/assets/img/ebike__logo-white.svg";
+import logo__white from "@/assets/img/ebike__logo-white.svg";
+import logo__dark from "@/assets/img/ebike__logo-dark.svg";
 import heroImg from "@/assets/img/ebike__hero-ill.png";
 import ill__simulation from "@/assets/img/ebike__simulation-illustration.png";
 import ill__backend from "@/assets/img/ebike__backend-illustration.png";
@@ -19,7 +20,7 @@ function HomePage() {
         <div className="home__container">
           <div className="home-hero__nav-wrapper">
             <div className="hero__brand">
-              <img src={logo} className="hero__logo" alt="Ebike logo" />
+              <img src={logo__white} className="hero__logo" alt="Ebike logo" />
               <span>Ebike</span>
             </div>
             <div className="home-hero__nav-center-wrapper">
@@ -110,7 +111,17 @@ function HomePage() {
       <div className="home-footer__wrapper">
         <div className="home__container">
           <div className="home-footer__inner-wrapper">
-            <div className="home-footer__left-wrapper">Ebike</div>
+            <div className="home-footer__left-wrapper">
+              <div className="footer__brand">
+                <img src={logo__dark} className="hero__logo" alt="Ebike logo" />
+                <span>Ebike</span>
+              </div>
+
+              <p>
+                Ett projekt av Projektgrupp 8 I kursen Ramverk vid Blekinge
+                Tekniska Högskola 2021-2022.
+              </p>
+            </div>
             <div className="home-footer__right-wrapper">Registrera dig</div>
           </div>
         </div>

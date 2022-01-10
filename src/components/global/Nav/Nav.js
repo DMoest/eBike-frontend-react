@@ -60,11 +60,13 @@ function Nav({ handleSetCity, city }) {
         </div>
       </div>
       <div className="nav-left__bottom-wrapper">
-        <img
-          src={icon__logout}
-          alt={icon__logout}
-          className="nav-left__menu-item-icon"
-        />
+        <NavLink to="/logout" className="nav-left__menu-item ">
+          <img
+            src={icon__logout}
+            alt={icon__logout}
+            className="nav-left__menu-item-icon"
+          />
+        </NavLink>
       </div>
     </div>
   );

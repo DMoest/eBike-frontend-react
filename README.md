@@ -1,21 +1,29 @@
 # Frontend React
 
-This repository is the frontend in the project eBike System.
-The frontend is intended to communicate with the server backend, support admin tools and customer login for account handling.
+This repository contains the admin & customer frontend for the eBike System.
 
-### Start & test the application
+## Start & test the application
 
-#### Start the backend / API (eBike-backend-laravel) using Docker
+### Add your own .env file in the root folder of
+
+The only required environment variable is REACT_APP_API_BASE_URL, which should contain the base URL (http://localhost:port/api/v1 for example) for the API you're using.
+
+Feel free to add the optional REACT_APP_API_INTERVAL environment variable, to specify how often bikes should be fetched from the API (in milliseconds).
+
+### Start the backend / API (eBike-backend-laravel) using Docker
+
 ```
 docker compose up ebike_backend
 ```
 
-#### Start the react app
+### Start the react app (eBike-frontend-react)
+
 ```
 yarn start (or npm run start)
 ```
 
-#### Build the react app
+### Build the react app (eBike-frontend-react)
+
 ```
 yarn build (or npm run build)
 ```
