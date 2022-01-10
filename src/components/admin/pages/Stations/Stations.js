@@ -7,17 +7,19 @@ import ChargingStation from "./StationSingle";
 import Map from "../../components/maps/Map";
 import BtnMap from "../../components/global/BtnMap/BtnMap";
 import StatusBar from "../../components/global/Statusbar/StatusBar";
+import ErrorNotice from "@/components/global/ErrorNotice/ErrorNotice";
 
 function Stations({ city }) {
   const url = process.env.REACT_APP_API_BASE_URL + "/station/city/" + city;
   const [stations, setStations] = useState([]);
+  const [error, setError] = useState(null);
 
   const getStations = async () => {
     try {
       const res = await axios.get(url);
       setStations(res.data.stations);
     } catch (err) {
-      console.error(err);
+      setError(err);
     }
   };
 
@@ -30,6 +32,9 @@ function Stations({ city }) {
       <DocumentTitle title="Laddstationer"></DocumentTitle>
       <BtnMap />
       <StatusBar city={city} />
+
+      {error ? <ErrorNotice err={error} /> : null}
+
       <div className="data-map__wrapper">
         <div className="data__wrapper">
           <h1 className="header__top">Stationer</h1>

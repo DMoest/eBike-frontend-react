@@ -15,6 +15,7 @@ import Bike from "./BikeSingle";
 import Map from "@/components/admin/components/maps/Map";
 import BtnMap from "@/components/admin/components/global/BtnMap/BtnMap";
 import StatusBar from "@/components/admin/components/global/Statusbar/StatusBar";
+import ErrorNotice from "@/components/global/ErrorNotice/ErrorNotice";
 
 // Lottie animations
 import loading__lottie from "@/components/admin/assets/lottie/loading__lottie.json";
@@ -23,8 +24,6 @@ function Bikes({ city }) {
   const [bikes, setBikes] = useState([]);
   const [lottieIsStopped, setLottieIsStopped] = useState(true);
   const [hideMap, setHideMap] = useState(true);
-
-  // TODO: Show error in UI
   const [error, setError] = useState(null);
 
   const api = new Api();
@@ -69,6 +68,9 @@ function Bikes({ city }) {
       <DocumentTitle title="Cyklar"></DocumentTitle>
       <BtnMap setHideMap={setHideMap} hideMap={hideMap} />
       <StatusBar city={city} />
+
+      {error ? <ErrorNotice err={error} /> : null}
+
       <div className="data-map__wrapper">
         <div className="data__wrapper">
           <div className="data__heading-wrapper">
