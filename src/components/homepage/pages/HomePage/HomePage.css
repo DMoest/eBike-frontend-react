@@ -27,7 +27,8 @@
   display: flex;
 }
 
-.hero__brand img {
+.hero__brand img,
+.footer__brand img {
   margin-right: 7px;
   max-width: 15px;
 }
@@ -35,6 +36,16 @@
 .hero__brand span {
   font-family: "Moderat Medium";
   color: #fff;
+}
+
+.footer__brand {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.footer__brand span {
+  font-family: "Moderat Medium";
 }
 
 .home-hero__nav-wrapper {
@@ -140,6 +151,7 @@
   display: flex;
   justify-content: space-between;
   padding: 0px 0px 50px 0px;
+  align-items: flex-end;
 }
 
 .author__wrapper {
@@ -172,6 +184,10 @@
   opacity: 0.5;
 }
 
+.home-footer__left-wrapper {
+  max-width: 40ch;
+}
+
 @media (max-width: 768px) {
   .home__container {
     width: 100%;
@@ -200,6 +216,20 @@
   .home-content__grid-item {
     aspect-ratio: none;
     margin-bottom: 50px;
+  }
+
+  .home-footer__left-wrapper {
+    padding: 25px 0px;
+    margin-bottom: 15px;
+  }
+
+  .home-footer__inner-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .home-footer__right-wrapper {
+    flex-direction: column;
   }
 }
 
@@ -234,13 +264,5 @@
 
   .home-content__grid-item {
     margin-bottom: 50px;
-  }
-
-  .home-content__testimonial-wrapper {
-    padding: 100px 0px;
-  }
-
-  .home-footer__inner-wrapper {
-    padding: 50px 0px;
   }
 }

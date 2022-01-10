@@ -136,6 +136,18 @@ a {
 }
 
 @media screen and (max-width: 1000px) {
+  h1 {
+    font-size: 3em;
+  }
+
+  h2 {
+    font-size: 2em;
+  }
+
+  h3 {
+    font-size: 1.5em;
+  }
+
   .container__main {
     margin-left: 0;
   }
@@ -183,5 +195,27 @@ a {
 
   .header__top {
     margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  h3 {
+    font-size: 1.2em;
+  }
+
+  .home-footer__inner-wrapper {
+    padding: 25px 0px;
+  }
+
+  .home-content__outer-wrapper {
+    padding: 25px 0px;
   }
 }
