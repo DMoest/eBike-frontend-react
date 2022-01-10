@@ -1,27 +1,31 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
-// import L from 'leaflet';
 import { Polygon } from "react-leaflet"; //, useMap
+import Api from "@/components/admin/helper/api";
+
 // import MarkerClusterGroup from 'react-leaflet-markercluster';
+// import L from 'leaflet';
 
 function ParkingZones() {
-  const url = process.env.REACT_APP_API_BASE_URL + "/api/parking";
   const [markers, setMarkers] = useState([]);
+  const [error, setError] = useState(null);
 
   // var map = useMap();
+  const api = new Api();
+
+  const getParkingZones = () => {
+    api
+      .getParkingZones()
+      .then((res) => {
+        setMarkers(res.data.parking_zones);
+      })
+      .catch((err) => {
+        setError(err);
+      });
+  };
 
   useEffect(() => {
-    const fetchData = () => {
-      axios.get(url).then((res) => {
-        setMarkers(res.data.parking_zones);
-      });
-    };
-
-    // Fetching immediately the first time
-    fetchData();
-
-    // Clearing is needed
-  }, [url]);
+    getParkingZones();
+  });
 
   return (
     <div>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
+import Api from "@/components/admin/helper/api";
 
 // Components
 import Customer from "./CustomerSingle";
@@ -10,35 +10,39 @@ import StatusBar from "../../components/global/Statusbar/StatusBar";
 import "./Customers.css";
 
 function Customers({ city }) {
-  const url = process.env.REACT_APP_API_BASE_URL + "/user/city/" + city;
   const [customers, setCustomers] = useState([]);
+  const [error, setError] = useState(null);
 
-  // API call
-  useEffect(() => {
-    axios
-      .get(url)
+  const api = new Api();
+
+  const getCustomers = () => {
+    api
+      .getCustomers(city)
       .then((res) => {
         setCustomers(res.data.users);
       })
       .catch((err) => {
-        console.log(err);
+        setError(err);
       });
-  }, [customers, url]);
+  };
+
+  // API call
+  useEffect(() => {
+    getCustomers();
+  });
 
   // Deletes a customer
   const handleDeleteCustomers = (customers) => {
-    // axios.request({
-    //     method: 'DELETE',
-    //     url: url,
-    //     data: {
-    //         _id: customers._id
-    //     }
-    // }).then(res => {
-    //     console.log(res)
-    //     setCustomers(customers.filter((customer) => customer._id !== customers._id))
-    // }).catch(err => {
-    //     console.log(err)
-    // })
+    api
+      .deleteCustomer(customers._id, city)
+      .then((res) => {
+        setCustomers(
+          customers.filter((customer) => customer._id !== customers._id)
+        );
+      })
+      .catch((err) => {
+        setError(err);
+      });
 
     console.log("Customer deleted", customers);
   };
