@@ -14,6 +14,9 @@ class Home extends React.Component {
 
     async componentDidMount() {
         await this.getUser();
+        // localStorage.setItem('code', "lol");
+        let code = localStorage.getItem('code1')
+        console.log("session", code)
         this.setState({render: true})
     }
     getUser = async () => {
@@ -29,14 +32,14 @@ class Home extends React.Component {
         if (this.state.render) {
             let user = this.state.user.payment_method;
             console.log(this.state.user.payment_method)
-            if (this.state.user.payment_method[0] === "credit") {
+            if (this.state.user.payment_method === "credit") {
               user = (
                 <div>
                 <p>Du betalar dina resor med saldo.</p>
-                <p>Ditt saldo: {this.state.user.payment_method[1]} kr</p>
+                <p>Ditt saldo: {this.state.user.payment_status} kr</p>
                 </div>
               )
-            } else if (this.state.user.payment_method[0] === "monthly") {
+            } else if (this.state.user.payment_method === "monthly") {
               user = (
                 <p>Du betalar dina resor sista dagen varje månad.</p>
               )

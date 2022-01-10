@@ -9,6 +9,7 @@ import HomePageApp from "./components/homepage/HomePageApp";
 // Components
 import Login from "./components/login/Login";
 import Logout from "./components/login/Logout";
+import Auth from "./Auth";
 
 // Global CSS
 import "./css/Global.css";
@@ -19,11 +20,13 @@ class App extends React.Component {
     this.state = {
       active: "",
       toggle: "home",
-      test_user: "61a0eebb8ac18115b353cacb",
+      test_user: "1",
     };
   }
 
-  handleLogin = (childData) => {};
+  handleLogin = (childData) => {
+      this.setState({test_user: childData})
+  };
 
   handleLogout = (childData) => {};
 
@@ -60,11 +63,15 @@ class App extends React.Component {
         <Routes>
           <Route
             path="/login"
-            element={<Login parentCallback={this.handleLogin} />}
+            element={<Login />}
           />
           <Route
             path="/logout"
             element={<Logout parentCallback={this.handleLogout} />}
+          />
+          <Route
+            path="/authorize"
+            element={<Auth parentCallback={this.handleLogin} />}
           />
         </Routes>
       </div>

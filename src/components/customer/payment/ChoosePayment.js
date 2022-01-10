@@ -8,13 +8,12 @@ import PaymentForm from "./PaymentForm"; // not implemented yet
 const url = "http://127.0.0.1:8000";
 
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
-
 class ChoosePayment extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       render: false,
-      price: 0,
+      price: "0",
       user: {},
       consent: false,
       active: "",
@@ -22,15 +21,17 @@ class ChoosePayment extends React.Component {
   }
 
   handlePay = async (childData) => {
-    console.log(this.state.user.payment_method);
+    console.log("hejsan", this.state.user.payment_status);
     console.log(this.state.price);
     let credit =
-      parseInt(this.state.user.payment_method[1]) + parseInt(this.state.price);
-    console.log(credit);
+      parseInt(this.state.user.payment_status) + parseInt(this.state.price);
+    credit = credit.toString();
+    console.log(typeof(credit), credit);
     if (childData.status === 200) {
       await axios.put(`${url}/api/v1/user`, {
         _id: this.props.user,
-        payment_method: ["credit", credit],
+        payment_method: "credit",
+        payment_status: credit
       });
     }
     this.setState({ active: "" });
@@ -50,16 +51,17 @@ class ChoosePayment extends React.Component {
 
   chooseCredit = async () => {
     if (
-      this.state.user.payment_method[0] === "monthly" &&
-      this.state.user.payment_method[1] === "unpaid"
+      this.state.user.payment_method === "monthly" &&
+      this.state.user.payment_status === "unpaid"
     ) {
       alert(
         "din månadsbetalning måste vara betalad innan du kan byta till saldo."
       );
-    } else if (this.state.user.payment_method[0] === "monthly") {
+    } else if (this.state.user.payment_method === "monthly") {
       axios.put(`${url}/api/v1/user`, {
         _id: this.props.user,
-        payment_method: ["credit", 0],
+        payment_method: "credit",
+        payment_status: "0"
       });
       this.setState({ active: "credit" });
     } else {
@@ -71,19 +73,20 @@ class ChoosePayment extends React.Component {
     if (this.state.consent) {
       axios.put(`${url}/api/v1/user`, {
         _id: this.props.user,
-        payment_method: ["monthly", "paid"],
+        payment_method: "monthly",
+        payment_status: "paid"
       });
       this.setState({ active: "month" });
-    } else if (this.state.user.payment_method[0] === "monthly") {
+    } else if (this.state.user.payment_method === "monthly") {
       alert("Ditt konto är redan registrerat för månadsbetalning.");
-    } else if (this.state.user.payment_method[0] === "credit") {
+    } else if (this.state.user.payment_method === "credit") {
       alert("Om du byter till månadsbetalning förlorar du ditt saldo");
       this.setState({ active: "agree" });
     }
   };
 
   render() {
-    console.log("betalningsmetod", this.state.user.payment_method);
+    console.log("betalningsmetod", this.state.user.payment_method,this.state.user.payment_status, this.state.price, typeof(this.state.price));
     let renderContainer = false;
     if (this.state.render) {
       let chosen;
@@ -143,7 +146,7 @@ class ChoosePayment extends React.Component {
             </p>
             <p>
               eller så kan du fylla på ditt saldo, då kan du betala dina resor
-              och åka tills saldot är slut.{" "}
+              och åka tills saldot är slut.
             </p>
             <p>
               För att byta till saldo från månadsbetalning måste du ha betalat
@@ -159,7 +162,7 @@ class ChoosePayment extends React.Component {
           <button className={this.state.active} onClick={this.chooseCredit}>
             Betala med saldo
           </button>
-          <button onClick={this.chooseMonth}>Betala varje månad</button>
+          <button className={this.state.active} onClick={this.chooseMonth}>Betala varje månad</button>
           <br />
         </div>
       );
