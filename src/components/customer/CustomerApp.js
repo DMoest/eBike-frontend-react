@@ -9,7 +9,6 @@ import Payment from "./payment/Payment";
 // import Adress from "./components/customer/Adress";
 
 function CustomerApp(props) {
-  console.log(props.user);
   return (
     <div className="App">
       <div className="nav__outer-wrapper">

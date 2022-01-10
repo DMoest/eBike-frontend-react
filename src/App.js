@@ -24,7 +24,9 @@ class App extends React.Component {
     };
   }
 
-  handleLogin = (childData) => {};
+  handleLogin = (childData) => {
+      this.setState({test_user: childData})
+  };
 
   handleLogout = (childData) => {};
 

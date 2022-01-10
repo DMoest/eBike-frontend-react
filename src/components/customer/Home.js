@@ -14,6 +14,9 @@ class Home extends React.Component {
 
     async componentDidMount() {
         await this.getUser();
+        // localStorage.setItem('code', "lol");
+        let code = localStorage.getItem('code1')
+        console.log("session", code)
         this.setState({render: true})
     }
     getUser = async () => {
