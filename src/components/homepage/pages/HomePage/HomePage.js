@@ -8,9 +8,9 @@ import "./HomePage.css";
 import logo__white from "@/assets/img/ebike__logo-white.svg";
 import logo__dark from "@/assets/img/ebike__logo-dark.svg";
 import heroImg from "@/assets/img/ebike__hero-ill.svg";
-import ill__simulation from "@/assets/img/ebike__simulation-illustration.png";
-import ill__backend from "@/assets/img/ebike__backend-illustration.png";
-import ill__frontend from "@/assets/img/ebike__frontend-illustration.png";
+import ill__simulation from "@/assets/img/ebike__simulation-illustration.svg";
+import ill__backend from "@/assets/img/ebike__backend-illustration.svg";
+import ill__frontend from "@/assets/img/ebike__frontend-illustration.svg";
 
 function HomePage() {
   return (
