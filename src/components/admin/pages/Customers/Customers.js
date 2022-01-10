@@ -5,6 +5,7 @@ import Api from "@/components/admin/helper/api";
 import Customer from "./CustomerSingle";
 import DocumentTitle from "react-document-title";
 import StatusBar from "../../components/global/Statusbar/StatusBar";
+import ErrorNotice from "@/components/global/ErrorNotice/ErrorNotice";
 
 // CSS
 import "./Customers.css";
@@ -35,10 +36,12 @@ function Customers({ city }) {
   const handleDeleteCustomers = (customers) => {
     api
       .deleteCustomer(customers._id, city)
-      .then((res) => {
+      .then(() => {
         setCustomers(
           customers.filter((customer) => customer._id !== customers._id)
         );
+
+        setError("Kund borttagen ", customers._id);
       })
       .catch((err) => {
         setError(err);
@@ -51,6 +54,9 @@ function Customers({ city }) {
     <>
       <StatusBar city={city} />
       <DocumentTitle title="Kunder"></DocumentTitle>
+
+      {/* Display error */}
+      {error ? <ErrorNotice err={error} /> : null}
 
       <div className="data-map__wrapper">
         <div className="data__wrapper fullwidth">

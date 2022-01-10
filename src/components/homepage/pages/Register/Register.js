@@ -1,9 +1,9 @@
 import DocumentTitle from "react-document-title";
 
-import "../../css/Global.css";
+import "@/css/Global.css";
 
-import logo from "../../../../assets/img/register__logo.svg";
-import bg__logo from "../../../../assets/img/register__bg-logo.svg";
+import logo from "@/assets/img/register__logo.svg";
+import bg__logo from "@/assets/img/register__bg-logo.svg";
 
 function Register() {
   return (

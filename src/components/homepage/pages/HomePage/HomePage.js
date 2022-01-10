@@ -26,10 +26,10 @@ function HomePage() {
               <NavLink to="/" className="home-nav__link">
                 Hem
               </NavLink>
-              <NavLink to="/" className="home-nav__link">
+              <NavLink to="/about" className="home-nav__link">
                 Om
               </NavLink>
-              <NavLink to="/" className="home-nav__link">
+              <NavLink to="/report" className="home-nav__link">
                 Rapport
               </NavLink>
             </div>
@@ -42,7 +42,7 @@ function HomePage() {
           <div className="home-hero__content-outer-wrapper">
             <div className="home-hero__content-inner-wrapper">
               <h1>Den ultimata elsparkcykel-simulatorn</h1>
-              <p>Logga in, ställ dig på cykeln och kör.</p>
+              <p>Logga in, ställ dig på scootern och kör.</p>
               <button className="home-hero__button">Registrera dig</button>
             </div>
           </div>

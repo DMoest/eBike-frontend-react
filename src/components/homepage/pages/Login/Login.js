@@ -1,6 +1,6 @@
 import DocumentTitle from "react-document-title";
 
-import "../../css/Global.css";
+import "@/css/Global.css";
 
 function Login() {
   return (
