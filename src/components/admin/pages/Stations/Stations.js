@@ -9,7 +9,7 @@ import BtnMap from "../../components/global/BtnMap/BtnMap";
 import StatusBar from "../../components/global/Statusbar/StatusBar";
 
 function Stations({ city }) {
-  const url = process.env.REACT_APP_API_BASE_URL + "/api/station/city/" + city;
+  const url = process.env.REACT_APP_API_BASE_URL + "/station/city/" + city;
   const [stations, setStations] = useState([]);
 
   const getStations = async () => {

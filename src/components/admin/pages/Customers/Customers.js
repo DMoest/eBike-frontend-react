@@ -10,7 +10,7 @@ import StatusBar from "../../components/global/Statusbar/StatusBar";
 import "./Customers.css";
 
 function Customers({ city }) {
-  const url = process.env.REACT_APP_API_BASE_URL + "/api/user/city/" + city;
+  const url = process.env.REACT_APP_API_BASE_URL + "/user/city/" + city;
   const [customers, setCustomers] = useState([]);
 
   // API call
