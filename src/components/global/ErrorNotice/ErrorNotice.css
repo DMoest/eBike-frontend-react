@@ -1,0 +1,19 @@
+.error__outer-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 15px;
+  margin: 25px;
+  z-index: 9999;
+  background: rgb(216, 78, 78);
+  color: #fff;
+  border-radius: 4px;
+  font-size: 0.9em;
+  display: flex;
+  align-items: center;
+}
+
+.errornotice__icon {
+  width: 18px;
+  margin-right: 5px;
+}

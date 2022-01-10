@@ -164,6 +164,10 @@
   opacity: 1;
 }
 
+.home-nav__link.active {
+  background: none;
+}
+
 .home-nav__link:hover {
   opacity: 0.5;
 }
