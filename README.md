@@ -4,7 +4,7 @@ This repository contains the admin & customer frontend for the eBike System.
 
 ## Start & test the application
 
-### Add your own .env file in the root folder of
+### Add your own .env file in the root folder
 
 The only required environment variable is REACT_APP_API_BASE_URL, which should contain the base URL (http://localhost:port/api/v1 for example) for the API you're using.
 
