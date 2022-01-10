@@ -1,42 +1,55 @@
-import axios from "axios";
 import DocumentTitle from "react-document-title";
 import { useState, useEffect } from "react";
 import Lottie from "react-lottie";
 
+// helpers
+import Api from "@/components/admin/helper/api";
+import {
+  getBikeStatusColor,
+  getBikeStatusSwedish,
+  getBikeActiveSwedish,
+} from "@/components/admin/helper/functions";
+
 // Components
 import Bike from "./BikeSingle";
-import Map from "../../components/maps/Map";
-import BtnMap from "../../components/global/BtnMap/BtnMap";
-import StatusBar from "../../components/global/Statusbar/StatusBar";
+import Map from "@/components/admin/components/maps/Map";
+import BtnMap from "@/components/admin/components/global/BtnMap/BtnMap";
+import StatusBar from "@/components/admin/components/global/Statusbar/StatusBar";
 
 // Lottie animations
-import loading__lottie from "../../assets/lottie/loading__lottie.json";
+import loading__lottie from "@/components/admin/assets/lottie/loading__lottie.json";
 
 function Bikes({ city }) {
-  const url = process.env.REACT_APP_API_BASE_URL + "/bike/city/" + city;
   const [bikes, setBikes] = useState([]);
   const [lottieIsStopped, setLottieIsStopped] = useState(true);
   const [hideMap, setHideMap] = useState(true);
 
-  // TODO: Breakout this
-  const getBikes = async () => {
-    try {
-      const res = await axios.get(url);
-      setBikes(res.data.bikes);
-    } catch (err) {
-      console.log(err);
-    }
+  // TODO: Show error in UI
+  const [error, setError] = useState(null);
+
+  const api = new Api();
+
+  const getBikes = () => {
+    api
+      .getBikes(city)
+      .then((res) => {
+        setBikes(res.data.bikes);
+      })
+      .catch((err) => {
+        setError(err);
+      });
   };
 
   useEffect(() => {
     getBikes();
     setLottieIsStopped(false);
 
+    // Call every n seconds
     const fetchDataInterval = setInterval(() => {
       getBikes();
-      console.log("New positions set");
       setLottieIsStopped(false);
-    }, 10000);
+      console.log("New positions set");
+    }, process.env.REACT_APP_API_INTERVAL || 10000);
 
     return () => clearInterval(fetchDataInterval);
   }, [city]);
@@ -50,33 +63,6 @@ function Bikes({ city }) {
       preserveAspectRatio: "xMidYMid slice",
     },
   };
-
-  // Status color
-  function getBikeStatusColor(bike) {
-    return bike.status === "available"
-      ? "#28C941"
-      : bike.status === "in_service"
-      ? "#F4D25E"
-      : bike.status === "broken"
-      ? "#EE6A6A"
-      : "#EE6A6A";
-  }
-
-  // Status to swedish
-  function getBikeStatusSwedish(bike) {
-    return bike.status === "available"
-      ? "Tillgänglig"
-      : bike.status === "in_service"
-      ? "Repereras"
-      : bike.status === "broken"
-      ? "Ur funktion"
-      : "Ingen information";
-  }
-
-  // Activity to swedish
-  function getBikeActiveSwedish(bike) {
-    return bike.active === "true" ? "Ja" : "Nej";
-  }
 
   return (
     <>
@@ -100,7 +86,6 @@ function Bikes({ city }) {
               ]}
             />
           </div>
-
           <div className="data__inner-wrapper">
             <table className="data__table">
               <thead>
