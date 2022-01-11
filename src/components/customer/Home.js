@@ -20,7 +20,7 @@ class Home extends React.Component {
         this.setState({render: true})
     }
     getUser = async () => {
-        await axios.get(`${url}/user/${this.props.user}`).then((response) => {
+        await axios.get(`http://localhost:8000/api/v1/user/${this.props.user}`).then((response) => {
             this.setState({user: response.data});
             console.log(response.data)
         });
@@ -29,6 +29,7 @@ class Home extends React.Component {
 
     render() {
         let renderContainer = false;
+        console.log(url)
         if (this.state.render) {
             let user = this.state.user;
             let payment;
