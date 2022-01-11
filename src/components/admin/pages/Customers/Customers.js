@@ -30,7 +30,7 @@ function Customers({ city }) {
   // API call
   useEffect(() => {
     getCustomers();
-  });
+  }, [city]);
 
   // Deletes a customer
   const handleDeleteCustomers = (customers) => {
