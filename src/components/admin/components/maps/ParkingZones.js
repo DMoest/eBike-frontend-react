@@ -25,7 +25,7 @@ function ParkingZones() {
 
   useEffect(() => {
     getParkingZones();
-  });
+  }, []);
 
   return (
     <div>
