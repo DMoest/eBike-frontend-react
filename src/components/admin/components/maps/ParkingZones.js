@@ -5,7 +5,7 @@ import Api from "@/components/admin/helper/api";
 // import MarkerClusterGroup from 'react-leaflet-markercluster';
 // import L from 'leaflet';
 
-function ParkingZones() {
+function ParkingZones({ city }) {
   const [markers, setMarkers] = useState([]);
   const [error, setError] = useState(null);
 
@@ -14,7 +14,7 @@ function ParkingZones() {
 
   const getParkingZones = () => {
     api
-      .getParkingZones()
+      .getParkingZones(city)
       .then((res) => {
         setMarkers(res.data.parking_zones);
       })
