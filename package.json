@@ -40,7 +40,7 @@
     "not dead",
     "not op_mini all"
   ],
-  "homepage":".",
+  "homepage": ".",
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^11.2.7",

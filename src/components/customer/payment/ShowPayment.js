@@ -4,7 +4,7 @@ import '../customer.scss';
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import PaymentForm from "./PaymentForm"; // not implemented yet
-const url = process.env.REACT_APP_API_BASE_URL;
+const url = "http://localhost:8000/api/v1";
 const stripepromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 
 class Showpayment extends React.Component {
@@ -14,7 +14,7 @@ class Showpayment extends React.Component {
             user: {},
             trips: [],
             months: [],
-            current: ["", 0],
+            current: "",
             price: 0,
             active: "",
             render: false
@@ -111,16 +111,16 @@ class Showpayment extends React.Component {
         let renderContainer = false;
         let content;
         console.log("current", this.state.user.payment_method)
-        if (this.state.active === "pay") {
-            content = (
-              <div class="flex-box">
-              <br/><p>Fyll i kortuppgifter för att betala månadens resor.</p><br/>
-              <Elements stripe={stripepromise}>
-                  <PaymentForm price={this.state.price} parentCallback={this.handlepay}/>
-              </Elements>
-              </div>
-            )
-        } else if (this.state.months.length === 0){
+        // if (this.state.active === "pay") {
+        //     content = (
+        //       <div class="flex-box">
+        //       <br/><p>Fyll i kortuppgifter för att betala månadens resor.</p><br/>
+        //       <Elements stripe={stripepromise}>
+        //           <PaymentForm price={this.state.price} parentCallback={this.handlepay}/>
+        //       </Elements>
+        //       </div>
+        //     )
+        if (this.state.months.length === 0) {
             content = (
                 <p>Du har inga väntande eller tidigare betalningar.</p>
             )
@@ -145,12 +145,11 @@ class Showpayment extends React.Component {
                       {trip[2] === 'unpaid' ? (<p>Dagar kvar till betalning: {trip[3]}</p>):(<p>Denna månad är betalad</p>)}
                   </div>
               })}
-
            </div>)
         }
         if(this.state.render) {
            renderContainer = (
-              <div>{content}</div>
+              <div className="grid-container">{content}</div>
            )
         }
         if (this.state.months === []) return "Det finns inga väntande betalningar";

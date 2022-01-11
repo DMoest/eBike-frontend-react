@@ -3,7 +3,7 @@ import React from "react";
 import "./customer.scss";
 const GEOCODE_URL =
   "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/reverseGeocode?f=pjson&langCode=EN&location=";
-const url = process.env.REACT_APP_API_BASE_URL;
+const url = "http://localhost:8000/api/v1";
 
 class History extends React.Component {
   constructor(props) {

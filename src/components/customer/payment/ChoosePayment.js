@@ -5,7 +5,7 @@ import "./payment.scss";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import PaymentForm from "./PaymentForm"; // not implemented yet
-const url = process.env.REACT_APP_API_BASE_URL;
+const url = "http://localhost:8000/api/v1";
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 
 class ChoosePayment extends React.Component {
@@ -92,7 +92,7 @@ class ChoosePayment extends React.Component {
       let chosen;
       if (this.state.active === "month") {
         chosen = (
-          <div class="flex-box chosen">
+          <div class="flex-box chosen month">
             <p>Du betalar nu alla dina resor en gång i månaden.</p>
           </div>
         );
@@ -128,7 +128,7 @@ class ChoosePayment extends React.Component {
         chosen = (
           <div class="flex-box chosen">
             <button
-              class="pay-btn"
+              class="pay-btn-agree"
               onClick={async () => {
                 await this.setState({ consent: true });
                 this.chooseMonth();

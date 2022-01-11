@@ -1,7 +1,7 @@
 import axios from "axios";
 import React from "react";
 import './customer.scss';
-const url = process.env.REACT_APP_API_BASE_URL;
+const url = "http://localhost:8000/api/v1";
 
 class Home extends React.Component {
     constructor(props) {
