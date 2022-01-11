@@ -1,4 +1,4 @@
-import "./customer.scss";
+import Nav from "../global/Nav/NavCustomer";
 import React from "react";
 import { Route, Routes, Link, NavLink } from "react-router-dom";
 import Logout from "../login/Logout";
@@ -11,25 +11,7 @@ import Payment from "./payment/Payment";
 function CustomerApp(props) {
   return (
     <div className="App">
-      <div className="nav__outer-wrapper">
-        <div className="nav__brand">
-          <Link to="/home">eBike</Link>
-        </div>
-        <div className="nav__menu">
-          <NavLink to="/history" className="nav__link">
-            Historik
-          </NavLink>
-          <NavLink to="/payment" className="nav__link">
-            Betalning
-          </NavLink>
-          <NavLink to="/login" className="nav__link nav__btn">
-            Logga in
-          </NavLink>
-          <NavLink to="/logout" className="nav__link nav__btn">
-            Logga ut
-          </NavLink>
-        </div>
-      </div>
+      <Nav />
       <Routes>
         <Route path="/home" element={<Home user={props.user} />} />
         <Route path="/history" element={<History user={props.user} />} />

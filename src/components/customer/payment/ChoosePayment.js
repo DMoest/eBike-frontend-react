@@ -5,9 +5,9 @@ import "./payment.scss";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import PaymentForm from "./PaymentForm"; // not implemented yet
-const url = "http://127.0.0.1:8000";
-
+const url = process.env.REACT_APP_API_BASE_URL;
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
+
 class ChoosePayment extends React.Component {
   constructor(props) {
     super(props);
@@ -28,7 +28,7 @@ class ChoosePayment extends React.Component {
     credit = credit.toString();
     console.log(typeof(credit), credit);
     if (childData.status === 200) {
-      await axios.put(`${url}/api/v1/user`, {
+      await axios.put(`${url}/user`, {
         _id: this.props.user,
         payment_method: "credit",
         payment_status: credit
@@ -44,7 +44,7 @@ class ChoosePayment extends React.Component {
   }
 
   getUser = () => {
-    axios.get(`${url}/api/v1/user/${this.props.user}`).then((response) => {
+    axios.get(`${url}/user/${this.props.user}`).then((response) => {
       this.setState({ user: response.data });
     });
   };
@@ -58,7 +58,7 @@ class ChoosePayment extends React.Component {
         "din månadsbetalning måste vara betalad innan du kan byta till saldo."
       );
     } else if (this.state.user.payment_method === "monthly") {
-      axios.put(`${url}/api/v1/user`, {
+      axios.put(`${url}/user`, {
         _id: this.props.user,
         payment_method: "credit",
         payment_status: "0"
@@ -71,7 +71,7 @@ class ChoosePayment extends React.Component {
 
   chooseMonth = async () => {
     if (this.state.consent) {
-      axios.put(`${url}/api/v1/user`, {
+      axios.put(`${url}/user`, {
         _id: this.props.user,
         payment_method: "monthly",
         payment_status: "paid"
