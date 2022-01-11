@@ -1,7 +1,7 @@
 import axios from "axios";
 import React from "react";
 import './customer.scss';
-const url = "http://127.0.0.1:8000";
+const url = process.env.REACT_APP_API_BASE_URL;
 
 class Home extends React.Component {
     constructor(props) {
@@ -20,7 +20,7 @@ class Home extends React.Component {
         this.setState({render: true})
     }
     getUser = async () => {
-        await axios.get(`${url}/api/v1/user/${this.props.user}`).then((response) => {
+        await axios.get(`${url}/user/${this.props.user}`).then((response) => {
             this.setState({user: response.data});
             console.log(response.data)
         });

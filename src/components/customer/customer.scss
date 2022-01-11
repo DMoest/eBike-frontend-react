@@ -61,25 +61,6 @@ form {
   background-color: #e0dbf0;
 }
 
-.nav__outer-wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 30px 50px;
-  background: #fff;
-  border-bottom: 1px solid #e4e4e6;
-}
-
-.nav__brand {
-  font-weight: 500;
-}
-
-.nav__link {
-  margin-left: 45px;
-  text-decoration: none;
-  font-weight: 500;
-}
-
 .active {
   color: #1e69d1;
 }

@@ -4,7 +4,7 @@ import '../customer.scss';
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import PaymentForm from "./PaymentForm"; // not implemented yet
-const url = "http://127.0.0.1:8000";
+const url = process.env.REACT_APP_API_BASE_URL;
 const stripepromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 
 class Showpayment extends React.Component {
@@ -23,7 +23,7 @@ class Showpayment extends React.Component {
 
     async componentDidMount() {
         await this.getUser();
-        await axios.get(`${url}/api/v1/travel`).then((response) => {
+        await axios.get(`${url}/travel`).then((response) => {
             this.setState({trips: response.data});
             console.log("trips", response.data)
         });
@@ -37,7 +37,7 @@ class Showpayment extends React.Component {
     }
 
     getUser = () => {
-        axios.get(`${url}/api/v1/user/${this.props.user}`).then((response) => {
+        axios.get(`${url}/user/${this.props.user}`).then((response) => {
             this.setState({user: response.data});
         });
     }
@@ -45,7 +45,7 @@ class Showpayment extends React.Component {
     checkPayStatus = async () => {
         console.log(this.state.current[1])
         if (this.state.current[1] > 0) {
-            axios.put(`${url}/api/v1/user`, {
+            axios.put(`${url}/user`, {
               _id: this.props.user,
               payment_method: "monthly",
               payment_status: "unpaid"
@@ -56,7 +56,7 @@ class Showpayment extends React.Component {
     payUnpaid = async () => {
         await this.state.trips.forEach((item, i) => {
               if (item.payment_status === "unpaid") {
-                axios.put(`${url}/api/v1/travel`, {
+                axios.put(`${url}/travel`, {
                     _id: item._id,
                     payment_status: "paid"
                 })
