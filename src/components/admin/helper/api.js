@@ -35,8 +35,8 @@ export default class Api {
     return this.init().get("/bike/city/" + city);
   };
 
-  getParkingZones = () => {
-    return this.init().get("/parking");
+  getParkingZones = (city) => {
+    return this.init().get("/parking/city/" + city);
   };
 
   // stations

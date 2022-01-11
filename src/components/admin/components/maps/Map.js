@@ -46,7 +46,7 @@ function Map({ type, data, city }) {
         />
         <StationMarkers data={data} />
         <BikeMarkers data={data} />
-        <ParkingZones />
+        <ParkingZones city={city} />
       </MapContainer>
     </>
   );
