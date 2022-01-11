@@ -1,26 +1,30 @@
+import Api from "@/components/admin/helper/api";
 import { useState, useEffect } from "react";
 import DocumentTitle from "react-document-title";
-import axios from "axios";
 
 // Components
-import ChargingStation from "./StationSingle";
-import Map from "../../components/maps/Map";
-import BtnMap from "../../components/global/BtnMap/BtnMap";
-import StatusBar from "../../components/global/Statusbar/StatusBar";
+import Station from "./StationSingle";
+import Map from "@/components/admin/components/maps/Map";
+import BtnMap from "@/components/admin/components/global/BtnMap/BtnMap";
+import StatusBar from "@/components/admin/components/global/Statusbar/StatusBar";
 import ErrorNotice from "@/components/global/ErrorNotice/ErrorNotice";
 
 function Stations({ city }) {
-  const url = process.env.REACT_APP_API_BASE_URL + "/station/city/" + city;
   const [stations, setStations] = useState([]);
   const [error, setError] = useState(null);
+  const [hideMap, setHideMap] = useState(true);
 
-  const getStations = async () => {
-    try {
-      const res = await axios.get(url);
-      setStations(res.data.stations);
-    } catch (err) {
-      setError(err);
-    }
+  const api = new Api();
+
+  const getStations = () => {
+    api
+      .getStations(city)
+      .then((res) => {
+        setStations(res.data.stations);
+      })
+      .catch((err) => {
+        setError(err);
+      });
   };
 
   useEffect(() => {
@@ -30,7 +34,7 @@ function Stations({ city }) {
   return (
     <>
       <DocumentTitle title="Laddstationer"></DocumentTitle>
-      <BtnMap />
+      <BtnMap setHideMap={setHideMap} hideMap={hideMap} />
       <StatusBar city={city} />
 
       {error ? <ErrorNotice err={error} /> : null}
@@ -40,30 +44,36 @@ function Stations({ city }) {
           <h1 className="header__top">Stationer</h1>
           <div className="data__inner-wrapper">
             <table className="data__table">
-              <tr>
-                <th>Stad</th>
-                <th>Kapacitet</th>
-                <th>Address</th>
-                <th>Postnummer</th>
-                <th>Aktiva</th>
-              </tr>
-              {stations.map((station) => {
-                return (
-                  <ChargingStation
-                    key={station._id}
-                    city={station.city}
-                    capacity={station.capacity}
-                    address={station.adress}
-                    postcode={station.postcode}
-                    active={station.active}
-                  />
-                );
-              })}
+              <thead>
+                <tr>
+                  <th>Stad</th>
+                  <th>Kapacitet</th>
+                  <th>Address</th>
+                  <th>Postnummer</th>
+                  <th>Aktiva</th>
+                </tr>
+              </thead>
+              <tbody>
+                {stations.map((station) => {
+                  return (
+                    <Station
+                      key={station._id}
+                      city={station.city}
+                      capacity={station.capacity}
+                      address={station.adress}
+                      postcode={station.postcode}
+                      active={station.active}
+                    />
+                  );
+                })}
+              </tbody>
             </table>
           </div>
         </div>
-        <div className="map__wrapper">
-          <Map type={"station"} data={stations} city={city} />
+        <div className={hideMap ? "map__hidden" : null}>
+          <div className="map__wrapper">
+            <Map type={"station"} data={stations} city={city} />
+          </div>
         </div>
       </div>
     </>

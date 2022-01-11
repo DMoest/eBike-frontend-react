@@ -40,7 +40,7 @@
     "not dead",
     "not op_mini all"
   ],
-  "homepage": "https://dmoest.github.io/eBike-frontend-react/build",
+  "homepage":".",
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^11.2.7",

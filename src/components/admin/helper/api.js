@@ -5,7 +5,7 @@ export default class Api {
     this.api_token = null;
     this.client = null;
     this.api_url =
-      process.env.REACT_APP_API_BASE_URL || "http://localhost:8000";
+      process.env.REACT_APP_API_BASE_URL || "http://localhost:8000/api/v1";
   }
 
   init = () => {
@@ -14,6 +14,7 @@ export default class Api {
 
     let headers = {
       Accept: "application/json",
+      "Access-Control-Allow-Origin": "*",
     };
 
     if (this.api_token) {
