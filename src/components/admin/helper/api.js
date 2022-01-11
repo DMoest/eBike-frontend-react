@@ -4,8 +4,8 @@ export default class Api {
   constructor() {
     this.api_token = null;
     this.client = null;
-    this.api_url =
-      process.env.REACT_APP_API_BASE_URL || "http://localhost:8000/api/v1";
+    this.api_url = "http://localhost:8000/api/v1";
+    //process.env.REACT_APP_API_BASE_URL ||
   }
 
   init = () => {
