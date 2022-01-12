@@ -110,15 +110,6 @@ class Showpayment extends React.Component {
         let renderContainer = false;
         let content;
         console.log("current", this.state.user.payment_method)
-        // if (this.state.active === "pay") {
-        //     content = (
-        //       <div class="flex-box">
-        //       <br/><p>Fyll i kortuppgifter för att betala månadens resor.</p><br/>
-        //       <Elements stripe={stripepromise}>
-        //           <PaymentForm price={this.state.price} parentCallback={this.handlepay}/>
-        //       </Elements>
-        //       </div>
-        //     )
         if (this.state.months.length === 0) {
             content = (
                 <p>Du har inga väntande eller tidigare betalningar.</p>
