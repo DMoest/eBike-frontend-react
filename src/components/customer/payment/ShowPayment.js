@@ -132,7 +132,7 @@ class Showpayment extends React.Component {
                   return <div style={{width: "350px"}} className="trips-div">
                       <p>Månad: {trip[0]}</p><br />
                       <p>Summa: {trip[1]} kr</p><br />
-                      {trip[2] === 'unpaid' ? (<p>Dagar kvar till betalning: {trip[3]}</p>):(<p>Denna månad är betalad</p>)}
+                      {trip[2] === 'unpaid' ? (<p>Dagar kvar till betalning: {trip[3]}</p>):(<p>Denna månad är betald</p>)}
                   </div>
               })}
            </div>)

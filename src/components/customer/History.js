@@ -117,7 +117,7 @@ class History extends React.Component {
                   </p>
                   <br />
                   <p>
-                    Start <br /> {trip.start_time}, {trip.start_spot} 
+                    Start <br /> {trip.start_time}, {trip.start_spot}
                   </p>
                   <br />
                   <p>
@@ -128,9 +128,7 @@ class History extends React.Component {
                     Pris <br /> {trip.price} kr
                   </p>
                   <br />
-                  <p>
-                    Status <br /> {trip.payment_status}
-                  </p>
+                  {trip.payment_status === 'unpaid' ? (<p>Status <br />Obetald</p>):(<p>Status <br />Betald</p>)}
                 </div>
               );
             })}
