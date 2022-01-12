@@ -9,19 +9,18 @@ import HomePageApp from "./components/homepage/HomePageApp";
 // Components
 import Login from "./components/login/Login";
 import Logout from "./components/login/Logout";
-import Auth from "./Auth";
 
 // Global CSS
 import "./css/Global.css";
 
 class App extends React.Component {
   constructor() {
-    super();
-    this.state = {
-      active: "",
-      toggle: "home",
-      test_user: "1",
-    };
+      super();
+      this.state = {
+          active: "",
+          toggle: "customer",
+          test_user: "1",
+      };
   }
 
   handleLogin = (childData) => {
@@ -68,10 +67,6 @@ class App extends React.Component {
           <Route
             path="/logout"
             element={<Logout parentCallback={this.handleLogout} />}
-          />
-          <Route
-            path="/authorize"
-            element={<Auth parentCallback={this.handleLogin} />}
           />
         </Routes>
       </div>

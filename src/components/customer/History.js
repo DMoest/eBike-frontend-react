@@ -20,7 +20,7 @@ class History extends React.Component {
   }
   getTrips = async () => {
     var travels = [];
-    await axios.get(`${url}/api/v1/travel`).then((response) => {
+    await axios.get(`http://localhost:8000/api/v1/travel`).then((response) => {
       travels = response.data;
     });
     for (const trip of travels) {
