@@ -20,7 +20,7 @@ class History extends React.Component {
   }
   getTrips = async () => {
     var travels = [];
-    await axios.get(`${url}/api/v1/travel`).then((response) => {
+    await axios.get(`${url}/travel`).then((response) => {
       travels = response.data;
     });
     for (const trip of travels) {
@@ -117,11 +117,11 @@ class History extends React.Component {
                   </p>
                   <br />
                   <p>
-                    Start <br /> {trip.start_spot} <br /> {trip.start_time}
+                    Start <br /> {trip.start_time}, {trip.start_spot} 
                   </p>
                   <br />
                   <p>
-                    Stop <br /> {trip.stop_spot} <br /> {trip.stop_time}
+                    Stop <br /> {trip.stop_time}, {trip.stop_spot}
                   </p>
                   <br />
                   <p>

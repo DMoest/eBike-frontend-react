@@ -29,7 +29,6 @@ class Showpayment extends React.Component {
         });
         this.calInvoice();
         const date = this.countdown();
-        console.log("HALLÅ",date)
         if (date === 0) {
             this.payUnpaid();
         }
@@ -79,9 +78,9 @@ class Showpayment extends React.Component {
                 previous = months[month][0]
             }
             if (month === m && item.payment_status === "unpaid") {
-                unpaid += item.price;
+                unpaid += parseInt(item.price);
             } else {
-                months[month][1] += item.price
+                months[month][1] += parseInt(item.price);
             }
         });
         await months.forEach((item, i) => {
@@ -149,7 +148,7 @@ class Showpayment extends React.Component {
         }
         if(this.state.render) {
            renderContainer = (
-              <div className="grid-container">{content}</div>
+              <div>{content}</div>
            )
         }
         if (this.state.months === []) return "Det finns inga väntande betalningar";
