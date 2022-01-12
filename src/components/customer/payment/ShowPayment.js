@@ -128,7 +128,7 @@ class Showpayment extends React.Component {
             <div className="payment-container">
             <h4>Kommande betalningar</h4>
             {this.state.current[1] > 0 ?
-                <div className="trips-div">
+                <div style={{width: "350px"}} className="trips-div">
                     <p>Månad: {this.state.current[0]}</p><br />
                     <p>Summa: {this.state.current[1]} kr</p><br />
                     {this.state.current[2] ? (<p>Dagar kvar till betalning: {this.state.current[2]}</p>):(<p></p>)}<br/>
@@ -138,7 +138,7 @@ class Showpayment extends React.Component {
 
             <br /><h4>Tidigare betalningar</h4>
             {this.state.months.map((trip) => {
-                  return <div className="trips-div">
+                  return <div style={{width: "350px"}} className="trips-div">
                       <p>Månad: {trip[0]}</p><br />
                       <p>Summa: {trip[1]} kr</p><br />
                       {trip[2] === 'unpaid' ? (<p>Dagar kvar till betalning: {trip[3]}</p>):(<p>Denna månad är betalad</p>)}
