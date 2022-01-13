@@ -15,7 +15,7 @@ class Login extends React.Component {
     return (
       <div className="container">
         <div className="form-div">
-          <p style={{ textAlign: "center" }}>Är du redan medlem?'</p>
+          <p style={{ textAlign: "center" }}>Är du redan medlem?</p>
           <button
             className="change-btn"
             onClick={() =>
@@ -33,10 +33,10 @@ class Login extends React.Component {
           <button
             className="change-btn"
             onClick={() =>
-              (window.location.href = "http://localhost:8000/register")
+              (window.location.href = "http://localhost:8000/login/admin/web/github")
             }
           >
-            Registrera dig
+            Logga in som admin
           </button>
         </div>
       </div>
