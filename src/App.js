@@ -25,7 +25,7 @@ class App extends React.Component {
   }
 
   handleLogin = (childData) => {
-      this.setState({test_user: childData})
+    this.setState({ test_user: childData });
   };
 
   handleLogout = (childData) => {};
@@ -61,10 +61,7 @@ class App extends React.Component {
         </button>
         {content}
         <Routes>
-          <Route
-            path="/login"
-            element={<Login />}
-          />
+          <Route path="/login" element={<Login />} />
           <Route
             path="/logout"
             element={<Logout parentCallback={this.handleLogout} />}
