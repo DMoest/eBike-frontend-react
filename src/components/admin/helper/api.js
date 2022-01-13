@@ -5,7 +5,7 @@ export default class Api {
     this.api_token = null;
     this.client = null;
     this.api_url = "http://localhost:8000/api/v1";
-    //process.env.REACT_APP_API_BASE_URL ||
+    //process.env.REACT_APP_API_BASE_URL || WHY IS THIS NOT WORKING?
   }
 
   init = () => {
@@ -30,26 +30,26 @@ export default class Api {
     return this.client;
   };
 
-  // Bikes
+  // Bikes Admin
   getBikes = (city) => {
-    return this.init().get("/bike/city/" + city);
+    return this.init().get("/admin/bike/city/" + city);
   };
 
   getParkingZones = (city) => {
-    return this.init().get("/parking/city/" + city);
+    return this.init().get("/admin/parking/city/" + city);
   };
 
-  // stations
+  // stations Admin
   getStations = (city) => {
-    return this.init().get("/station/city/" + city);
+    return this.init().get("/admin/station/city/" + city);
   };
 
-  // Customers
+  // Customers Admin
   getCustomers = (city) => {
-    return this.init().get("/user/city/" + city);
+    return this.init().get("/admin/user/city/" + city);
   };
 
   deleteCustomer = (data, city) => {
-    return this.init().delete("/user/city/" + city, { data: data });
+    return this.init().delete("/admin/user/city/" + city, { data: data });
   };
 }
