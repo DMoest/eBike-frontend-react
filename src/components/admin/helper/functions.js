@@ -27,5 +27,5 @@ export function getBikeStatusSwedish(bike) {
 }
 
 export function getBikeActiveSwedish(bike) {
-  return bike.active === "true" ? "Ja" : "Nej";
+  return bike.active === "True" ? "Ja" : "Nej";
 }

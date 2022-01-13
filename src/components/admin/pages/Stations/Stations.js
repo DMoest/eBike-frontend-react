@@ -9,12 +9,12 @@ import BtnMap from "@/components/admin/components/global/BtnMap/BtnMap";
 import StatusBar from "@/components/admin/components/global/Statusbar/StatusBar";
 import ErrorNotice from "@/components/global/ErrorNotice/ErrorNotice";
 
-function Stations({ city }) {
+function Stations({ city, token }) {
   const [stations, setStations] = useState([]);
   const [error, setError] = useState(null);
   const [hideMap, setHideMap] = useState(true);
 
-  const api = new Api();
+  const api = new Api(token);
 
   const getStations = () => {
     api

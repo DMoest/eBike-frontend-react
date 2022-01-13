@@ -20,21 +20,23 @@ import ErrorNotice from "@/components/global/ErrorNotice/ErrorNotice";
 // Lottie animations
 import loading__lottie from "@/components/admin/assets/lottie/loading__lottie.json";
 
-function Bikes({ city }) {
+function Bikes({ city, token }) {
   const [bikes, setBikes] = useState([]);
   const [lottieIsStopped, setLottieIsStopped] = useState(true);
   const [hideMap, setHideMap] = useState(true);
   const [error, setError] = useState(null);
 
-  const api = new Api();
+  const api = new Api(token);
 
   const getBikes = () => {
     api
       .getBikes(city || "Stockholm")
       .then((res) => {
+        console.log("CYKLAR: ", res.data.bikes.length);
         setBikes(res.data.bikes);
       })
       .catch((err) => {
+        console.log(err);
         setError(err);
       });
   };
@@ -104,7 +106,7 @@ function Bikes({ city }) {
                 {bikes.map((bike) => {
                   bike.statusColor = getBikeStatusColor(bike);
                   bike.status_swedish = getBikeStatusSwedish(bike);
-                  bike.active = getBikeActiveSwedish(bike);
+                  bike.activity = getBikeActiveSwedish(bike);
 
                   return (
                     <Bike
@@ -115,7 +117,7 @@ function Bikes({ city }) {
                       battery={bike.battery}
                       status={bike.status_swedish}
                       statusColor={bike.statusColor}
-                      active={bike.active}
+                      active={bike.activity}
                     />
                   );
                 })}
