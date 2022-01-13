@@ -7,17 +7,36 @@ import History from "./History";
 import Home from "./Home";
 import Payment from "./payment/Payment";
 // import Adress from "./components/customer/Adress";
+import { useCookies } from "react-cookie";
 
-function CustomerApp(props) {
+function CustomerApp({ cookies }) {
+  console.log(cookies);
+
+  // // Token check TEMP
+  // if (!cookies.token) {
+  //   if (cookies.token === undefined) {
+  //     window.location.href = "http://localhost:3000/denied";
+  //     return;
+  //   }
+  // }
+
   return (
     <div className="App">
       <Nav />
       <Routes>
-        <Route path="/home" element={<Home user={props.user} />} />
-        <Route path="/history" element={<History user={props.user} />} />
-        <Route path="/payment" element={<Payment user={props.user} />} />
-        <Route path="/logout" element={<Logout />} />
-        <Route path="/logout" element={<Login user={props.user} />} />
+        <Route exact path="/home" element={<Home user={cookies.user} />} />
+        <Route
+          exact
+          path="/history"
+          element={<History user={cookies.user} />}
+        />
+        <Route
+          exact
+          path="/payment"
+          element={<Payment user={cookies.user} />}
+        />
+        <Route exact path="/logout" element={<Logout />} />
+        <Route exact path="/logout" element={<Login user={cookies.user} />} />
       </Routes>
       <div className="home-container"></div>
     </div>

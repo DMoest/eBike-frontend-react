@@ -30,7 +30,7 @@ function Bikes({ city }) {
 
   const getBikes = () => {
     api
-      .getBikes(city)
+      .getBikes(city || "Stockholm")
       .then((res) => {
         setBikes(res.data.bikes);
       })

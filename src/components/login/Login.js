@@ -19,7 +19,8 @@ class Login extends React.Component {
           <button
             className="change-btn"
             onClick={() =>
-              (window.location.href = "http://localhost:8000/oauth/authorize")
+              (window.location.href =
+                "http://localhost:8000/login/user/web/github")
             }
           >
             Logga in

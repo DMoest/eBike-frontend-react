@@ -1,12 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
 import { BrowserRouter } from "react-router-dom";
+import { CookiesProvider } from "react-cookie";
+import AuthWrapper from "./AuthWrapper";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <CookiesProvider>
+        <AuthWrapper />
+      </CookiesProvider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")

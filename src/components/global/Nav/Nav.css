@@ -95,18 +95,36 @@
 }
 
 @media (max-width: 1000px) {
+  .nav-left__city-menu {
+    left: -4vw;
+    top: 10vh;
+  }
+
+  .nav-left__city-menu-icon {
+    top: -10%;
+    left: 40%;
+    transform: rotate(90deg);
+  }
+
   .nav-left__outer-wrapper {
     position: static;
     width: 100%;
     height: 100%;
     flex-direction: row;
-    padding: 0px 25px;
+    padding: 0px 15px;
   }
 
   .nav-left__menu-wrapper,
   .nav-left__bottom-wrapper {
     flex-direction: row !important;
+  }
+
+  .nav-left__menu-wrapper {
     justify-content: center;
+  }
+
+  .nav-left__bottom-wrapper {
+    justify-content: flex-end;
   }
 
   .nav-left__brand-wrapper {
@@ -139,11 +157,6 @@
   .map__wrapper {
     width: 100vw;
     height: 100vh;
-  }
-
-  .leaflet-container {
-    width: 100%;
-    height: 100%;
   }
 
   .data__inner-wrapper {
