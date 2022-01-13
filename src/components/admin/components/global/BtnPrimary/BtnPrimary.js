@@ -1,7 +1,8 @@
 import React from "react";
+import "./BtnPrimary.css";
 
 function BtnPrimary({ btnText }) {
-  return <button className="btn__primary">{btnText}</button>;
+  return <div className="btn__primary">{btnText}</div>;
 }
 
 export default BtnPrimary;

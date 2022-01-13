@@ -1,3 +1,66 @@
+.login__bg {
+  background: #1d1e22;
+  height: 100vh;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  z-index: 3;
+}
+
+.ebike__bgLogo {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+}
+
+.login__btn-outer-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  z-index: 3;
+}
+
+.logo__outer-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.login__inner-wrapper {
+  z-index: 3;
+  text-align: center;
+}
+
+.login__inner-wrapper h1 {
+  margin-bottom: 40px;
+}
+
+.login__btn-primary {
+  background: #2bb786;
+  color: #fff;
+}
+
+.login__btn-secondary {
+  background: #f1eff1;
+  margin-top: 15px;
+}
+
+/*BUTTON STYLING*/
+button {
+  border-radius: 4px;
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 12px 25px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter Medium", sans-serif;
+  font-weight: 500;
+}
+
 .container {
   display: flex;
   justify-content: space-around;
@@ -55,24 +118,6 @@ input[type="password"]:focus,
 textarea:focus {
   border: 1px solid #82ca94;
   outline: 0;
-}
-
-/*BUTTON STYLING*/
-button {
-  display: inline-block;
-  height: 40px;
-  padding: 0 40px;
-  color: #555;
-  text-align: center;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 38px;
-  letter-spacing: 0.1rem;
-  text-transform: uppercase;
-  background-color: #fff;
-  border-radius: 20px;
-  border: 1px solid #d1d1d1;
-  cursor: pointer;
 }
 
 .button-primary {

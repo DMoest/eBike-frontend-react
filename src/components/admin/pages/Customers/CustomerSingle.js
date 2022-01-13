@@ -1,4 +1,7 @@
+import BtnPrimary from "@/components/admin/components/global/BtnPrimary/BtnPrimary";
+
 function Customer({
+  _id,
   firstname,
   lastname,
   adress,
@@ -21,8 +24,8 @@ function Customer({
       <td data-label="Email">{email}</td>
       <td data-label="Betalningsmetod">{paymentMethod}</td>
       <td data-label="Betalningsstatus">{paymentStatus}</td>
-      <td data-label="Ta bort">
-        <button onClick={handleDeleteCustomers}>Ta bort</button>
+      <td>
+        <BtnPrimary btnText={"Ta bort"}></BtnPrimary>
       </td>
     </tr>
   );

@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Marker, Popup, useMap } from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-markercluster";
-// import axios from 'axios';
 
 // Custom markers
 import {
@@ -13,7 +12,6 @@ import {
 
 function BikeMarkers({ data }) {
   const [markers, setMarkers] = useState([]);
-  console.log("BIKEMARKERS data: ", data);
   let map = useMap();
 
   useEffect(() => {

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="71" height="64.615" viewBox="0 0 71 64.615">
+  <g id="ebike__login-logo" transform="translate(-4847 -3837.385)">
+    <path id="Path_159" data-name="Path 159" d="M15.794,16.743a2.949,2.949,0,1,1,2.949-2.949A2.957,2.957,0,0,1,15.794,16.743Zm8.846-2.654a8.85,8.85,0,1,0-17.691,0c0,3.45,2.875,8.02,8.846,13.475C21.765,22.109,24.64,17.539,24.64,14.089ZM15.794,2A11.727,11.727,0,0,1,27.588,14.089q0,7.342-11.794,17.4Q4.007,21.423,4,14.089A11.727,11.727,0,0,1,15.794,2Z" transform="translate(4866.206 3835.385)" fill="#2bb786"/>
+    <text id="Ebike" transform="translate(4847 3897)" fill="#fff" font-size="25" font-family="Moderat-Extended-Medium, Moderat Extended" font-weight="500"><tspan x="0" y="0">Ebike</tspan></text>
+  </g>
+</svg>
