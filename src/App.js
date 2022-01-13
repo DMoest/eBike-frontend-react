@@ -20,15 +20,15 @@ import "./css/Global.css";
 
 // Params
 const queryParams = new URLSearchParams(window.location.search) || null;
-const id = queryParams.get("id") || null;
-const userType = queryParams.get("userType") || null;
+const id = queryParams.get("_id") || null;
+const userClass = queryParams.get("userClass") || null;
 const token = queryParams.get("token") || null;
 
 const App = (props) => {
   const { cookies } = props;
-  const token = cookies.get("XSRF-TOKEN");
+  // const token = cookies.get("XSRF-TOKEN");
   console.log(cookies);
-  console.log("TOKEN: ", token);
+  console.log(id, userClass, token);
 
   return (
     <>
