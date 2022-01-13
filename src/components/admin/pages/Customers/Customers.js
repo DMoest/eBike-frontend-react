@@ -10,11 +10,11 @@ import ErrorNotice from "@/components/global/ErrorNotice/ErrorNotice";
 // CSS
 import "./Customers.css";
 
-function Customers({ city }) {
+function Customers({ city, token }) {
   const [customers, setCustomers] = useState([]);
   const [error, setError] = useState(null);
 
-  const api = new Api();
+  const api = new Api(token);
 
   const getCustomers = () => {
     api

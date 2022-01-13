@@ -10,44 +10,39 @@ import Customers from "./pages/Customers/Customers.js";
 // Global components
 import Nav from "../global/Nav/Nav";
 
-function AdminApp({ cookies }) {
+function AdminApp({ token, id }) {
   const [city, setCity] = useState("Stockholm");
-  // const [isAuthenticated, userHasAuthenticated] = useState(false);
 
   function handleSetCity(city) {
     setCity(city);
   }
 
-  // async function onLoad() {
-  //   try {
-  //     await Auth.currentSession();
-  //     userHasAuthenticated(true);
-  //   } catch (e) {
-  //     alert(e);
-  //   }
-  // }
-
-  // useEffect(() =>{
-  //   onLoad();
-  // })
-
-  // // Token check TEMP
-  // if (!cookies.token) {
-  //   if (cookies.token === undefined) {
-  //     window.location.href = "http://localhost:3000/denied";
-  //     return;
-  //   }
-  // }
+  // Token check
+  if (!token) {
+    window.location.href = "http://localhost:3000/denied";
+    return;
+  }
 
   return (
     <div className="App">
-      <Nav handleSetCity={handleSetCity} city={city} />
+      <Nav handleSetCity={handleSetCity} city={city} id={id} />
       <div className="container__main">
         <Routes>
-          <Route exact path="/stations" element={<Stations city={city} />} />
-          <Route path="/customers" element={<Customers city={city} />} />
-          <Route path="/logout" element={<Logout />} />
-          <Route exact path="/" element={<Bikes city={city} />} />
+          <Route
+            exact
+            path="/stations"
+            element={<Stations city={city} token={token} id={id} />}
+          />
+          <Route
+            path="/customers"
+            element={<Customers city={city} token={token} id={id} />}
+          />
+          <Route path="/logout" element={<Logout />} token={token} id={id} />
+          <Route
+            exact
+            path="/"
+            element={<Bikes city={city} token={token} id={id} />}
+          />
         </Routes>
       </div>
     </div>

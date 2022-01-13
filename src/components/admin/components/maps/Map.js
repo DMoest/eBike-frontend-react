@@ -13,6 +13,7 @@ function Map({ type, data, city }) {
   const [mapCenterCoordinates, setMapCenterCoordinates] = useState([
     59.334591, 18.06324,
   ]);
+  console.log("MAP data: ", data);
 
   useEffect(() => {
     // Setting up map centering based on city

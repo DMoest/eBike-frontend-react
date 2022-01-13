@@ -1,7 +1,5 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { instanceOf } from 'prop-types';
-import { withCookies, Cookies } from 'react-cookie';
 
 // Sections
 import CustomerApp from "./components/customer/CustomerApp";
@@ -15,17 +13,19 @@ import Logout from "./components/login/Logout";
 // Global CSS
 import "./css/Global.css";
 
-class App extends React.Component {
-  static propTypes = {
-    cookies: instanceOf(Cookies).isRequired
-  };
+const queryParams = new URLSearchParams(window.location.search) || null;
+const id = queryParams.get("_id") || null;
+const userClass = queryParams.get("userClass") || null;
+const token = queryParams.get("token") || null;
 
+class App extends React.Component {
   constructor(props) {
     super(props);
 
-    const { cookies } = props;
     this.state = {
-      token: cookies.get('XSRF-TOKEN')
+      token: token,
+      id: id,
+      userClass: userClass,
     };
   }
 
@@ -33,9 +33,13 @@ class App extends React.Component {
     var content;
 
     if (this.state.token) {
-      content = <CustomerApp token={this.state.token}/>;
-    // } else if (this.state.token === "declined") {
-    //   content = <AdminApp />;
+      if (this.state.userClass === "user") {
+        content = <CustomerApp token={this.state.token} id={this.state.id} />;
+      }
+
+      if (this.state.userClass === "admin") {
+        content = <AdminApp token={this.state.token} id={this.state.id} />;
+      }
     } else {
       content = <HomePageApp />;
     }
@@ -44,18 +48,12 @@ class App extends React.Component {
       <div>
         {content}
         <Routes>
-          <Route
-            path="/login"
-            element={<Login />}
-          />
-          <Route
-            path="/logout"
-            element={<Logout />}
-          />
+          <Route path="/login" element={<Login />} />
+          <Route path="/logout" element={<Logout />} />
         </Routes>
       </div>
     );
   }
 }
 
-export default withCookies(App);
+export default App;

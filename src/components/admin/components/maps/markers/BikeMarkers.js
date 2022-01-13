@@ -13,7 +13,7 @@ import {
 
 function BikeMarkers({ data }) {
   const [markers, setMarkers] = useState([]);
-
+  console.log("BIKEMARKERS data: ", data);
   let map = useMap();
 
   useEffect(() => {
@@ -45,28 +45,6 @@ function BikeMarkers({ data }) {
     console.log("Markers set");
   }, [data]);
 
-  // useEffect(() => {
-  //     const fetchData = () => {
-  //         axios.get(url).then((res) => {
-  //             let bikes = getBikesWithinBounds(res.data);
-  //             setMarkers(bikes);
-  //         })
-  //     }
-
-  //     // Fetching immediately the first time
-  //     fetchData();
-
-  //     // Fetching every 10 seconds
-  //     const fetchDataInterval = setInterval(() => {
-  //         fetchData();
-  //     }, 10000);
-
-  //     console.log(markers)
-
-  //     // Clearing is needed
-  //     return () => clearInterval(fetchDataInterval);
-  // }, [])
-
   return (
     <div>
       <MarkerClusterGroup>
@@ -93,6 +71,7 @@ function BikeMarkers({ data }) {
                 <br /> Lan: {marker.longitude}
                 <br /> Battery: {marker.battery}
                 <br /> Speed: {marker.speed}
+                <br /> City: {marker.city}
               </Popup>
             </Marker>
           );
