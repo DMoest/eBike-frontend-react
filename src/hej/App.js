@@ -15,8 +15,8 @@ import Auth from "./Auth";
 import "./css/Global.css";
 
 class App extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       active: "",
       toggle: "customer",

@@ -17,15 +17,39 @@ import "./css/Global.css";
 const App = (props) => {
   const { cookies } = props;
   const token = cookies.get('XSRF-TOKEN');
+  var toggle_active = "admin";
+  console.log(cookies)
+
+  const toggle = {
+    admin: "customer",
+    customer: "home",
+    home: "admin",
+  };
+
+  var content;
+
+  if (toggle_active === "customer") {
+    content = <CustomerApp user="1" />;
+  } else if (toggle_active === "admin") {
+    content = <AdminApp />;
+  } else if (toggle_active === "home") {
+    content = <HomePageApp />;
+  } else {
+    content = <Login />;
+  }
 
   return (
     <div>
-      <HomePageApp />
+      <button
+        style={{ position: "absolute", zIndex: 100, right: "0" }}
+        onClick={() => {
+          toggle_active = toggle[toggle_active];
+        }}
+      >
+        {toggle[toggle_active]}
+      </button>
+      {content}
       <Routes>
-        <Route
-          path="/"
-          element={<HomePageApp />}
-        />
         <Route
           path="/login"
           element={<Login />}
@@ -35,12 +59,8 @@ const App = (props) => {
           element={<Logout />}
         />
         <Route
-          path="/user"
-          element=<CustomerApp user="1" />
-        />
-        <Route
-          path="/admin"
-          element={<AdminApp />}
+          path="/authorize"
+          element={<Auth />}
         />
       </Routes>
     </div>
