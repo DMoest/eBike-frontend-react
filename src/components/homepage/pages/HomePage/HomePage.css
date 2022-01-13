@@ -193,14 +193,6 @@
     width: 100%;
   }
 
-  .home-hero__nav-center-wrapper {
-    display: none;
-  }
-
-  .home-hero__nav-right-wrapper {
-    display: none;
-  }
-
   .home-content__grid-wrapper {
     grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
     grid-column-gap: 0px;

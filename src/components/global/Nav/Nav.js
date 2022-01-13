@@ -31,7 +31,7 @@ function Nav({ handleSetCity, city }) {
             className="nav-left__menu-item-icon"
           />
         </NavLink>
-        <NavLink to="/charging" className="nav-left__menu-item">
+        <NavLink to="/stations" className="nav-left__menu-item">
           <img
             src={icon__charge}
             alt={icon__charge}

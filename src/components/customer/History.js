@@ -1,9 +1,11 @@
+import Api from "@/components/admin/helper/api";
 import axios from "axios";
 import React from "react";
 import "./customer.scss";
+
 const GEOCODE_URL =
   "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/reverseGeocode?f=pjson&langCode=EN&location=";
-const url = "http://localhost:8000/api/v1";
+// const url = "http://localhost:8000/api/v1";
 
 class History extends React.Component {
   constructor(props) {
@@ -19,10 +21,11 @@ class History extends React.Component {
     this.setState({ render: true });
   }
   getTrips = async () => {
-    var travels = [];
-    await axios.get(`${url}/travel`).then((response) => {
-      travels = response.data;
-    });
+    var travels = Api.getTravel();
+
+    // await axios.get(`${url}/travel`).then((response) => {
+    //   travels = response.data;
+    // });
     for (const trip of travels) {
       console.log(trip);
       await this.getAddress("start", trip.start_longitude, trip.start_latitude);
@@ -128,7 +131,17 @@ class History extends React.Component {
                     Pris <br /> {trip.price} kr
                   </p>
                   <br />
-                  {trip.payment_status === 'unpaid' ? (<p>Status <br />Obetald</p>):(<p>Status <br />Betald</p>)}
+                  {trip.payment_status === "unpaid" ? (
+                    <p>
+                      Status <br />
+                      Obetald
+                    </p>
+                  ) : (
+                    <p>
+                      Status <br />
+                      Betald
+                    </p>
+                  )}
                 </div>
               );
             })}

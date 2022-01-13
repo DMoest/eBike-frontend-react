@@ -52,4 +52,15 @@ export default class Api {
   deleteCustomer = (data, city) => {
     return this.init().delete("/admin/user/city/" + city, { data: data });
   };
+
+  // // Get user ID
+  // getUserId = (token) => {
+  //   return this.init().get("/user/")
+  // }
+
+  // trips
+  getTrips = () => {
+    let res = this.init().get("/travel/");
+    return res.data;
+  };
 }

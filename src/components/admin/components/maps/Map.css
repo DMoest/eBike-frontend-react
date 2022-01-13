@@ -2,3 +2,9 @@
   width: 50vw;
   height: 100vh;
 }
+
+@media only screen and (max-width: 1000px) {
+  .leaflet-container {
+    width: 100% !important;
+  }
+}
