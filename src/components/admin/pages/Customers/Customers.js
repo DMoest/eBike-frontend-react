@@ -33,21 +33,19 @@ function Customers({ city, token }) {
   }, [city]);
 
   // Deletes a customer
-  const handleDeleteCustomers = (customers) => {
+  const handleDeleteCustomers = (id) => {
     api
-      .deleteCustomer(customers._id, city)
+      .deleteCustomer(id)
       .then(() => {
-        setCustomers(
-          customers.filter((customer) => customer._id !== customers._id)
-        );
-
-        setError("Kund borttagen ", customers._id);
+        console.log("Customer deleted");
+        // setError("Kund borttagen ", customers._id);
       })
       .catch((err) => {
         setError(err);
       });
 
-    console.log("Customer deleted", customers);
+    // console.log("Customer deleted", customers);
+    getCustomers();
   };
 
   return (
@@ -82,6 +80,7 @@ function Customers({ city, token }) {
                   return (
                     <Customer
                       key={customer._id}
+                      id={customer._id}
                       firstname={customer.firstname}
                       lastname={customer.lastname}
                       adress={customer.adress}

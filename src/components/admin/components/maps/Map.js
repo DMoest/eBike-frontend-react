@@ -1,4 +1,4 @@
-import { MapContainer, TileLayer } from "react-leaflet";
+import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import { useEffect, useState } from "react";
 
 // CSS
@@ -13,7 +13,7 @@ function Map({ type, data, city }) {
   const [mapCenterCoordinates, setMapCenterCoordinates] = useState([
     59.334591, 18.06324,
   ]);
-  console.log("MAP data: ", data);
+  // console.log("MAP data: ", data);
 
   useEffect(() => {
     // Setting up map centering based on city
@@ -45,9 +45,15 @@ function Map({ type, data, city }) {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
           url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
         />
-        <StationMarkers data={data} />
-        <BikeMarkers data={data} />
-        <ParkingZones city={city} />
+        {type === "bike" ? (
+          <>
+            <StationMarkers data={data} />
+            <BikeMarkers data={data} />
+            <ParkingZones city={city} />
+          </>
+        ) : type === "station" ? (
+          <StationMarkers data={data} />
+        ) : null}
       </MapContainer>
     </>
   );

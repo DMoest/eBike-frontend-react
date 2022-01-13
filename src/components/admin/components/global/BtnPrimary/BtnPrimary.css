@@ -1,0 +1,30 @@
+.btn__primary,
+.btn__secondary {
+  border-radius: 4px;
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 12px 25px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter Medium", sans-serif;
+  font-weight: 500;
+}
+
+.btn__primary {
+  background: #2bb786;
+  color: #fff;
+  border: 1px solid #2bb786;
+}
+
+.btn__secondary {
+  background: #f1eff1;
+  color: #000;
+}
+
+.btn__icon {
+  width: 15px;
+  margin-right: 5px;
+}

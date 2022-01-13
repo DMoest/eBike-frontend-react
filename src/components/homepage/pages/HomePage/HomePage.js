@@ -44,7 +44,14 @@ function HomePage() {
             <div className="home-hero__content-inner-wrapper">
               <h1>Den ultimata elsparkcykel-simulatorn</h1>
               <p>Logga in, ställ dig på scootern och kör.</p>
-              <button className="home-hero__button">Registrera dig</button>
+              <button
+                className="home-hero__button"
+                onClick={() =>
+                  (window.location.href = "http://localhost:3000/login")
+                }
+              >
+                Logga in
+              </button>
             </div>
           </div>
         </div>
@@ -122,7 +129,7 @@ function HomePage() {
                 Tekniska Högskola 2021-2022.
               </p>
             </div>
-            <div className="home-footer__right-wrapper">Registrera dig</div>
+            <div className="home-footer__right-wrapper">2022</div>
           </div>
         </div>
       </div>

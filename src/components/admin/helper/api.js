@@ -71,10 +71,9 @@ export default class Api {
   /**
    * ADMIN - Delete a customer by ID
    * @param {string} id
-   * @param {string} city
    */
-  deleteCustomer = (data, city) => {
-    return this.init().delete("/admin/user/city/" + city, { data: data });
+  deleteCustomer = (id) => {
+    return this.init().delete("/admin/user", { body: id });
   };
 
   /**
