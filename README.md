@@ -15,20 +15,24 @@ Feel free to add the optional REACT_APP_API_INTERVAL environment variable, to sp
 ```
 docker compose up ebike_backend
 ```
+### Install dependencies
 
-### Start the react app (eBike-frontend-react)
+```
+yarn install (or npm run install)
+```
+
+### Start the app locally (eBike-frontend-react)
 
 ```
 yarn start (or npm run start)
 ```
 
-### Build the react app (eBike-frontend-react)
+### Or build & start the app using Docker
+```
+docker-compose build ebike_backend
+```
 
+### Or build & start the app using Docker
 ```
-yarn build (or npm run build)
-```
-
-### Testing the react app (eBike-frontend-react)
-```
-yarn test (or npm run test)
+docker-compose up ebike_backend
 ```
