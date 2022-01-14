@@ -2,7 +2,6 @@
 import axios from "axios";
 import React from "react";
 import "./customer.scss";
-
 const url = "http://localhost:8000/api/v1";
 const GEOCODE_URL =
   "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/reverseGeocode?f=pjson&langCode=EN&location=";

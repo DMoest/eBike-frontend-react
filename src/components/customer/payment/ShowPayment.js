@@ -1,11 +1,7 @@
 import axios from "axios";
 import React from "react";
 import '../customer.scss';
-import { loadStripe } from "@stripe/stripe-js";
-import { Elements } from "@stripe/react-stripe-js";
-import PaymentForm from "./PaymentForm"; // not implemented yet
 const url = "http://localhost:8000/api/v1";
-const stripepromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 
 class Showpayment extends React.Component {
     constructor(props) {

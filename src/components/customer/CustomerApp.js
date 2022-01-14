@@ -1,8 +1,7 @@
 import Nav from "../global/Nav/NavCustomer";
 import React from "react";
-import { Route, Routes, Link, NavLink } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Logout from "../login/Logout";
-import Login from "../login/Login";
 import History from "./History";
 import Home from "./Home";
 import Payment from "./payment/Payment";

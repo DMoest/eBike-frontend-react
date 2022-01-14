@@ -43,11 +43,13 @@ function Nav() {
         </NavLink>
       </div>
       <div className="nav-left__bottom-wrapper">
+      <NavLink to="/logout" className="nav-left__menu-item">
         <img
           src={icon__logout}
           alt={icon__logout}
           className="nav-left__menu-item-icon"
         />
+        </NavLink>
       </div>
     </div>
   );
