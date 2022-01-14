@@ -27,7 +27,7 @@ yarn install (or npm run install)
 yarn start (or npm run start)
 ```
 
-### Or build & start the app using Docker
+### Build & start the app using Docker
 ```
 docker-compose build ebike_backend
 ```
