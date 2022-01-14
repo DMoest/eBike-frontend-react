@@ -21,8 +21,6 @@ class ChoosePayment extends React.Component {
   }
 
   handlePay = async (childData) => {
-    console.log("hejsan", this.state.user.payment_status);
-    console.log(this.state.price);
     let credit =
       parseInt(this.state.user.payment_status) + parseInt(this.state.price);
     credit = credit.toString();
@@ -39,7 +37,6 @@ class ChoosePayment extends React.Component {
 
   async componentDidMount() {
     await this.getUser();
-    console.log(this.state.user);
     this.setState({ render: true });
   }
 
@@ -86,33 +83,33 @@ class ChoosePayment extends React.Component {
   };
 
   render() {
-    console.log("betalningsmetod", this.state.user.payment_method,this.state.user.payment_status, this.state.price, typeof(this.state.price));
+    // console.log("betalningsmetod", this.state.user.payment_method,this.state.user.payment_status, this.state.price, typeof(this.state.price));
     let renderContainer = false;
     if (this.state.render) {
       let chosen;
       if (this.state.active === "month") {
         chosen = (
-          <div class="flex-box chosen month">
+          <div className="flex-box chosen month">
             <p>Du betalar nu alla dina resor en gång i månaden.</p>
           </div>
         );
       } else if (this.state.active === "credit") {
         chosen = (
-          <div class="flex-box chosen">
+          <div className="flex-box chosen">
             <p>Fyll på ditt saldo med den valda summan</p>
             <div
-              class="price"
+              className="price"
               onChange={(e) => this.setState({ price: e.target.value })}
             >
-              <label style={{ backgroundColor: "#ffdb99" }} class="radiobtn">
+              <label style={{ backgroundColor: "#ffdb99" }} className="radiobtn">
                 <input type="radio" value="100" name="price" /> 100 kr
               </label>
               <br />
-              <label style={{ backgroundColor: "#ffc966" }} class="radiobtn">
+              <label style={{ backgroundColor: "#ffc966" }} className="radiobtn">
                 <input type="radio" value="250" name="price" /> 250 kr
               </label>
               <br />
-              <label style={{ backgroundColor: "#ffb732" }} class="radiobtn">
+              <label style={{ backgroundColor: "#ffb732" }} className="radiobtn">
                 <input type="radio" value="500" name="price" /> 500 kr
               </label>
             </div>
@@ -126,9 +123,9 @@ class ChoosePayment extends React.Component {
         );
       } else if (this.state.active === "agree") {
         chosen = (
-          <div class="flex-box chosen">
+          <div className="flex-box chosen">
             <button
-              class="pay-btn-agree"
+              className="pay-btn-agree"
               onClick={async () => {
                 await this.setState({ consent: true });
                 this.chooseMonth();
@@ -140,7 +137,7 @@ class ChoosePayment extends React.Component {
         );
       } else {
         chosen = (
-          <div>
+          <div style={{marginBottom: "2em"}}>
             <p>
               Du kan välja mellan att betala alla dina resor en gång i månaden
             </p>
@@ -157,7 +154,7 @@ class ChoosePayment extends React.Component {
       }
 
       renderContainer = (
-        <div class="payment-container">
+        <div className="payment-container">
           {chosen}
           <button className={this.state.active} onClick={this.chooseCredit}>
             Betala med saldo

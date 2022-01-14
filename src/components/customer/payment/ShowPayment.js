@@ -25,7 +25,6 @@ class Showpayment extends React.Component {
         await this.getUser();
         await axios.get(`${url}/travel/user/${this.props.id}`).then((response) => {
             this.setState({trips: response.data});
-            console.log("trips", response.data)
         });
         this.calInvoice();
         const date = this.countdown();
@@ -42,7 +41,6 @@ class Showpayment extends React.Component {
     }
 
     checkPayStatus = async () => {
-        console.log(this.state.current[1])
         if (this.state.current[1] > 0) {
             axios.put(`${url}/user`, {
               _id: this.props.user,
@@ -89,12 +87,11 @@ class Showpayment extends React.Component {
             }
             if (item[1] !== 0) {
                 bills.push(item);
-                console.log(item)
             }
         });
         await this.setState({months: bills, current: [curMonth, unpaid, this.countdown()]})
         await this.checkPayStatus();
-        console.log("Months", this.state.months, "current", this.state.current)
+        // console.log("Months", this.state.months, "current", this.state.current)
     }
 
     countdown = () => {
@@ -109,7 +106,7 @@ class Showpayment extends React.Component {
     render() {
         let renderContainer = false;
         let content;
-        console.log("current", this.state.user.payment_method)
+        // console.log("current", this.state.user.payment_method)
         if (this.state.months.length === 0) {
             content = (
               <div className="payment-container">

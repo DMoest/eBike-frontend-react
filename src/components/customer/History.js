@@ -97,7 +97,6 @@ class History extends React.Component {
 
   render() {
     let renderContainer = false;
-    // let year = "November 2021";
     if (this.state.render) {
       renderContainer = (
         <div className="grid-container">

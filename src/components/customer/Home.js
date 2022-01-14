@@ -1,7 +1,7 @@
 import axios from "axios";
 import React from "react";
 import './customer.scss';
-import Api from "@/components/admin/helper/api";
+// import Api from "@/components/admin/helper/api";
 const url = "http://localhost:8000/api/v1";
 
 class Home extends React.Component {
@@ -21,13 +21,11 @@ class Home extends React.Component {
     getUser = async () => {
         await axios.get(`${url}/user/${this.props.id}`).then((response) => {
             this.setState({user: response.data});
-            console.log(response.data)
         });
     }
 
 
     render() {
-        console.log(this)
         let renderContainer = false;
         if (this.state.render) {
             let user = this.state.user;
