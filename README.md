@@ -27,3 +27,8 @@ yarn start (or npm run start)
 ```
 yarn build (or npm run build)
 ```
+
+### Testing the react app (eBike-frontend-react)
+```
+yarn test (or npm run test)
+```
