@@ -47,12 +47,13 @@ function Map({ type, data, city }) {
         />
         {type === "bike" ? (
           <>
-            <StationMarkers data={data} />
+            {/* <StationMarkers data={data} /> */}
             <BikeMarkers data={data} />
             <ParkingZones city={city} />
           </>
         ) : type === "station" ? (
-          <StationMarkers data={data} />
+          // <StationMarkers data={data} />
+          <BikeMarkers data={data} />
         ) : null}
       </MapContainer>
     </>

@@ -70,6 +70,7 @@ function BikeMarkers({ data }) {
                 <br /> Battery: {marker.battery}
                 <br /> Speed: {marker.speed}
                 <br /> City: {marker.city}
+                {/* <br /> Status: {marker.status} */}
               </Popup>
             </Marker>
           );
