@@ -1,11 +1,11 @@
-import Api from "@/components/admin/helper/api";
+// import Api from "@/components/admin/helper/api";
 import axios from "axios";
 import React from "react";
 import "./customer.scss";
 
+const url = "http://localhost:8000/api/v1";
 const GEOCODE_URL =
   "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/reverseGeocode?f=pjson&langCode=EN&location=";
-// const url = "http://localhost:8000/api/v1";
 
 class History extends React.Component {
   constructor(props) {
@@ -21,11 +21,11 @@ class History extends React.Component {
     this.setState({ render: true });
   }
   getTrips = async () => {
-    var travels = Api.getTravel();
-
-    // await axios.get(`${url}/travel`).then((response) => {
-    //   travels = response.data;
-    // });
+    // var travels = Api.getTravels();
+    var travels;
+    await axios.get(`${url}/travel/user/${this.props.id}`).then((response) => {
+      travels = response.data;
+    });
     for (const trip of travels) {
       console.log(trip);
       await this.getAddress("start", trip.start_longitude, trip.start_latitude);
@@ -103,53 +103,56 @@ class History extends React.Component {
         <div className="grid-container">
           <h2>Tidigare resor</h2>
           <br />
-          <div className="trips-container">
-            {this.state.trips.map((trip) => {
-              return (
-                <div className="trips-div">
-                  <p>
-                    Cykel-id <br /> {trip.bike_id}
-                  </p>
-                  <br />
-                  <p>
-                    Stad <br /> {trip.city}
-                  </p>
-                  <br />
-                  <p>
-                    Datum <br /> {trip.date}
-                  </p>
-                  <br />
-                  <p>
-                    Start <br /> {trip.start_time}, {trip.start_spot}
-                  </p>
-                  <br />
-                  <p>
-                    Stop <br /> {trip.stop_time}, {trip.stop_spot}
-                  </p>
-                  <br />
-                  <p>
-                    Pris <br /> {trip.price} kr
-                  </p>
-                  <br />
-                  {trip.payment_status === "unpaid" ? (
+          {this.state.trips.length > 0 ?
+            <div className="trips-container">
+              {this.state.trips.map((trip) => {
+                return (
+                  <div className="trips-div">
                     <p>
-                      Status <br />
-                      Obetald
+                      Cykel-id <br /> {trip.bike_id}
                     </p>
-                  ) : (
+                    <br />
                     <p>
-                      Status <br />
-                      Betald
+                      Stad <br /> {trip.city}
                     </p>
-                  )}
-                </div>
-              );
-            })}
-          </div>
+                    <br />
+                    <p>
+                      Datum <br /> {trip.date}
+                    </p>
+                    <br />
+                    <p>
+                      Start <br /> {trip.start_time}, {trip.start_spot}
+                    </p>
+                    <br />
+                    <p>
+                      Stop <br /> {trip.stop_time}, {trip.stop_spot}
+                    </p>
+                    <br />
+                    <p>
+                      Pris <br /> {trip.price} kr
+                    </p>
+                    <br />
+                    {trip.payment_status === "unpaid" ? (
+                      <p>
+                        Status <br />
+                        Obetald
+                      </p>
+                    ) : (
+                      <p>
+                        Status <br />
+                        Betald
+                      </p>
+                    )}
+                  </div>
+                );
+              })}
+            </div>:
+            <p>Du har inga resor i din historik</p>
+          }
         </div>
       );
     }
-    return renderContainer;
+    return (renderContainer)
   }
 }
 

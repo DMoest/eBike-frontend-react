@@ -1,6 +1,7 @@
 import axios from "axios";
 import React from "react";
 import './customer.scss';
+import Api from "@/components/admin/helper/api";
 const url = "http://localhost:8000/api/v1";
 
 class Home extends React.Component {
@@ -14,13 +15,11 @@ class Home extends React.Component {
 
     async componentDidMount() {
         await this.getUser();
-        // localStorage.setItem('code', "lol");
-        let code = localStorage.getItem('code1')
-        console.log("session", code)
         this.setState({render: true})
     }
+
     getUser = async () => {
-        await axios.get(`${url}/user/${this.props.user}`).then((response) => {
+        await axios.get(`${url}/user/${this.props.id}`).then((response) => {
             this.setState({user: response.data});
             console.log(response.data)
         });
@@ -28,6 +27,7 @@ class Home extends React.Component {
 
 
     render() {
+        console.log(this)
         let renderContainer = false;
         if (this.state.render) {
             let user = this.state.user;
@@ -54,21 +54,13 @@ class Home extends React.Component {
                       <h2>Dina personuppgifter</h2>
                       <br />
                       <div className="trips-div">
-                        <p>
-                          Namn <br /> {user.firstname} {user.lastname}
-                        </p>
+                        {user.lastname ? (<p>Namn <br />{user.firstname} {user.lastname}</p>) : (<p>Namn <br />Inte angivet</p>)}
                         <br />
-                        <p>
-                          Adress <br /> {user.adress}, {user.postcode}, {user.city}
-                        </p>
+                        {user.city ? (<p>Adress <br />{user.adress}, {user.postcode}, {user.city}</p>) : (<p>Adress<br />Inte angivet</p>)}
                         <br />
-                        <p>
-                          Email <br /> {user.email}
-                        </p>
+                        {user.email ? (<p>Email <br /> {user.email}</p>) : (<p>Email<br />Inte angivet</p>)}
                         <br />
-                        <p>
-                          Telefon <br /> {user.phone}
-                        </p>
+                        {user.phone ? (<p>Telefon <br /> {user.phone}</p>) : (<p>Telefon<br />Inte angivet</p>)}
                       </div>
                   </div>
               </div>

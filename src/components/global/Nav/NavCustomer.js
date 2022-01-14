@@ -20,7 +20,7 @@ function Nav() {
         <img src={icon__logo} alt={icon__logo} />
       </div>
       <div className="nav-left__menu-wrapper">
-        <NavLink to="/home" className="nav-left__menu-item">
+        <NavLink to="/" className="nav-left__menu-item">
           <img
             src={icon__profile}
             alt={icon__profile}

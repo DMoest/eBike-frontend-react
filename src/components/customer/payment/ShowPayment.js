@@ -23,7 +23,7 @@ class Showpayment extends React.Component {
 
     async componentDidMount() {
         await this.getUser();
-        await axios.get(`${url}/travel`).then((response) => {
+        await axios.get(`${url}/travel/user/${this.props.id}`).then((response) => {
             this.setState({trips: response.data});
             console.log("trips", response.data)
         });
@@ -112,7 +112,9 @@ class Showpayment extends React.Component {
         console.log("current", this.state.user.payment_method)
         if (this.state.months.length === 0) {
             content = (
+              <div className="payment-container">
                 <p>Du har inga väntande eller tidigare betalningar.</p>
+              </div>
             )
         } else {
             content = (
@@ -142,7 +144,6 @@ class Showpayment extends React.Component {
               <div>{content}</div>
            )
         }
-        if (this.state.months === []) return "Det finns inga väntande betalningar";
         return (renderContainer)
     }
 }

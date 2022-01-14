@@ -19,7 +19,7 @@ function CustomerApp({ token, id }) {
     <div className="App">
       <Nav />
       <Routes>
-        <Route exact path="/home" element={<Home id={id} token={token} />} />
+        <Route exact path="/" element={<Home id={id} token={token} />} />
         <Route
           exact
           path="/history"

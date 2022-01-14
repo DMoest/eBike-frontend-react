@@ -23,6 +23,17 @@
   padding: 0 5px;
 }
 
+
+.message {
+    margin-left: 6em;
+}
+
+.payment-inner {
+    p {
+        margin-left: 1em;
+    }
+}
+
 .pay-btn,
 .pay-btn-agree {
   white-space: nowrap;
@@ -138,6 +149,13 @@ input[type="radio"]:checked {
         margin: 1em;
         p {
           text-align: left;
+        }
+    }
+
+    .payment-inner {
+        text-align: center;
+        .message {
+           margin-left: 1em;
         }
     }
 

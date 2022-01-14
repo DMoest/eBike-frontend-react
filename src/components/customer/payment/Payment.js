@@ -21,7 +21,6 @@ class Payment extends React.Component {
   }
 
   render() {
-    console.log("pay", this.props.user);
     return (
       <div className="payment-outer">
         <div className="button-div">
@@ -37,11 +36,11 @@ class Payment extends React.Component {
         <div className="payment-inner">
           {this.state.active === "choose" ? (
             <div>
-              <ShowPayment user={this.props.user} />
+              <ShowPayment id={this.props.id} />
             </div>
           ) : (
             <div>
-              <ChoosePayment user={this.props.user} />
+              <ChoosePayment id={this.props.id} />
             </div>
           )}
         </div>
